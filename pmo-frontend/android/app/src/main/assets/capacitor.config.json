@@ -3,11 +3,9 @@
 	"appName": "PMO-Tool",
 	"webDir": "build",
 	"bundledWebRuntime": false,
+	"allowMixedContent": true,
+	"cleartext": true,
 	"server": {
-		"androidScheme": "http",
-		"allowNavigation": [
-			"http://localhost:5000/xlsx-parser/",
-			"https://jsonplaceholder.typicode.com/todos/1"
-		]
+		"androidScheme": "http"
 	}
 }
