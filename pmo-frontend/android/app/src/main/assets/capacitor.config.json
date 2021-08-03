@@ -3,9 +3,5 @@
 	"appName": "PMO-Tool",
 	"webDir": "build",
 	"bundledWebRuntime": false,
-	"allowMixedContent": true,
-	"cleartext": true,
-	"server": {
-		"androidScheme": "http"
-	}
+	"allowMixedContent": true
 }

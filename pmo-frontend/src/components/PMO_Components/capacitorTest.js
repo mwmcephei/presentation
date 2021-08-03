@@ -43,7 +43,7 @@ const CapacitorTest = (props) => {
       }, []);
 
 
-      const parserBaseURL = "http://localhost:5000/xlsx-parser"
+      const parserBaseURL = "http://192.168.2.112:5000/xlsx-parser"
     useEffect(() => {
         fetch(parserBaseURL + "/measures")
           .then(response => response.json())
@@ -67,7 +67,7 @@ const CapacitorTest = (props) => {
         <div className="page-content">
         <Container fluid>
         <Row>
-            test
+            TEST
         </Row>
         <Row>
             {test}
