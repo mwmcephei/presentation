@@ -1,0 +1,83 @@
+import PropTypes from "prop-types"
+import React, { useState, useEffect } from "react"
+import { Row, Col, Collapse } from "reactstrap"
+import { Link, withRouter } from "react-router-dom"
+import classname from "classnames"
+
+//i18n
+import { withTranslation } from "react-i18next"
+
+import { connect } from "react-redux"
+
+const Navbar = props => {
+
+  const [activeTab, setActiveTab] = useState("dashboard")
+ 
+
+
+ 
+
+  return (
+    <React.Fragment>
+      <div className="topnav">
+        <div className="container-fluid">
+          <nav
+            className="navbar navbar-light navbar-expand-lg topnav-menu"
+            id="navigation"
+          >
+            <Collapse
+              isOpen={props.leftMenu}
+              className="navbar-collapse"
+              id="topnav-menu-content"
+            >
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link to="/dashboard" className="dropdown-item">
+                      Dashboard
+                    </Link>
+                </li>
+
+                <li className="nav-item ">
+                    <Link to="/measure_overview" className="dropdown-item">
+                      Measure Overview
+                    </Link>       
+                </li>
+                <li className="nav-item ">
+                <Link to="/measure_reports" className="dropdown-item">
+                      Measure Reports
+                    </Link>    
+                </li>
+                <li className="nav-item ">
+                    <Link to="/budget_reports" className="dropdown-item">
+                      Budget Report
+                    </Link>     
+                </li>
+
+
+
+
+                
+              </ul>
+            </Collapse>
+          </nav>
+        </div>
+      </div>
+    </React.Fragment>
+  )
+}
+
+Navbar.propTypes = {
+  leftMenu: PropTypes.any,
+  location: PropTypes.any,
+  menuOpen: PropTypes.any,
+  t: PropTypes.any,
+}
+
+const mapStatetoProps = state => {
+  const { leftMenu } = state.Layout
+  return { leftMenu }
+}
+
+export default withRouter(
+  connect(mapStatetoProps, {})(withTranslation()(Navbar))
+)

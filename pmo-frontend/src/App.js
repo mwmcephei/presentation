@@ -14,9 +14,13 @@ import Authmiddleware from "./routes/middleware/Authmiddleware"
 import VerticalLayout from "./components/VerticalLayout/"
 import HorizontalLayout from "./components/HorizontalLayout/"
 import NonAuthLayout from "./components/NonAuthLayout"
-import Header from "./components/HorizontalLayout/Header_custom"
-import Navbar from "./components/HorizontalLayout/Navbar"
-import Index from "./components/HorizontalLayout/index"
+
+/*
+ import Header from "./components/HorizontalLayout/Header_custom"
+import Header_vert from "./components/VerticalLayout/Header"
+import Navbar from "./components/HorizontalLayout/Navbar_custom"
+*/
+import Index from "./components/HorizontalLayout/index_custom"
 import Footer from "./components/HorizontalLayout/Footer"
 
 import Overview from "./components/PMO_Components/overview"
@@ -84,11 +88,22 @@ const App = props => {
  */}
 
       <Router>   
-        <Header />
+        <Index />
+
         <Switch>
-          <Route path="/overview">
+          <Route path="/dashboard">
             <Overview />
           </Route>
+          <Route path="/measure_overview">
+            <Test />
+          </Route>
+          <Route path="/measure_reports">
+            <Test />
+          </Route>
+          <Route path="/budget_reports">
+            <Test />
+          </Route>
+
           <Route path="/test">
             <Test />
           </Route>

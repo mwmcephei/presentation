@@ -47,7 +47,7 @@ const Overview = (props) => {
    const [monthlySpendings, setMonthlySpendings] = useState()
    const [approved, setApproved] = useState()
 
-
+/*
     useEffect(() => {
         fetch(parserBaseURL + "/budget")
             .then(response => response.json())
@@ -141,7 +141,7 @@ const Overview = (props) => {
         greenCounter: greenCounter_kpi
     })
   }, [measures]);
-
+*/
 
 
 
@@ -155,10 +155,11 @@ const Overview = (props) => {
 }
 
 
-/*
+
 
     let status1 = "test" 
-    let status2 = "test" 
+    let status2 = "test"
+/*     
     if(overviewData){
         status1 = <CardUser signal={ overviewData.overallStatus} 
         budget={ overviewData.totalBudget }
@@ -181,7 +182,7 @@ const Overview = (props) => {
                     {"status2"}
               </Row> 
 
-                <Row>
+          { /*     <Row>
                     <SalesAnalytics title={"Status of Projects"}
                         green={measuresPieChart.greenCounter} 
                         yellow={measuresPieChart.yellowCounter} 
@@ -204,6 +205,7 @@ const Overview = (props) => {
                         </CardBody>
                     </Card>
                 </Row>
+               */ }
 
             </Container>          
         </div>              
