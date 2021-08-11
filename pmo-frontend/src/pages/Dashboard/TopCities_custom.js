@@ -27,7 +27,7 @@ const TopCities = (props) => {
                     <p className="mb-0">Overall Progress</p>
                   </td>
                   <td style={{ width: "25%" }}>
-                    <h5 className="mb-0">{props.overallProgress}</h5>
+                    <h5 className="mb-0">{props.overallProgress}%</h5>
                   </td>
                   <td>
                     <Progress
@@ -43,7 +43,7 @@ const TopCities = (props) => {
                     <p className="mb-0">KPI Progress</p>
                   </td>
                   <td>
-                    <h5 className="mb-0">{props.kpiProgress}</h5>
+                    <h5 className="mb-0">{props.kpiProgress}%</h5>
                   </td>
                   <td>
                     <Progress

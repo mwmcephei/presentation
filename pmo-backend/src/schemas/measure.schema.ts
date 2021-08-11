@@ -19,6 +19,9 @@ export class Measure {
   @Prop()
   artefact: number;
 
+  @Prop()
+  kpiProgress: number;
+
   @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Artifact' })
   artefacts: [Artifact];
 }

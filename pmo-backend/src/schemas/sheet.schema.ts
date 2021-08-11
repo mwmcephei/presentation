@@ -10,8 +10,20 @@ export class Sheet {
   @Prop()
   name: string;
 
+  @Prop()
+  totalBudget: number;
+
+  @Prop()
+  overallStatus: number;
+
+  @Prop()
+  progress: number;
+
+  @Prop()
+  kpiProgress: number;
+
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Measure' })
-  artifacts: [Measure];
+  measures: [Measure];
 }
 
 export const SheetSchema = SchemaFactory.createForClass(Sheet);

@@ -21,7 +21,9 @@ import {
   import TopCities from "../../pages/Dashboard/TopCities_custom"
 
   import ApexRadial from "../../pages/Dashboard/ApexRadial"
-
+  import BarChart from 'pages/AllCharts/chartjs/barchart'
+  import LineChart from 'pages/AllCharts/chartjs/linechart'
+  import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics_custom'
   
   
 import { Link } from 'react-router-dom';
@@ -33,7 +35,10 @@ const Test = (props) => {
     const [artefacts_display, setArtefactsDisplay] = useState([])
     
 
-    const parserBaseURL = "http://192.168.2.112:5000/xlsx-parser"
+ //   const parserBaseURL = "http://192.168.2.112:5000/xlsx-parser"  // Michael
+    const parserBaseURL = "http://localhost:5000/xlsx-parser" // Matthias
+  // const parserBaseURL = "http://10.0.2.2:5000/xlsx-parser" 
+
 
     useEffect(() => {
         fetch(parserBaseURL + "/measures")
@@ -162,6 +167,12 @@ const getKPIProgress = () => {
         <>
         <div className="page-content">
         <Container fluid>
+
+
+            <Row>
+                <SalesAnalytics />
+            </Row>
+
         <Row>
         <Col xl="6">
             <Row>

@@ -4,16 +4,27 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Sheet, SheetSchema } from '../schemas/sheet.schema';
 import { Measure, MeasureSchema } from '../schemas/measure.schema';
 import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
+import { Budget, BudgetSchema } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
 
+var XLSX = require('xlsx'); 
 
 @Injectable()
 export class XlsxParserService {
+  path: string = '/Users/mwm/Desktop/pmo_test/pmo/pmo-backend/src/xlsx-parser/';      // change to this directory
+  fileName: string = 'test_data.xlsx'
+  kpi_file_1: string = 'KPI-report_1.xlsx'
+  kpi_file_2: string = 'KPI-report_2.xlsx'
+  budget_file: string = 'budget_report.xlsx'
 
   constructor(
     @InjectModel('Artifact') private artifactModel: Model<Artifact>, 
-    @InjectModel('Measure') private measureModel: Model<Measure>
+    @InjectModel('Measure') private measureModel: Model<Measure>,
+    @InjectModel('Sheet') private sheetModel: Model<Sheet>,
+    @InjectModel('Budget') private budgetModel: Model<Budget>,
+
     ){}
+    
 
 /*
   async getAllArtefacts(): Promise<string> {
@@ -34,62 +45,255 @@ console.log(result)
   return JSON.stringify(result)
 }
 
+async getOverview(): Promise<string> {
+  const excelSheet = await this.sheetModel.findOne({name: this.fileName})   // TO DO: safeguard for duplicates
+console.log(excelSheet)
+  return JSON.stringify(excelSheet)
+}
+
+async getBudget(): Promise<string> {
+  const excelSheet = await this.budgetModel.findOne()   // TO DO: safeguard for duplicates
+console.log(excelSheet)
+  return JSON.stringify(excelSheet)
+}
+
+
+
+
+// ---------  parsing functions  -----------------------------
+
+async createOverview(): Promise<string> {
+  const excelSheet = await this.sheetModel.findOne({name: this.fileName})   // TO DO: safeguard for duplicates
+  if(excelSheet){
+    const numberOfMeasures = excelSheet.measures.length
+    console.log(numberOfMeasures)
+
+    var workbook = XLSX.readFile(this.path + this.fileName);
+    const overview_object = workbook.Sheets["Status Overview"]
+//    console.log[overview_object]
+
+    // ------total budget
+    let totalBudget = 0;
+    let allBudgetsOfMeasures = []                     // <-----------------  [{measureName, budget}, ...]
+    Object.keys(overview_object).filter(key => {
+        if(key.includes("I")){
+            const row = parseInt(key.substring(1))
+               if(row > 4){
+                 const measureName = overview_object["D" + row]["v"]
+       //         console.log(overview_object[key])
+                const budgetAsString = overview_object[key]["v"]
+                const budget = parseInt(budgetAsString.substring(0, budgetAsString.indexOf("k"))) * 1000
+                totalBudget += budget
+                const currentBudget = {
+                  [measureName]: budget
+                }
+                allBudgetsOfMeasures.push(currentBudget)
+              }}
+         })
+    
+ //   Object.keys(overview_object).map(key => {
+ //     totalBudget += allBudgetsOfMeasures[key]
+ //   })
+  //  console.log("totalBudget   " + totalBudget)
+
+   
+    // ------overall status
+        let all_risksBudgetsAndArtefacts = []
+        Object.keys(overview_object).filter(key => {
+          if(key.includes("P")){
+            const row = parseInt(key.substring(1))
+               if(row > 4){
+                all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+        }}})
+        Object.keys(overview_object).filter(key => {
+          if(key.includes("Q")){
+            const row = parseInt(key.substring(1))
+               if(row > 4){
+                all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+        }}})
+        Object.keys(overview_object).filter(key => {
+          if(key.includes("R")){
+            const row = parseInt(key.substring(1))
+               if(row > 4){
+                all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+        }}})
+    //    console.log(all_risksBudgetsAndArtefacts)
+        let overallStatus = 0
+        all_risksBudgetsAndArtefacts.map(a => {
+            if(a > overallStatus){overallStatus = a}
+        })
+
+
+ // ------Progress Overview:  sum over measures(avgProgress * measureBudget) / totalBudget
+// get all measures, get artefacts of each measure    // why only measure_id notfull object ????  => compare schemas artefacts and measures
+// console.log(allBudgetsOfMeasures)
+let sum_avgProgressTimesBudgetOfMEasures = 0
+
+
+
+for(let m = 0; m < excelSheet.measures.length; m++){
+  // console.log(excelSheet.measures[m])
+  console.log("TEST")
+
+    const measure = await (await this.measureModel.findById(excelSheet.measures[m])).populate("artefacts").execPopulate()
+
+    console.log("TESTTEST")
+    let avgProgressOfArtefacts = 0
+    measure.artefacts.map(art => {
+      avgProgressOfArtefacts += art.progress
+    })
+    avgProgressOfArtefacts = avgProgressOfArtefacts / measure.artefacts.length
+    let temp = 0
+    let budgetOFThisMEasure
+    allBudgetsOfMeasures.map(item => {
+      if(item[measure.title]){
+    //    console.log(measure.title + "    "  +  item[measure.title])
+        temp = item[measure.title] * avgProgressOfArtefacts
+        budgetOFThisMEasure = item[measure.title]
+      }
+    })
+    console.log(measure.title + "  " + avgProgressOfArtefacts +" * " + budgetOFThisMEasure + ":  " + temp)
+    sum_avgProgressTimesBudgetOfMEasures += temp
+}
+const progressOverviewBar_result = sum_avgProgressTimesBudgetOfMEasures / totalBudget
+
+
+
+// ------KPI Progress 
+    const KPIprogressOfAllMeasures = this.getKPIProgressData('kpi_progress.xlsx')
+    let sum = 0
+    KPIprogressOfAllMeasures.map(item => {    //  [{measurename: ..., kpiProgress: ...}, ...]
+      let thisBudget = 0
+      allBudgetsOfMeasures.map(budgetOfMeasure => {
+        if(budgetOfMeasure[item.measureName]){
+          const temp = item.progress * budgetOfMeasure[item.measureName]
+          sum += temp
+          console.log(item.measureName + "   " + item.progress + " *  " + budgetOfMeasure[item.measureName] + ":  " + temp)
+        }
+      })
+    })
+    const KPIProgress_result = sum / totalBudget
+
+ //   console.log(avgProgress)
+      
+  
+ excelSheet.update({
+  totalBudget: totalBudget,
+  overallStatus: overallStatus,
+  progress: Math.round(progressOverviewBar_result * 100) / 100,
+  kpiProgress: Math.round(KPIProgress_result * 100) / 100,
+ }).then(result => {
+   console.log("updated")
+ })
+        
+  console.log("numberOfMeasures   " +  numberOfMeasures)
+  console.log("totalBudget   " +  totalBudget)
+  console.log("overallStatus   " +  overallStatus)
+  console.log("progressOverviewBar_result   " +  progressOverviewBar_result)
+  console.log("KPIProgress_result   " +  KPIProgress_result)
+  
+  //######################
+  }
+  const result = "moin"
+//console.log(result)
+  return JSON.stringify(result)
+}
+
+
+// aux function for createOverview()
+getKPIProgressData(kpiFile: string): any {
+  const workbook = XLSX.readFile(this.path + kpiFile); 
+  const overview_object = workbook.Sheets["Plan view"]
+//  console.log(overview_object)
+// D:measure name, G current progress, H target progress
+// TO DO: get number of rows programmatically    ---   22
+  const numbeOfRows = 22
+  let result = []
+  for(let i = 1; i <= numbeOfRows; i++){
+    const key_measureName = "D" + (4 + i)       // first enry at row 4
+    const key_actualProgress = "G" + (4 + i) 
+    const key_targetProgress = "H" + (4 + i) 
+    result.push({
+      measureName: overview_object[key_measureName]["v"],
+      progress: Math.round(((overview_object[key_actualProgress]["v"] / overview_object[key_targetProgress]["v"])) * 100) / 100  
+    })
+  }
+//  console.log(result)
+  return result
+}
+//------------------------------------------------
+
+
+
+
+
+
+
+
 
 
 // parse and save measures and corresponding artefacts
   parse(): string {
-      var path = '/Users/mwm/Desktop/PMO_Tool/pmo-backend/src/xlsx-parser/';      // change to this directory
-        var XLSX = require('xlsx');
-        var workbook = XLSX.readFile(path + 'test_data.xlsx', );
+      // create Sheet Table
+      const newSheet = {
+        name: this.fileName,
+      }
+      const excelFile = new this.sheetModel(newSheet)
+      excelFile.save()
+      .then( newlySavedExcelSheet => {
+          console.log(newlySavedExcelSheet)
 
-        // sheet here means measure
-        var sheet_name_list = workbook.SheetNames;
+          var workbook = XLSX.readFile(this.path + this.fileName, );
+          // 'sheet' corresponds to measure
+          var sheet_name_list = workbook.SheetNames;
 
-        let sheetsAsJsonArray = []
-        sheet_name_list.map(sheetName => {
-          // save measure to DB
-          const newMeasure = {
-            title: sheetName,
-          }
-          const measure = new this.measureModel(newMeasure)
-          measure.save()
-          .then( async savedMeasure => {
-            // get artefacts of this measure and add it to measure in DB
-            const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
-            const artefacts = this.getArtefacts_fromLinesArray(data)
-
-            let savedArtefact_IDs = []
-            artefacts.map(art => {
-              const toSave = {
-                id: art["__EMPTY_1"],
-                description: art["__EMPTY_2"],
-                progress: art["__EMPTY_9"],
-                budget: art["__EMPTY_11"] ? art["__EMPTY_11"] : "",
-                achievement: art["__EMPTY_13"],
-                work: art["__EMPTY_21"],
+          let sheetsAsJsonArray = []
+          sheet_name_list.map(sheetName => {
+            // save measure to DB
+            if(sheetName !== "Status Overview" && sheetName !== "Overview"){
+              console.log(sheetName)
+              const newMeasure = {
+                title: sheetName,
               }
-              const artifact = new this.artifactModel(toSave)
-              artifact.save()
-              .then( async savedArtefact => {
-          //      console.log("saved artifact")
-          //      console.log(savedArtefact)
-                savedArtefact_IDs.push(savedArtefact._id)
-
-                await this.measureModel.updateOne({_id: savedMeasure._id}, { $push: { artefacts: savedArtefact } });
-              
+              const measure = new this.measureModel(newMeasure)
+              measure.save()
+              .then(async savedMeasure => {
+                // add measure to ExcelSheet measure list
+                await this.sheetModel.updateOne({_id: newlySavedExcelSheet._id}, { $push: { measures: savedMeasure } });   
+                return savedMeasure
               })
-              .catch(err => console.log(err))
+              .then( async savedMeasure => {
+                // get artefacts of this measure and add it to measure in DB
+                const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
+                const artefacts = this.getArtefacts_fromLinesArray(data)
+
+                let savedArtefact_IDs = []
+                artefacts.map(art => {
+                  const toSave = {
+                    id: art["__EMPTY_1"],
+                    description: art["__EMPTY_2"],
+                    progress: art["__EMPTY_9"],
+                    budget: art["__EMPTY_11"] ? art["__EMPTY_11"] : "",
+                    achievement: art["__EMPTY_13"],
+                    work: art["__EMPTY_21"],
+                }
+                const artifact = new this.artifactModel(toSave)
+                artifact.save()
+                .then( async savedArtefact => {
+                  savedArtefact_IDs.push(savedArtefact._id)
+                  await this.measureModel.updateOne({_id: savedMeasure._id}, { $push: { artefacts: savedArtefact } });              
+                })
+                .catch(err => console.log(err))
+              })
             })
-          })
-          .catch(err => console.log(err))
+            .catch(err => console.log(err))
+          }
         })
+      })     
     return "measures & artefacts parsed and saved to DB"
   }
 
-
-
-
-
+// aux function for parse()
   getArtefacts_fromLinesArray(sheet: Object[]): Object[]{
     return sheet.filter(line => {
       const firstKey = Object.keys(line)[0]
@@ -108,10 +312,6 @@ console.log(result)
   }
 
 
-  getColumn(rawValue: string): number{
-    const asArray = rawValue.split('_')
-    return parseInt(asArray[asArray.length - 1])
-  }
 
 
 
@@ -120,30 +320,23 @@ console.log(result)
 
 
 
-
+// adds status info to measures 
     parse_overview(): string {
-      var path = '/Users/mwm/Desktop/PMO/pmo/packages/pmo-backend/src/xlsx-parser/';    // change to this directory
-
-        var XLSX = require('xlsx');
-        var workbook = XLSX.readFile(path + 'test_data.xlsx');
-
+        var workbook = XLSX.readFile(this.path + this.fileName);
    //     console.log(workbook.Sheets[workbook.SheetNames[0]])
-
+/*
         var sheet_name_list = workbook.SheetNames;
-
         let sheetsAsJsonArray = []
         sheet_name_list.map(sheetName => {
           const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
   //        console.log(sheetName)
           sheetsAsJsonArray.push(data)
         })
-
    //     console.log(sheetsAsJsonArray[0])
-
-
+*/
    // parse overview
       const overview_object = workbook.Sheets["Status Overview"]
-        let risks = []
+        let risks = []                                                    // RESTRUCTURE!!!!!!!
         Object.keys(overview_object).filter(key => {
           if(key.includes("P")){
             const row = parseInt(key.substring(1))
@@ -152,8 +345,7 @@ console.log(result)
                       row: row,
                       risk: overview_object[key]["v"],
                       }) 
-                  }
-            }
+              }}
          })
         let budgets = []
         Object.keys(overview_object).filter(key => {
@@ -164,8 +356,7 @@ console.log(result)
                       row: row,
                       budget: overview_object[key]["v"],
                       }) 
-                  }
-            }
+              }}
          })
         let artefacts = []
         Object.keys(overview_object).filter(key => {
@@ -176,11 +367,8 @@ console.log(result)
                       row: row,
                       artefact: overview_object[key]["v"],
                       }) 
-                  }
-            }
+              }}
          })
-         console.log(artefacts)
-
        let result = []
        Object.keys(overview_object)
           .filter(async key => {           
@@ -201,17 +389,11 @@ console.log(result)
                 
                 } );
                 result.push(addToResult)
-              }
-              
-              
+              }   
             }
           })
-
-
        console.log(result)
-
-       return "hallo"
-        return JSON.stringify(sheetsAsJsonArray)
+        return JSON.stringify(result)
       }
 
 
@@ -219,18 +401,156 @@ console.log(result)
 
 
 
-      getObjectFromArrayWithKey(input: Object[], inputKey: number): Object{
-    //    console.log(inputKey)
-        for(let i = 0; i > input.length; i++){
-   //       console.log(Object.keys(input[i]))
-          
-          if(inputKey in Object.keys(input[i])){
-    //        console.log(input[inputKey])
-            return input[inputKey]
+
+
+      async parseKPI(): Promise<string> {
+        var workbook = XLSX.readFile(this.path + this.kpi_file_2);
+        const overview_object = workbook.Sheets["Plan view"]
+        // get row number of measures. measure names in column "D"
+        let rowsOfMeasures = []
+        Object.keys(overview_object).filter(key => {
+          if(key.includes("D")){
+            const row = parseInt(key.substring(1))
+               if(row > 4){           
+                 rowsOfMeasures.push({
+                      measureName: overview_object[key]["v"],
+                      row: row,
+                      }) 
+              }}
+         })
+    //     console.log(rowsOfMeasures)
+         // get measures from DB
+        const measures = await this.measureModel.find()
+        measures.map(measure => {
+          let rowOfThisMeasure;
+          for(let i = 0; i < rowsOfMeasures.length; i++){
+            if(rowsOfMeasures[i].measureName === measure.title){
+           //   console.log(measure.title + "    " + rowsOfMeasures[i].measureName)
+           rowOfThisMeasure = rowsOfMeasures[i].row
+            }
           }
-          else {return {}  }
-        }
-        
-        
+          console.log(measure.title + "    "  + rowOfThisMeasure)
+          // from row get actual, target, plan of last month
+          // G, H and J ???
+          let actuals;
+          let target;
+          let lastPlan;
+          Object.keys(overview_object).filter(key => {
+            if(key.includes("G")){
+              const row = parseInt(key.substring(1))
+                 if(row == rowOfThisMeasure){           
+                  actuals = overview_object[key]["v"]
+                }}
+            if(key.includes("H")){
+              const row = parseInt(key.substring(1))
+                 if(row == rowOfThisMeasure){           
+                  target = overview_object[key]["v"]
+                }}
+            if(key.includes("L")){                        // TO DO: clarify which last month
+                const row = parseInt(key.substring(1))
+                  if(row == rowOfThisMeasure){           
+                    lastPlan = overview_object[key]["v"]
+                }}
+           })
+        console.log(measure.title + "  " + actuals + "  " + target + "  " + lastPlan)
+           let kpiProgressOfThisMeasure;
+           if(actuals < lastPlan){
+              kpiProgressOfThisMeasure = 0                      // behind schedule
+           } else if(lastPlan <= actuals && actuals < target){
+              kpiProgressOfThisMeasure = 1                      // on schedule
+           }else if(actuals >= target){
+              kpiProgressOfThisMeasure = 2                      // finished
+           }
+           measure.update({
+            kpiProgress: kpiProgressOfThisMeasure
+           }).then(result => {
+             console.log("updated")
+           })
+         })   
+        return "ok"
       }
+
+
+
+
+
+
+
+      parseBudgetMonths(): string {
+        var workbook = XLSX.readFile(this.path + this.budget_file);
+        const overview_object = workbook.Sheets["1. Overview"]
+        const detailes_object = workbook.Sheets["2. Detailed view"]
+
+        // M > 5,  D measure names
+        // M 29 grand total approved budget
+        const totalApprovedBudget = overview_object["M29"]["v"]
+
+        // get month columns EUR1 EUR2 .... row 12
+        let month_columns = []
+        Object.keys(detailes_object).map(key => {
+   //       const test = key.substring(key.length - 2)
+   //       console.log(test)
+          const tmp = key.replace(/^[A-Z]/, "_");
+          const split = tmp.split("_")
+          const target = split[split.length - 1]
+          if(parseInt(target) == 12){
+            const x = detailes_object[key]["v"]
+            if(x.substring(0, 3) === "EUR" && x.length < 5){
+             //   console.log(x)
+                month_columns.push(key.substring(0, key.length - 2))
+            }
+          }
+        })
+      //  month_columns = [ 'M', 'O', 'Q', 'S', 'U', 'W' ]   columns of months in "Detailed view"
+        const sumRow = 286    // sum of all measures spent budget per month in this row in "Detailed view"
+        // get sum of spent berson / month for all measures combined
+        const monthNames = ["jan", "feb", "mar", "apr", "mai", "jun", "jul", "auf", "sep", "oct", "nov", "dec"]
+        const monthlySpendings = month_columns.map((month, index) => {
+          return Math.round(detailes_object[month + "" + sumRow]["v"] * 100) / 100
+    /*      return {
+            [monthNames[index]]: Math.round(detailes_object[month + "" + sumRow]["v"] * 100) / 100
+          }  */
+        });
+        console.log(monthlySpendings)
+
+        
+        const approvedBudgetPerMonth = Math.round((totalApprovedBudget / month_columns.length) * 100) / 100
+        var year = new Date().getFullYear()  // TO DO: year is currently assumed to be this year (Datetime). Improve by parsing from file
+        const newBudget = new this.budgetModel({
+          monthlySpendings,
+          approvedBudgetPerMonth,
+          year
+        })
+        newBudget.save()
+        .then(result => {
+          console.log("budget saved")
+        }
+        )
+
+        return JSON.stringify("budget parsed")
+      }
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

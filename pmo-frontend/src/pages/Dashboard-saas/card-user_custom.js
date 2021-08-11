@@ -71,7 +71,7 @@ function CardUser(props) {
                       <Col xs="4">
                         <div>
                           <p className="text-muted text-truncate mb-2">
-                            Total Measure
+                            Total Measures
                           </p>
                           <h5 className="mb-0"> {props.numberOfMeasures} </h5>
                         </div>

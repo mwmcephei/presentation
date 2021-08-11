@@ -1,22 +1,58 @@
 import React from "react"
+import {useState, useEffect} from 'react';
 import ReactApexChart from "react-apexcharts"
 
-const LineColumnArea = () => {
+const LineColumnArea = ({labels, monthlySpendings, approved}) => {
+
+  const [approvedArray, setApproved] = useState()
+  const [accumulatedSpendings, setAccumulatedSpendings] = useState()
+
+  useEffect(() => {
+    console.log("data")
+    console.log(labels)
+    console.log(monthlySpendings)
+    console.log(approved)
+
+    const a = monthlySpendings.map(a => {
+      return approved
+   })
+    setApproved(a)
+
+   const acumulateSpendingsAray = acumulateArray(monthlySpendings)
+   console.log("acumulateSpendings")
+   console.log(acumulateSpendingsAray)
+   setAccumulatedSpendings(acumulateSpendingsAray)
+  }, [labels, monthlySpendings, approved]);
+
+
+  const acumulateArray = (array) => {
+    let result = []
+    for(let i = 0; i < array.length; i++){
+      let acc = 0
+      for(let j = 0; j <= i; j++){
+        acc += array[j]
+      }
+      result.push(acc)
+    }
+    return result
+  }
+
+
   const series = [
     {
-      name: "Team A",
-      type: "column",
-      data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-    },
-    {
-      name: "Team B",
+      name: "Approved",
       type: "area",
-      data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+      data: approvedArray,
     },
     {
-      name: "Team C",
+      name: "Accumulated Monthly Spendings",
       type: "line",
-      data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+      data: accumulatedSpendings,
+    },   
+    {
+      name: "Monthly Spendings",
+      type: "column",
+      data: monthlySpendings,
     },
   ]
   const options = {
@@ -48,19 +84,8 @@ const LineColumnArea = () => {
         stops: [0, 100, 100, 100],
       },
     },
-    labels: [
-      "01/01/2003",
-      "02/01/2003",
-      "03/01/2003",
-      "04/01/2003",
-      "05/01/2003",
-      "06/01/2003",
-      "07/01/2003",
-      "08/01/2003",
-      "09/01/2003",
-      "10/01/2003",
-      "11/01/2003",
-    ],
+    
+    labels: labels ,
     markers: {
       size: 0,
     },
@@ -72,7 +97,7 @@ const LineColumnArea = () => {
     },
     yaxis: {
       title: {
-        text: "Points",
+        text: "Spent",
       },
     },
     tooltip: {

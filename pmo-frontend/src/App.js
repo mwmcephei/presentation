@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from "react"
 
-import { Switch, BrowserRouter as Router } from "react-router-dom"
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom"
 import { connect } from "react-redux"
 
 // Import Routes all
@@ -19,8 +19,14 @@ import Navbar from "./components/HorizontalLayout/Navbar"
 import Index from "./components/HorizontalLayout/index"
 import Footer from "./components/HorizontalLayout/Footer"
 
+import Overview from "./components/PMO_Components/overview"
 import Test from "./components/PMO_Components/test"
 import CapacitorTest from "./components/PMO_Components/capacitorTest"
+
+import UiTabsAccordions from 'pages/Ui/UiTabsAccordions_custom'
+import BarChart from 'pages/AllCharts/chartjs/barchart'
+import LineChart from 'pages/AllCharts/chartjs/linechart'
+import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics'
 
 
 
@@ -31,6 +37,8 @@ import "./assets/scss/theme.scss"
 // import { initFirebaseBackend } from "./helpers/firebase_helper"
 
 import fakeBackend from "./helpers/AuthType/fakeBackend"
+
+
 
 // Activating fake backend
 //fakeBackend()
@@ -75,10 +83,20 @@ const App = props => {
       <Footer />
  */}
 
-      <Router>
+      <Router>   
         <Header />
-        <CapacitorTest /> 
-  {/*        <Test />
+        <Switch>
+          <Route path="/overview">
+            <Overview />
+          </Route>
+          <Route path="/test">
+            <Test />
+          </Route>
+        </Switch>
+        
+
+
+  {/*        <CapacitorTest />
         
         <Switch>
         

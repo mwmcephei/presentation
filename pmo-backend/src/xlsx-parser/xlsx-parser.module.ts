@@ -5,6 +5,7 @@ import { XlsxParserController } from './xlsx-parser.controller';
 import { Sheet, SheetSchema } from '../schemas/sheet.schema';
 import { Measure, MeasureSchema } from '../schemas/measure.schema';
 import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
+import { Budget, BudgetSchema } from '../schemas/budget.schema';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
       { name: "Sheet", schema: SheetSchema },
       { name: "Measure", schema: MeasureSchema },
       { name: "Artifact", schema: ArtifactSchema },
-    
+      { name: "Budget", schema: BudgetSchema },
     ])
   ],
   providers: [XlsxParserController, XlsxParserService],
