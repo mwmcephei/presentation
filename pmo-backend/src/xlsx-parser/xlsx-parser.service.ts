@@ -7,7 +7,7 @@ import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
 import { Budget, BudgetSchema } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
 
-var XLSX = require('xlsx'); 
+const XLSX = require('xlsx'); 
 
 @Injectable()
 export class XlsxParserService {
@@ -68,7 +68,7 @@ async createOverview(): Promise<string> {
     const numberOfMeasures = excelSheet.measures.length
     console.log(numberOfMeasures)
 
-    var workbook = XLSX.readFile(this.path + this.fileName);
+    const workbook = XLSX.readFile(this.path + this.fileName);
     const overview_object = workbook.Sheets["Status Overview"]
 //    console.log[overview_object]
 
@@ -243,11 +243,9 @@ getKPIProgressData(kpiFile: string): any {
       .then( newlySavedExcelSheet => {
           console.log(newlySavedExcelSheet)
 
-          var workbook = XLSX.readFile(this.path + this.fileName, );
+          const workbook = XLSX.readFile(this.path + this.fileName, );
           // 'sheet' corresponds to measure
-          var sheet_name_list = workbook.SheetNames;
-
-          let sheetsAsJsonArray = []
+          const sheet_name_list = workbook.SheetNames;
           sheet_name_list.map(sheetName => {
             // save measure to DB
             if(sheetName !== "Status Overview" && sheetName !== "Overview"){
@@ -322,18 +320,8 @@ getKPIProgressData(kpiFile: string): any {
 
 // adds status info to measures 
     parse_overview(): string {
-        var workbook = XLSX.readFile(this.path + this.fileName);
+      const workbook = XLSX.readFile(this.path + this.fileName);
    //     console.log(workbook.Sheets[workbook.SheetNames[0]])
-/*
-        var sheet_name_list = workbook.SheetNames;
-        let sheetsAsJsonArray = []
-        sheet_name_list.map(sheetName => {
-          const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
-  //        console.log(sheetName)
-          sheetsAsJsonArray.push(data)
-        })
-   //     console.log(sheetsAsJsonArray[0])
-*/
    // parse overview
       const overview_object = workbook.Sheets["Status Overview"]
         let risks = []                                                    // RESTRUCTURE!!!!!!!
@@ -404,7 +392,7 @@ getKPIProgressData(kpiFile: string): any {
 
 
       async parseKPI(): Promise<string> {
-        var workbook = XLSX.readFile(this.path + this.kpi_file_2);
+        const workbook = XLSX.readFile(this.path + this.kpi_file_2);
         const overview_object = workbook.Sheets["Plan view"]
         // get row number of measures. measure names in column "D"
         let rowsOfMeasures = []
@@ -477,7 +465,7 @@ getKPIProgressData(kpiFile: string): any {
 
 
       parseBudgetMonths(): string {
-        var workbook = XLSX.readFile(this.path + this.budget_file);
+        const workbook = XLSX.readFile(this.path + this.budget_file);
         const overview_object = workbook.Sheets["1. Overview"]
         const detailes_object = workbook.Sheets["2. Detailed view"]
 
@@ -515,7 +503,7 @@ getKPIProgressData(kpiFile: string): any {
 
         
         const approvedBudgetPerMonth = Math.round((totalApprovedBudget / month_columns.length) * 100) / 100
-        var year = new Date().getFullYear()  // TO DO: year is currently assumed to be this year (Datetime). Improve by parsing from file
+        const year = new Date().getFullYear()  // TO DO: year is currently assumed to be this year (Datetime). Improve by parsing from file
         const newBudget = new this.budgetModel({
           monthlySpendings,
           approvedBudgetPerMonth,
