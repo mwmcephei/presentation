@@ -24,6 +24,9 @@ import Index from "./components/HorizontalLayout/index_custom"
 import Footer from "./components/HorizontalLayout/Footer"
 
 import Overview from "./components/PMO_Components/overview"
+import Measure_Overview from "./components/PMO_Components/Measure_Overview"
+import Measure_Reports from "./components/PMO_Components/Measure_Reports"
+import Budget_Report from "./components/PMO_Components/Budget_Report"
 import Test from "./components/PMO_Components/test"
 import CapacitorTest from "./components/PMO_Components/capacitorTest"
 
@@ -95,18 +98,19 @@ const App = props => {
             <Overview />
           </Route>
           <Route path="/measure_overview">
-            <Test />
+            <Measure_Overview />
           </Route>
           <Route path="/measure_reports">
-            <Test />
+            <Measure_Reports />
           </Route>
           <Route path="/budget_reports">
-            <Test />
+            <Budget_Report />
           </Route>
-
+{ /*
           <Route path="/test">
             <Test />
           </Route>
+*/  }
         </Switch>
         
 

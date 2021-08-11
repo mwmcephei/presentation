@@ -8,21 +8,28 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
   const [accumulatedSpendings, setAccumulatedSpendings] = useState()
 
   useEffect(() => {
-    console.log("data")
-    console.log(labels)
-    console.log(monthlySpendings)
-    console.log(approved)
+    if(labels &&  monthlySpendings && approved){
+      console.log("data")
+      console.log(labels)
+      console.log(monthlySpendings)
+      console.log(approved)
 
-    const a = monthlySpendings.map(a => {
-      return approved
-   })
-    setApproved(a)
+      const a = monthlySpendings.map(a => {
+        return approved
+       })
+      setApproved(a)
 
-   const acumulateSpendingsAray = acumulateArray(monthlySpendings)
-   console.log("acumulateSpendings")
-   console.log(acumulateSpendingsAray)
-   setAccumulatedSpendings(acumulateSpendingsAray)
-  }, [labels, monthlySpendings, approved]);
+      const acumulateSpendingsAray = acumulateArray(monthlySpendings)
+      console.log("acumulateSpendings")
+      console.log(acumulateSpendingsAray)
+      setAccumulatedSpendings(acumulateSpendingsAray)
+    }
+    
+
+    
+
+
+  }, []);
 
 
   const acumulateArray = (array) => {
@@ -39,20 +46,21 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
 
 
   const series = [
-    {
-      name: "Approved",
-      type: "area",
-      data: approvedArray,
-    },
+    
     {
       name: "Accumulated Monthly Spendings",
-      type: "line",
+      type: "area",
       data: accumulatedSpendings,
     },   
     {
       name: "Monthly Spendings",
       type: "column",
       data: monthlySpendings,
+    },
+    {
+      name: "Approved",
+      type: "line",
+      data: approvedArray,
     },
   ]
   const options = {
@@ -71,10 +79,14 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
         columnWidth: "50%",
       },
     },
-    colors: ["#f46a6a", "#556ee6", "#34c38f"],
+    colors: [
+          "#556ee6", 
+          "#f46a6a", // red
+          "#34c38f"
+          ],
 
     fill: {
-      opacity: [0.85, 0.25, 1],
+      opacity:  [0.25, 1, 1],  // [0.85, 0.25, 1],
       gradient: {
         inverseColors: false,
         shade: "light",
@@ -117,13 +129,24 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
     },
   }
 
+  let result = ""
+  if(labels &&  monthlySpendings && approved){
+    result =  <ReactApexChart
+        options={options}
+        series={series}
+        type="line"
+        height="350"
+      />
+  }
+   
+
+
+
   return (
-    <ReactApexChart
-      options={options}
-      series={series}
-      type="line"
-      height="350"
-    />
+    <div>
+       {result}
+    </div>
+   
   )
 }
 

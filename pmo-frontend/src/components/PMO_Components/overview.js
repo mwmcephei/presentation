@@ -21,7 +21,7 @@ import {
   import CardUser from "../../pages/Dashboard-saas/card-user_custom"
   import TopCities from "../../pages/Dashboard/TopCities_custom"
   import Apexchart from "../../pages/Charts/Apexcharts_custom"
-  import LineColumnArea from "pages/AllCharts/apex/LineColumnArea"
+  import LineColumnArea from "pages/AllCharts/apex/LineColumnArea_custom"
  
   import ApexRadial from "../../pages/Dashboard/ApexRadial"
   import BarChart from 'pages/AllCharts/chartjs/barchart'
@@ -47,13 +47,13 @@ const Overview = (props) => {
    const [monthlySpendings, setMonthlySpendings] = useState()
    const [approved, setApproved] = useState()
 
-/*
+
     useEffect(() => {
         fetch(parserBaseURL + "/budget")
             .then(response => response.json())
             .then(response => {
                 setMonthlySpendings(response.monthlySpendings)
-         //      console.log("budget")
+               console.log("budget")
                 console.log(response)
                 let labels = []
                 for(let i = 0; i < response.monthlySpendings.length; i++){
@@ -73,7 +73,7 @@ const Overview = (props) => {
             })
     }, []);
 
-
+/*
    useEffect(() => {
     fetch(parserBaseURL + "/overview")
       .then(response => response.json())
@@ -196,7 +196,7 @@ const Overview = (props) => {
                         red={measurePKI_pieChart.redCounter} 
                     />
                 </Row>
-               
+          */ }       
                 <Row>
                     <Card>
                         <CardBody>
@@ -205,7 +205,7 @@ const Overview = (props) => {
                         </CardBody>
                     </Card>
                 </Row>
-               */ }
+             
 
             </Container>          
         </div>              
