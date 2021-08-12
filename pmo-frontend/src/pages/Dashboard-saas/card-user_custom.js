@@ -4,7 +4,7 @@ import {
   Col,
   Card,
   CardBody,
-  Progress,
+  CardTitle,
 } from "reactstrap"
 
 //Import Images
@@ -46,6 +46,7 @@ function CardUser(props) {
         <Col lg="12">
           <Card>
             <CardBody>
+              <CardTitle className="mb-4">Short Summary</CardTitle>
               <Row>
                 <div>
             

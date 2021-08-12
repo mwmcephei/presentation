@@ -96,7 +96,7 @@ const Overview = (props) => {
        }
     
   }, [approved]);
-/*
+
 
   useEffect(() => { 
     let greenCounter = 0
@@ -144,6 +144,7 @@ const Overview = (props) => {
         greenCounter: greenCounter_kpi
     })
   }, [measures]);
+  /*
 */
 
 
@@ -190,27 +191,33 @@ const Overview = (props) => {
                         {overview}
                     </Container>
                 </Row>  
-
-          { /*     <Row>
-                    <SalesAnalytics title={"Status of Projects"}
-                        green={measuresPieChart.greenCounter} 
-                        yellow={measuresPieChart.yellowCounter} 
-                        red={measuresPieChart.redCounter} 
-                    />
-                </Row>
-                <Row>
-                    <SalesAnalytics title={"KPI"}
-                        green={measurePKI_pieChart.greenCounter} 
-                        yellow={measurePKI_pieChart.yellowCounter} 
-                        red={measurePKI_pieChart.redCounter} 
-                    />
-                </Row>
-          */ }       
+            
+                    <Row>
+                    <Container className="">
+                    <Row>
+                            <Col xs="12" xm="6" lg="6" xl="6">
+                                <SalesAnalytics title={"Status of Projects"}
+                                    green={measuresPieChart.greenCounter} 
+                                    yellow={measuresPieChart.yellowCounter} 
+                                    red={measuresPieChart.redCounter} 
+                                />
+                            </Col>
+                            <Col xs="12" xm="6" lg="6" xl="6">
+                                <SalesAnalytics title={"KPI"}
+                                    green={measurePKI_pieChart.greenCounter} 
+                                    yellow={measurePKI_pieChart.yellowCounter} 
+                                    red={measurePKI_pieChart.redCounter} 
+                                />
+                            </Col>
+                            </Row>
+                            </Container>
+                    </Row>
+        
                 <Row>
                     <Container>
                      <Card>
                         <CardBody>
-                            <CardTitle className="mb-4"></CardTitle>
+                            <CardTitle className="mb-4">Budget</CardTitle>
                            {budgetChart}
                         </CardBody>
                     </Card>   
