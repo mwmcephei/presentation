@@ -191,10 +191,10 @@ const Overview = (props) => {
                         {overview}
                     </Container>
                 </Row>  
-            
-                    <Row>
+        
+                <Row>
                     <Container className="">
-                    <Row>
+                        <Row>
                             <Col xs="12" xm="6" lg="6" xl="6">
                                 <SalesAnalytics title={"Status of Projects"}
                                     green={measuresPieChart.greenCounter} 
@@ -209,9 +209,9 @@ const Overview = (props) => {
                                     red={measurePKI_pieChart.redCounter} 
                                 />
                             </Col>
-                            </Row>
-                            </Container>
-                    </Row>
+                        </Row>
+                    </Container>
+                </Row>
         
                 <Row>
                     <Container>
