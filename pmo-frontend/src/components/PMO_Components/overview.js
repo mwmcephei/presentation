@@ -191,10 +191,11 @@ const Overview = (props) => {
                         {overview}
                     </Container>
                 </Row>  
-        
+
                 <Row>
                     <Container className="">
                         <Row>
+
                             <Col xs="12" xm="6" lg="6" xl="6">
                                 <SalesAnalytics title={"Status of Projects"}
                                     green={measuresPieChart.greenCounter} 
@@ -212,6 +213,7 @@ const Overview = (props) => {
                         </Row>
                     </Container>
                 </Row>
+
         
                 <Row>
                     <Container>
