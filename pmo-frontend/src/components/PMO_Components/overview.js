@@ -73,27 +73,30 @@ const Overview = (props) => {
             })
     }, []);
 
-/*
-   useEffect(() => {
-    fetch(parserBaseURL + "/overview")
-      .then(response => response.json())
-      .then(response => {
-        setOverviewData(response)
-        console.log( "overview")
-        console.log( response)
 
-        fetch(parserBaseURL + "/measures")
+   useEffect(() => {
+       if(approved){
+        fetch(parserBaseURL + "/overview")
         .then(response => response.json())
         .then(response => {
-            setMeasures(response)
-            console.log( "measures")
-            console.log( response)
+          setOverviewData(response)
+          console.log( "overview")
+          console.log( response)
+  
+          fetch(parserBaseURL + "/measures")
+          .then(response => response.json())
+          .then(response => {
+              setMeasures(response)
+              console.log( "measures")
+              console.log( response)
+          })
+          .catch(error => console.log(error));
         })
         .catch(error => console.log(error));
-      })
-      .catch(error => console.log(error));
+       }
+    
   }, [approved]);
-
+/*
 
   useEffect(() => { 
     let greenCounter = 0
@@ -157,17 +160,25 @@ const Overview = (props) => {
 
 
 
-    let status1 = "test" 
-    let status2 = "test"
-/*     
+    let overview = "overview"  
     if(overviewData){
-        status1 = <CardUser signal={ overviewData.overallStatus} 
-        budget={ overviewData.totalBudget }
-        numberOfMeasures={overviewData.measures.length}
-        />
-        status2 =  <TopCities overallProgress={overviewData.progress * 100} kpiProgress={overviewData.kpiProgress * 100} />
+        overview = <div>
+            <CardUser signal={ overviewData.overallStatus} 
+                    budget={ overviewData.totalBudget }
+                    numberOfMeasures={overviewData.measures.length}
+                    overallProgress={overviewData.progress * 100} 
+                    kpiProgress={overviewData.kpiProgress * 100}
+                  />          
+            </div>
     }
+    
+    /* 
  */   
+
+    let budgetChart = "budgetChart"
+    if(labels && monthlySpendings && approved){
+        budgetChart =  <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved}/>
+    }
  
 
     return (
@@ -175,12 +186,10 @@ const Overview = (props) => {
         <div className="page-content">
             <Container fluid>
                 <Row>
-                    {"status1"}
+                    <Container>
+                        {overview}
+                    </Container>
                 </Row>  
-
-                <Row>
-                    {"status2"}
-              </Row> 
 
           { /*     <Row>
                     <SalesAnalytics title={"Status of Projects"}
@@ -198,12 +207,15 @@ const Overview = (props) => {
                 </Row>
           */ }       
                 <Row>
-                    <Card>
+                    <Container>
+                     <Card>
                         <CardBody>
                             <CardTitle className="mb-4"></CardTitle>
-                            <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved}/>
+                           {budgetChart}
                         </CardBody>
-                    </Card>
+                    </Card>   
+                    </Container>
+                    
                 </Row>
              
 

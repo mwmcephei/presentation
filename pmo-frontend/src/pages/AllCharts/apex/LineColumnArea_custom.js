@@ -2,6 +2,14 @@ import React from "react"
 import {useState, useEffect} from 'react';
 import ReactApexChart from "react-apexcharts"
 
+import {
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Progress,
+  Container
+} from "reactstrap"
 const LineColumnArea = ({labels, monthlySpendings, approved}) => {
 
   const [approvedArray, setApproved] = useState()
@@ -23,6 +31,8 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
       console.log("acumulateSpendings")
       console.log(acumulateSpendingsAray)
       setAccumulatedSpendings(acumulateSpendingsAray)
+    }else{
+      console.log("FAILEDD")
     }
     
 
@@ -50,17 +60,17 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
     {
       name: "Accumulated Monthly Spendings",
       type: "area",
-      data: accumulatedSpendings,
+      data: accumulatedSpendings ? accumulatedSpendings : [],
     },   
     {
       name: "Monthly Spendings",
       type: "column",
-      data: monthlySpendings,
+      data: monthlySpendings ? monthlySpendings : [],
     },
     {
       name: "Approved",
       type: "line",
-      data: approvedArray,
+      data: approvedArray ? approvedArray : [],
     },
   ]
   const options = {
@@ -144,8 +154,10 @@ const LineColumnArea = ({labels, monthlySpendings, approved}) => {
 
   return (
     <div>
-       {result}
+      {result}
     </div>
+        
+
    
   )
 }
