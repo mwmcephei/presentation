@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import img2 from "../../assets/images/small/img-2.jpg"
 import img3 from "../../assets/images/small/img-3.jpg"

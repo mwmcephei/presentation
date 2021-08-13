@@ -7,7 +7,7 @@ import ReactApexChart from "react-apexcharts"
 import { getEarningChartsData } from "../../store/actions"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"
 
 function Earning(props) {
   const dispatch = useDispatch()
@@ -69,7 +69,7 @@ function Earning(props) {
                   <select
                     className="form-select form-select-sm"
                     value={seletedMonth}
-                    onChange={(e) => {
+                    onChange={e => {
                       onChangeMonth(e.target.value)
                     }}
                   >

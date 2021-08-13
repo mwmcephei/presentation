@@ -47,7 +47,7 @@ const CryptoKYCApplication = props => {
       const modifiedSteps = [...passedSteps]
       modifiedSteps.push(tab)
       setActiveTab(tab)
-      setPassedSteps(modifiedSteps);
+      setPassedSteps(modifiedSteps)
     }
   }
 

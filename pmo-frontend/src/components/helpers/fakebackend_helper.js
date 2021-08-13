@@ -128,7 +128,6 @@ export const getGroups = () => get(url.GET_GROUPS)
 // get Contacts
 export const getContacts = () => get(url.GET_CONTACTS)
 
-
 // get messages
 export const getMessages = (roomId = "") =>
   get(`${url.GET_MESSAGES}/${roomId}`, { params: { roomId } })
@@ -146,9 +145,9 @@ export const addNewOrder = order => post(url.ADD_NEW_ORDER, order)
 export const updateOrder = order => put(url.UPDATE_ORDER, order)
 
 // delete order
-export const deleteOrder= order =>
-  del(url.DELETE_ORDER, { headers: { order } })  
-  
+export const deleteOrder = order =>
+  del(url.DELETE_ORDER, { headers: { order } })
+
 // get cart data
 export const getCartData = () => get(url.GET_CART_DATA)
 
@@ -162,8 +161,8 @@ export const addNewCustomer = customer => post(url.ADD_NEW_CUSTOMER, customer)
 export const updateCustomer = customer => put(url.UPDATE_CUSTOMER, customer)
 
 // delete CUSTOMER
-export const deleteCustomer= customer =>
-  del(url.DELETE_CUSTOMER, { headers: { customer } })  
+export const deleteCustomer = customer =>
+  del(url.DELETE_CUSTOMER, { headers: { customer } })
 
 // get shops
 export const getShops = () => get(url.GET_SHOPS)
@@ -201,9 +200,8 @@ export const addNewUser = user => post(url.ADD_NEW_USER, user)
 export const updateUser = user => put(url.UPDATE_USER, user)
 
 // delete user
-export const deleteUser = user =>
-  del(url.DELETE_USER, { headers: { user } })
-  
+export const deleteUser = user => del(url.DELETE_USER, { headers: { user } })
+
 /** PROJECT */
 // add user
 export const addNewProject = project => post(url.ADD_NEW_PROJECT, project)
@@ -212,8 +210,8 @@ export const addNewProject = project => post(url.ADD_NEW_PROJECT, project)
 export const updateProject = project => put(url.UPDATE_PROJECT, project)
 
 // delete user
-export const deleteProject= project =>
-  del(url.DELETE_PROJECT, { headers: { project } })  
+export const deleteProject = project =>
+  del(url.DELETE_PROJECT, { headers: { project } })
 
 export const getUserProfile = () => get(url.GET_USER_PROFILE)
 
@@ -221,7 +219,8 @@ export const getUserProfile = () => get(url.GET_USER_PROFILE)
 export const getInboxMails = () => get(url.GET_INBOX_MAILS)
 
 // add inboxmail
-export const addNewInboxMail = inboxmail => post(url.ADD_NEW_INBOX_MAIL, inboxmail)
+export const addNewInboxMail = inboxmail =>
+  post(url.ADD_NEW_INBOX_MAIL, inboxmail)
 
 // delete inboxmail
 export const deleteInboxMail = inboxmail =>

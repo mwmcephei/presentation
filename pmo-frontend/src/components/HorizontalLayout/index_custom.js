@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react"
 import { withRouter } from "react-router-dom"
 import PropTypes from "prop-types"
 
@@ -17,18 +17,16 @@ import Header from "./Header_custom"
 import Navbar from "./Navbar_custom"
 import Footer from "./Footer"
 import Rightbar from "../CommonForBoth/RightSidebar"
-const Layout = (props) => {
-
+const Layout = props => {
   const dispatch = useDispatch()
 
-  const {
-    topbarTheme, layoutWidth, isPreloader, showRightSidebar
-  } = useSelector(state => ({
-    topbarTheme: state.Layout.topbarTheme,
-    layoutWidth : state.Layout.layoutWidth,
-    isPreloader : state.Layout.isPreloader,
-    showRightSidebar: state.Layout.showRightSidebar,
-  }))
+  const { topbarTheme, layoutWidth, isPreloader, showRightSidebar } =
+    useSelector(state => ({
+      topbarTheme: state.Layout.topbarTheme,
+      layoutWidth: state.Layout.layoutWidth,
+      isPreloader: state.Layout.isPreloader,
+      showRightSidebar: state.Layout.showRightSidebar,
+    }))
 
   /*
   document title
@@ -37,20 +35,19 @@ const Layout = (props) => {
     const title = props.location.pathname
     let currentage = title.charAt(1).toUpperCase() + title.slice(2)
 
-    document.title =
-      currentage + " PMO Tool"
-  },[props.location.pathname]);
+    document.title = currentage + " PMO Tool"
+  }, [props.location.pathname])
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  },[]);
+  }, [])
 
   /*
   layout settings
   */
   useEffect(() => {
-    dispatch(changeLayout("horizontal"));
-  },[dispatch]);
+    dispatch(changeLayout("horizontal"))
+  }, [dispatch])
 
   useEffect(() => {
     if (isPreloader === true) {
@@ -68,55 +65,55 @@ const Layout = (props) => {
   }, [isPreloader])
 
   useEffect(() => {
-    if(topbarTheme) {
-      dispatch(changeTopbarTheme(topbarTheme));
+    if (topbarTheme) {
+      dispatch(changeTopbarTheme(topbarTheme))
     }
-  },[dispatch, topbarTheme]);
+  }, [dispatch, topbarTheme])
 
   useEffect(() => {
-    if(layoutWidth) {
-      dispatch(changeLayoutWidth(layoutWidth));
+    if (layoutWidth) {
+      dispatch(changeLayoutWidth(layoutWidth))
     }
-  },[dispatch, layoutWidth]);
+  }, [dispatch, layoutWidth])
 
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isMenuOpened, setIsMenuOpened] = useState(false)
   const openMenu = () => {
-    setIsMenuOpened(!isMenuOpened);
+    setIsMenuOpened(!isMenuOpened)
   }
 
   return (
     <React.Fragment>
-        <div id="preloader">
-          <div id="status">
-            <div className="spinner-chase">
-              <div className="chase-dot" />
-              <div className="chase-dot" />
-              <div className="chase-dot" />
-              <div className="chase-dot" />
-              <div className="chase-dot" />
-              <div className="chase-dot" />
-            </div>
+      <div id="preloader">
+        <div id="status">
+          <div className="spinner-chase">
+            <div className="chase-dot" />
+            <div className="chase-dot" />
+            <div className="chase-dot" />
+            <div className="chase-dot" />
+            <div className="chase-dot" />
+            <div className="chase-dot" />
           </div>
         </div>
+      </div>
 
-        <div id="layout-wrapper">
-          <Header
-            theme={topbarTheme}
-            isMenuOpened={isMenuOpened}
-            openLeftMenuCallBack={openMenu}
-          />
-          <Navbar menuOpen={isMenuOpened} />
-          <div className="main-content">{props.children}</div>
-          <Footer />
-        </div>
+      <div id="layout-wrapper">
+        <Header
+          theme={topbarTheme}
+          isMenuOpened={isMenuOpened}
+          openLeftMenuCallBack={openMenu}
+        />
+        <Navbar menuOpen={isMenuOpened} />
+        <div className="main-content">{props.children}</div>
+        <Footer />
+      </div>
 
-        {showRightSidebar ? <Rightbar /> : null}
-      </React.Fragment>
-  );
+      {showRightSidebar ? <Rightbar /> : null}
+    </React.Fragment>
+  )
 }
 
 Layout.propTypes = {
-  changeLayout: PropTypes.func,/*  */
+  changeLayout: PropTypes.func /*  */,
   changeLayoutWidth: PropTypes.func,
   changeTopbarTheme: PropTypes.func,
   children: PropTypes.object,
@@ -124,7 +121,7 @@ Layout.propTypes = {
   layoutWidth: PropTypes.any,
   location: PropTypes.object,
   showRightSidebar: PropTypes.any,
-  topbarTheme: PropTypes.any
+  topbarTheme: PropTypes.any,
 }
 
-export default withRouter(Layout);
+export default withRouter(Layout)

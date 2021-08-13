@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Row,
   Col,
@@ -47,7 +47,9 @@ const FormUpload = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Form File Upload | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Form File Upload | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid={true}>
           <Breadcrumbs title="Forms" breadcrumbItem="Form File Upload" />
@@ -121,10 +123,7 @@ const FormUpload = () => {
                   </Form>
 
                   <div className="text-center mt-4">
-                    <button
-                      type="button"
-                      className="btn btn-primary "
-                    >
+                    <button type="button" className="btn btn-primary ">
                       Send Files
                     </button>
                   </div>

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import {
   CardTitle,
@@ -13,7 +13,7 @@ const RenderCardTitle = props => {
     <React.Fragment>
       <UncontrolledDropdown className="float-end">
         <DropdownToggle href="#" className="arrow-none" tag="i">
-          <i className="mdi mdi-dots-vertical m-0 text-muted h5"/>
+          <i className="mdi mdi-dots-vertical m-0 text-muted h5" />
         </DropdownToggle>
         <DropdownMenu right>
           <DropdownItem href="#">Edit</DropdownItem>
@@ -26,7 +26,7 @@ const RenderCardTitle = props => {
 }
 
 RenderCardTitle.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 }
 
 export default RenderCardTitle

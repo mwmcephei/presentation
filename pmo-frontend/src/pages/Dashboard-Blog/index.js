@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row } from "reactstrap"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //import component
 import CardUser from "./CardUser"
@@ -88,7 +88,9 @@ const index = props => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Blog Dashboard | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Blog Dashboard | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid>
           {/* Render Breadcrumb */}

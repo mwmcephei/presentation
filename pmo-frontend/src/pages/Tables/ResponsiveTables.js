@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import { Row, Col, Card, CardBody, CardTitle, CardSubtitle } from "reactstrap"
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table"
@@ -12,7 +12,9 @@ const ResponsiveTables = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Responsive Table | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Responsive Table | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <div className="container-fluid">
           <Breadcrumbs title="Tables" breadcrumbItem="Responsive Table" />

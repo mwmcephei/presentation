@@ -22,7 +22,7 @@ const MailsList = props => {
   const dispatch = useDispatch()
 
   const { mails } = useSelector(state => ({
-    mails: state.mails.mails
+    mails: state.mails.mails,
   }))
 
   const [mailList, setmailList] = useState([])

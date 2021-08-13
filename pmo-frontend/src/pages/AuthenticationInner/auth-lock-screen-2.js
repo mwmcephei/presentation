@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Col, Container, Row } from "reactstrap"
 
 // availity-reactstrap-validation
@@ -12,12 +12,14 @@ import logolight from "../../assets/images/logo-light.png"
 import user from "../../assets/images/users/avatar-1.jpg"
 import CarouselPage from "./CarouselPage"
 
-const LockScreen2 = (props) => {
+const LockScreen2 = props => {
   return (
     <React.Fragment>
       <div>
         <MetaTags>
-          <title>Lock Screen 2 | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Lock Screen 2 | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid className="p-0">
           <Row className="g-0">
@@ -27,8 +29,7 @@ const LockScreen2 = (props) => {
                 <div className="w-100">
                   <div className="d-flex flex-column h-100">
                     <div className="mb-4 mb-md-5">
-                      <Link to="dashboard"
-                        className="d-block auth-logo">
+                      <Link to="dashboard" className="d-block auth-logo">
                         <img
                           src={logodark}
                           alt=""
@@ -67,7 +68,8 @@ const LockScreen2 = (props) => {
                           </div>
 
                           <div className="mb-3">
-                            <AvField name="email"
+                            <AvField
+                              name="email"
                               label="Email"
                               value=""
                               className="form-control"
@@ -78,7 +80,13 @@ const LockScreen2 = (props) => {
                           </div>
 
                           <div className="text-end">
-                            <button className="btn btn-primary w-md" type="submit" > Unlock </button>
+                            <button
+                              className="btn btn-primary w-md"
+                              type="submit"
+                            >
+                              {" "}
+                              Unlock{" "}
+                            </button>
                           </div>
                         </AvForm>
                         <div className="mt-5 text-center">
@@ -98,9 +106,7 @@ const LockScreen2 = (props) => {
 
                     <div className="mt-4 mt-md-5 text-center">
                       <p className="mb-0">
-                        ©{" "}
-                        {new Date().getFullYear()}{" "}
-                        Skote. Crafted with{" "}
+                        © {new Date().getFullYear()} Skote. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
                         Themesbrand
                       </p>
@@ -116,4 +122,4 @@ const LockScreen2 = (props) => {
   )
 }
 
-export default LockScreen2;
+export default LockScreen2

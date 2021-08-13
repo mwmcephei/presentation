@@ -9,8 +9,8 @@ Leaflet.Icon.Default.imagePath = "../node_modules/leaflet"
 delete Leaflet.Icon.Default.prototype._getIconUrl
 
 Leaflet.Icon.Default.mergeOptions({
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 })
 
 export default class MapMarkerCustomIcons extends Component {
@@ -23,11 +23,7 @@ export default class MapMarkerCustomIcons extends Component {
   render() {
     const position = [this.state.lat, this.state.lng]
     return (
-      <Map
-        center={position}
-        zoom={this.state.zoom}
-        style={{ height: "300px" }}
-      >
+      <Map center={position} zoom={this.state.zoom} style={{ height: "300px" }}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

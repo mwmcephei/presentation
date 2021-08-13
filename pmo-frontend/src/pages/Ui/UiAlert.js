@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Alert,
   Col,
@@ -32,10 +32,11 @@ const UiAlert = () => {
                 <CardBody>
                   <CardTitle className="mb-2">Default Alerts </CardTitle>
                   <CardSubtitle className="mb-4">
-                    Alerts are available for any length of
-                    text, as well as an optional dismiss button. For proper styling, use one
-                    of the four <strong>required</strong> contextual classes (e.g., <code
-                    >.alert-success</code>). For inline dismissal, use the alerts jQuery plugin.
+                    Alerts are available for any length of text, as well as an
+                    optional dismiss button. For proper styling, use one of the
+                    four <strong>required</strong> contextual classes (e.g.,{" "}
+                    <code>.alert-success</code>). For inline dismissal, use the
+                    alerts jQuery plugin.
                   </CardSubtitle>
 
                   <div className="">
@@ -128,8 +129,9 @@ const UiAlert = () => {
                 <CardBody>
                   <CardTitle className="mb-2">Dismissing </CardTitle>
                   <CardSubtitle className="mb-4">
-                    Add a dismiss button and the <code>.alert-dismissible</code> class, which adds extra padding
-                  to the right of the alert and positions the <code>.btn-close</code> button.
+                    Add a dismiss button and the <code>.alert-dismissible</code>{" "}
+                    class, which adds extra padding to the right of the alert
+                    and positions the <code>.btn-close</code> button.
                   </CardSubtitle>
 
                   <div className="">

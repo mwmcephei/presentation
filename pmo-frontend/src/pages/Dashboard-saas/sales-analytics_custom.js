@@ -17,7 +17,6 @@ const SalesAnalytics = props => {
     },
   }
 
-
   return (
     <React.Fragment>
       <Col xl="4">
@@ -39,7 +38,7 @@ const SalesAnalytics = props => {
 
             <div className="text-center text-muted">
               <Row>
-              <Col xs="4">
+                <Col xs="4">
                   <div className="mt-4">
                     <p className="mb-2 text-truncate">
                       <i className="mdi mdi-circle text-danger me-1" />
@@ -58,12 +57,11 @@ const SalesAnalytics = props => {
                 <Col xs="4">
                   <div className="mt-4">
                     <p className="mb-2 text-truncate">
-                      <i className="mdi mdi-circle text-success me-1" /> 
+                      <i className="mdi mdi-circle text-success me-1" />
                     </p>
                     <h5>{props.green}</h5>
                   </div>
                 </Col>
-                
               </Row>
             </div>
           </CardBody>

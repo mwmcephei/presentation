@@ -1,10 +1,8 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-//import { Document } from 'mongoose';
 import * as mongoose from 'mongoose';
 
 
 
-export const ArtifactSchema = new mongoose.Schema({
+export const ArtefactSchema = new mongoose.Schema({
     id: {type: Number},
     description: {type: String},
     progress: {type: Number},
@@ -13,7 +11,7 @@ export const ArtifactSchema = new mongoose.Schema({
     work: {type: String},
 })
 
-export interface Artifact {
+export interface Artefact {
     id:number,
     description:string,
     progress:number,

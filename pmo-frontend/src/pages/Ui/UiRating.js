@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -13,7 +13,7 @@ const UiRating = () => {
   const [def, setdef] = useState("")
   const [rate, setRate] = useState("")
   const [stopRate, setStopRate] = useState("")
-  const [secondrate,setSecondRate] = useState("")
+  const [secondrate, setSecondRate] = useState("")
   const [startrate, setStartrate] = useState("")
   const [customize, setcustomize] = useState("")
   const starStyle = {}
@@ -76,28 +76,28 @@ const UiRating = () => {
                     </Col>
 
                     <Col xl="3" md="4" sm="6">
-                        <div className="p-4 text-center">
-                          <h5 className="font-size-15 mb-3">Half rating</h5>
-                          <RatingTooltip
-                            max={5}
-                            onChange={rate => {
+                      <div className="p-4 text-center">
+                        <h5 className="font-size-15 mb-3">Half rating</h5>
+                        <RatingTooltip
+                          max={5}
+                          onChange={rate => {
                             setRate(rate)
                           }}
-                            ActiveComponent={
-                              <i
-                                className="mdi mdi-star text-primary"
-                                style={starStyle}
-                              />
-                            }
-                            InActiveComponent={
-                              <i
-                                className="mdi mdi-star-outline text-primary"
-                                style={starStyle}
-                              />
-                            }
-                          />
-                        </div>
-                      </Col>
+                          ActiveComponent={
+                            <i
+                              className="mdi mdi-star text-primary"
+                              style={starStyle}
+                            />
+                          }
+                          InActiveComponent={
+                            <i
+                              className="mdi mdi-star-outline text-primary"
+                              style={starStyle}
+                            />
+                          }
+                        />
+                      </div>
+                    </Col>
 
                     <Col xl="3" md="4" sm="6">
                       <div className="p-4 text-center">
@@ -308,7 +308,7 @@ const UiRating = () => {
                           clearRating={false}
                           onChange={() => {
                             setStopRate(!stopRate)
-                              }}
+                          }}
                           tooltipContent={tooltipContentStep}
                           ActiveComponent={
                             <i
@@ -346,9 +346,9 @@ const UiRating = () => {
                       <div className="p-4 text-center">
                         <h5 className="font-16 m-b-15">Fractional rating</h5>
                         <Rating
-                        // onChange={rate => {
-                        //     setdef(rate)
-                        //   }} 
+                          // onChange={rate => {
+                          //     setdef(rate)
+                          //   }}
                           ActiveComponent={
                             <i
                               className="mdi mdi-star text-primary"
@@ -369,9 +369,12 @@ const UiRating = () => {
                     <Col xl="3" md="4" sm="6">
                       <div className="p-4 text-center">
                         <h5 className="font-16 m-b-15">Custom CSS icons</h5>
-                        <Rating onChange={rate => {
+                        <Rating
+                          onChange={rate => {
                             setdef(rate)
-                          }} fractions={2} />
+                          }}
+                          fractions={2}
+                        />
                       </div>
                     </Col>
                   </Row>{" "}

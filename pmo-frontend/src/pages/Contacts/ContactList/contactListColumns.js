@@ -29,7 +29,7 @@ const contactListColumns = () => [
   },
   {
     text: "Name",
-    dataField:"name",
+    dataField: "name",
     sort: true,
     formatter: (cellContent, user) => (
       <>

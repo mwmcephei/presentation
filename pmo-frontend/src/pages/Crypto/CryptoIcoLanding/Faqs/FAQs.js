@@ -43,7 +43,7 @@ const FAQs = () => {
                           setactiveTab("1")
                         }}
                       >
-                        <i className="bx bx-help-circle nav-icon d-block mb-2"/>
+                        <i className="bx bx-help-circle nav-icon d-block mb-2" />
                         <p className="font-weight-bold mb-0">
                           General Questions
                         </p>
@@ -55,7 +55,7 @@ const FAQs = () => {
                           setactiveTab("2")
                         }}
                       >
-                        <i className="bx bx-receipt nav-icon d-block mb-2"/>
+                        <i className="bx bx-receipt nav-icon d-block mb-2" />
                         <p className="font-weight-bold mb-0">Token sale</p>
                       </NavLink>
 
@@ -65,7 +65,7 @@ const FAQs = () => {
                           setactiveTab("3")
                         }}
                       >
-                        <i className="bx bx-timer d-block nav-icon mb-2"/>
+                        <i className="bx bx-timer d-block nav-icon mb-2" />
                         <p className="font-weight-bold mb-0">Roadmap</p>
                       </NavLink>
                     </Nav>

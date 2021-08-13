@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Card, CardBody, Col, Media } from "reactstrap"
 
@@ -47,7 +47,7 @@ const CardBox = props => {
 }
 
 CardBox.propTypes = {
-  coins: PropTypes.array
+  coins: PropTypes.array,
 }
 
 export default CardBox

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Row, Col, Card, CardBody, CardTitle } from "reactstrap"
 
 //Import Breadcrumb
@@ -36,7 +36,7 @@ const PagesTimeline = () => {
       description:
         "To an English person, it will seem like simplified English existence.",
     },
-  ];
+  ]
 
   return (
     <React.Fragment>

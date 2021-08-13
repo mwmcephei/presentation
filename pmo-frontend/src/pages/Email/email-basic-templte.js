@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Row, Col } from "reactstrap"
 import { Link } from "react-router-dom"
 
@@ -32,8 +32,7 @@ const EmailBasicTemplte = () => {
                 <tbody>
                   <tr
                     style={{
-                      fontFamily:
-                        "'Helvetica Neue',Helvetica,Arial,sans-serif",
+                      fontFamily: "'Helvetica Neue',Helvetica,Arial,sans-serif",
                       boxSizing: "border-box",
                       fontSize: "14px",
                       margin: "0",
@@ -120,7 +119,8 @@ const EmailBasicTemplte = () => {
                                   padding: "30px",
                                   borderRadius: "7px",
                                   backgroundColor: "#fff",
-                                  boxShadow: "0 0.75rem 1.5rem rgba(18,38,63,.03)"
+                                  boxShadow:
+                                    "0 0.75rem 1.5rem rgba(18,38,63,.03)",
                                 }}
                                 valign="top"
                               >
@@ -173,7 +173,7 @@ const EmailBasicTemplte = () => {
                                       >
                                         Please confirm your email address by
                                         clicking the link below.
-                                        </td>
+                                      </td>
                                     </tr>
 
                                     <tr
@@ -199,10 +199,10 @@ const EmailBasicTemplte = () => {
                                         valign="top"
                                       >
                                         We may need to send you critical
-                                        information about our service and it
-                                        is important that we have an accurate
-                                        email address.
-                                        </td>
+                                        information about our service and it is
+                                        important that we have an accurate email
+                                        address.
+                                      </td>
                                     </tr>
 
                                     <tr
@@ -256,7 +256,7 @@ const EmailBasicTemplte = () => {
                                           }}
                                         >
                                           Confirm email address
-                                          </Link>
+                                        </Link>
                                       </td>
                                     </tr>
 
@@ -311,7 +311,7 @@ const EmailBasicTemplte = () => {
                                         valign="top"
                                       >
                                         © {new Date().getFullYear()} Skote
-                                        </td>
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -329,7 +329,7 @@ const EmailBasicTemplte = () => {
         </div>
       </div>
     </React.Fragment>
-  );
+  )
 }
 
-export default EmailBasicTemplte;
+export default EmailBasicTemplte

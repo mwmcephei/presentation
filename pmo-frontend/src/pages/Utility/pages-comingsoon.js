@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { Container, Row, Col } from "reactstrap"
 
@@ -37,12 +37,12 @@ const PagesComingsoon = () => {
 
   return (
     <React.Fragment>
-     <MetaTags>
-          <title>Coming Soon | Skote - React Admin & Dashboard Template</title>
-        </MetaTags>
+      <MetaTags>
+        <title>Coming Soon | Skote - React Admin & Dashboard Template</title>
+      </MetaTags>
       <div className="home-btn d-none d-sm-block">
         <Link to="/" className="text-white">
-          <i className="fas fa-home h2"/>
+          <i className="fas fa-home h2" />
         </Link>
       </div>
 

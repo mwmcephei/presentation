@@ -35,7 +35,7 @@ import DeleteModal from "./DeleteModal"
 import "@fullcalendar/bootstrap/main.css"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"
 
 const Calender = props => {
   const dispatch = useDispatch()
@@ -45,12 +45,12 @@ const Calender = props => {
     categories: state.calendar.categories,
   }))
 
-  const [modal, setModal] = useState(false);
-  const [deleteModal, setDeleteModal] = useState(false);
-  const [modalcategory, setModalcategory] = useState(false);
-  const [event, setEvent] = useState({});
-  const [selectedDay, setSelectedDay] = useState(0);
-  const [isEdit, setIsEdit] = useState(false);
+  const [modal, setModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [modalcategory, setModalcategory] = useState(false)
+  const [event, setEvent] = useState({})
+  const [selectedDay, setSelectedDay] = useState(0)
+  const [isEdit, setIsEdit] = useState(false)
 
   useEffect(() => {
     dispatch(onGetCategories())
@@ -103,8 +103,8 @@ const Calender = props => {
     )
     const modifiedData = { ...arg, date: modifiedDate }
 
-    setSelectedDay(modifiedData);
-    toggle();
+    setSelectedDay(modifiedData)
+    toggle()
   }
 
   /**
@@ -121,24 +121,31 @@ const Calender = props => {
       category: event.classNames[0],
       event_category: event.classNames[0],
     })
-    setIsEdit(true);
-    toggle();
+    setIsEdit(true)
+    toggle()
   }
 
   /**
    * Handling submit event on event form
    */
   const handleValidEventSubmit = (e, values) => {
-    const date = event['start'];
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
+    const date = event["start"]
+    const day = date.getDate()
+    const month = date.getMonth()
+    const year = date.getFullYear()
 
-    const currectDate = new Date();
-    const currentHour = currectDate.getHours();
-    const currentMin = currectDate.getMinutes();
-    const currentSec = currectDate.getSeconds();
-    const modifiedDate = new Date(year, month, day, currentHour, currentMin, currentSec);
+    const currectDate = new Date()
+    const currentHour = currectDate.getHours()
+    const currentMin = currectDate.getMinutes()
+    const currentSec = currectDate.getSeconds()
+    const modifiedDate = new Date(
+      year,
+      month,
+      day,
+      currentHour,
+      currentMin,
+      currentSec
+    )
     if (isEdit) {
       const updateEvent = {
         id: event.id,
@@ -158,8 +165,8 @@ const Calender = props => {
       // save new event
       dispatch(onAddNewEvent(newEvent))
     }
-    setSelectedDay(null);
-    toggle();
+    setSelectedDay(null)
+    toggle()
   }
 
   const handleValidEventSubmitcategory = (event, values) => {
@@ -173,40 +180,47 @@ const Calender = props => {
     }
     // save new event
 
-    dispatch(onAddNewEvent(newEvent));
-    toggleCategory();
+    dispatch(onAddNewEvent(newEvent))
+    toggleCategory()
   }
 
   /**
    * On delete event
    */
   const handleDeleteEvent = () => {
-    dispatch(onDeleteEvent(event));
-    setDeleteModal(false);
-    toggle();
+    dispatch(onDeleteEvent(event))
+    setDeleteModal(false)
+    toggle()
   }
 
   /**
    * On category darg event
    */
   const onDrag = event => {
-    event.preventDefault();
+    event.preventDefault()
   }
 
   /**
    * On calendar drop event
    */
   const onDrop = event => {
-    const date = event['date'];
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
+    const date = event["date"]
+    const day = date.getDate()
+    const month = date.getMonth()
+    const year = date.getFullYear()
 
-    const currectDate = new Date();
-    const currentHour = currectDate.getHours();
-    const currentMin = currectDate.getMinutes();
-    const currentSec = currectDate.getSeconds();
-    const modifiedDate = new Date(year, month, day, currentHour, currentMin, currentSec);
+    const currectDate = new Date()
+    const currentHour = currectDate.getHours()
+    const currentMin = currectDate.getMinutes()
+    const currentSec = currectDate.getSeconds()
+    const modifiedDate = new Date(
+      year,
+      month,
+      day,
+      currentHour,
+      currentMin,
+      currentSec
+    )
 
     const draggedEl = event.draggedEl
     const modifiedData = {

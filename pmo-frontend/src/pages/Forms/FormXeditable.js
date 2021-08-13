@@ -19,13 +19,20 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 const FormXeditable = () => {
   /** Confirm button */
   const confirmElement = (
-    <button type="submit" className="btn btn-success editable-submit btn-sm me-1"><i className="mdi mdi-check"></i></button>
-  );
+    <button
+      type="submit"
+      className="btn btn-success editable-submit btn-sm me-1"
+    >
+      <i className="mdi mdi-check"></i>
+    </button>
+  )
 
   /** Cancel button */
   const cancelElement = (
-    <button type="button" className="btn btn-danger editable-cancel btn-sm"><i className="mdi mdi-close"></i></button>
-  );
+    <button type="button" className="btn btn-danger editable-cancel btn-sm">
+      <i className="mdi mdi-close"></i>
+    </button>
+  )
   return (
     <React.Fragment>
       <div className="page-content">

@@ -602,7 +602,10 @@ const FormValidations = () => {
                         validate={{
                           required: { value: true },
                           minLength: { value: 5, errorMessage: "Min 6 chars." },
-                          maxLength: { value: 10, errorMessage: "Max 10 chars." },
+                          maxLength: {
+                            value: 10,
+                            errorMessage: "Max 10 chars.",
+                          },
                         }}
                       />
                     </div>

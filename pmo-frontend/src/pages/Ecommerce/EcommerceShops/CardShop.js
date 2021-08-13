@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "react-router-dom"
 import { Card, Col, Row } from "reactstrap"
@@ -50,7 +50,9 @@ const CardShop = props => {
                   </Col>
                 </Row>
                 <div className="mt-4">
-                  <Link to="#" className="text-decoration-underline text-reset">See Profile <i className="mdi mdi-arrow-right"></i></Link>
+                  <Link to="#" className="text-decoration-underline text-reset">
+                    See Profile <i className="mdi mdi-arrow-right"></i>
+                  </Link>
                 </div>
               </div>
             </Col>
@@ -62,7 +64,7 @@ const CardShop = props => {
 }
 
 CardShop.propTypes = {
-  shop: PropTypes.object
+  shop: PropTypes.object,
 }
 
 export default CardShop

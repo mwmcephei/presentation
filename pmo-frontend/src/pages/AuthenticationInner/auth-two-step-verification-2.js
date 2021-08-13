@@ -1,6 +1,6 @@
 import React from "react"
 import CarouselPage from "./CarouselPage"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Verification code package
 import AuthCode from "react-auth-code-input"
@@ -15,8 +15,10 @@ const TwostepVerification2 = () => {
   return (
     <React.Fragment>
       <div>
-      <MetaTags>
-          <title>Two Step Verification 2 | Skote - React Admin & Dashboard Template</title>
+        <MetaTags>
+          <title>
+            Two Step Verification 2 | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <div className="container-fluid p-0">
           <div className="row g-0">
@@ -55,7 +57,7 @@ const TwostepVerification2 = () => {
                             Please enter the 4 digit code sent to{" "}
                             <span className="font-weight-semibold">
                               example@abc.com
-                              </span>
+                            </span>
                           </p>
 
                           <Form>
@@ -67,7 +69,7 @@ const TwostepVerification2 = () => {
                                     className="visually-hidden"
                                   >
                                     Dight 1
-                                    </Label>
+                                  </Label>
                                   <AuthCode
                                     characters={4}
                                     className="form-control form-control-lg text-center"
@@ -81,7 +83,7 @@ const TwostepVerification2 = () => {
                                       marginRight: "15px",
                                       border: "1px solid #ced4da",
                                       textTransform: "uppercase",
-                                      borderRadius: ".4rem"
+                                      borderRadius: ".4rem",
                                     }}
                                     onChange={() => null}
                                   />
@@ -96,7 +98,7 @@ const TwostepVerification2 = () => {
                               className="btn btn-success w-md"
                             >
                               Confirm
-                              </Link>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -106,8 +108,8 @@ const TwostepVerification2 = () => {
                       <p className="mb-0">
                         © {new Date().getFullYear()} Skote. Crafted with{" "}
                         <i className="mdi mdi-heart text-danger"></i> by
-                          Themesbrand
-                        </p>
+                        Themesbrand
+                      </p>
                     </div>
                   </div>
                 </div>

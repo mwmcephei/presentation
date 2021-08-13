@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Row, Col, Container } from "reactstrap"
 import { Link } from "react-router-dom"
 
@@ -41,8 +41,7 @@ const EmailAlertTemplte = props => {
                   >
                     <td
                       style={{
-                        fontFamily:
-                          "Helvetica Neue,Helvetica,Arial,sans-serif",
+                        fontFamily: "Helvetica Neue,Helvetica,Arial,sans-serif",
                         boxSizing: "border-box",
                         fontSize: "14px",
                         verticalAlign: "top",
@@ -54,8 +53,7 @@ const EmailAlertTemplte = props => {
                       className="container"
                       width="600"
                       style={{
-                        fontFamily:
-                          "Helvetica Neue,Helvetica,Arial,sans-serif",
+                        fontFamily: "Helvetica Neue,Helvetica,Arial,sans-serif",
                         boxSizing: "border-box",
                         fontSize: "14px",
                         verticalAlign: "top",
@@ -126,7 +124,7 @@ const EmailAlertTemplte = props => {
                               >
                                 Warning: You're approaching your limit. Please
                                 upgrade.
-                                </td>
+                              </td>
                             </tr>
                             <tr
                               style={{
@@ -205,10 +203,10 @@ const EmailAlertTemplte = props => {
                                             }}
                                           >
                                             1 free report
-                                            </span>
+                                          </span>
                                         </strong>{" "}
-                                          remaining.
-                                        </td>
+                                        remaining.
+                                      </td>
                                     </tr>
                                     <tr
                                       style={{
@@ -232,11 +230,10 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        Add your credit card now to upgrade
-                                        your account to a premium plan to
-                                        ensure you don't miss out on any
-                                        reports.
-                                        </td>
+                                        Add your credit card now to upgrade your
+                                        account to a premium plan to ensure you
+                                        don't miss out on any reports.
+                                      </td>
                                     </tr>
                                     <tr
                                       style={{
@@ -285,7 +282,7 @@ const EmailAlertTemplte = props => {
                                           }}
                                         >
                                           Upgrade my account
-                                          </Link>
+                                        </Link>
                                       </td>
                                     </tr>
                                     <tr
@@ -310,9 +307,8 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        Thanks for choosing <b>Skote</b>{" "}
-                                          Admin.
-                                        </td>
+                                        Thanks for choosing <b>Skote</b> Admin.
+                                      </td>
                                     </tr>
                                     <tr
                                       style={{
@@ -365,7 +361,7 @@ const EmailAlertTemplte = props => {
                                         valign="top"
                                       >
                                         © {new Date().getFullYear()} Skote
-                                        </td>
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </table>

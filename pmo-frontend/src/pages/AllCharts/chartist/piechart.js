@@ -4,10 +4,10 @@ import ChartistGraph from "react-chartist"
 const piechart = () => {
   const pieChartData = {
     series: [5, 3, 4],
-    labels: ["42%", "25%", "33%"]
+    labels: ["42%", "25%", "33%"],
   }
   const pieChartOptions = {
-    showLabel: true
+    showLabel: true,
   }
 
   return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Card, CardBody } from "reactstrap"
 import ReactApexChart from "react-apexcharts"
 
-const Storage = (props) => {
+const Storage = props => {
   const { options, series } = props
   return (
     <React.Fragment>

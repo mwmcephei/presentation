@@ -17,7 +17,6 @@ const SalesAnalytics = props => {
     },
   }
 
-
   return (
     <React.Fragment>
       <Col xl="4">

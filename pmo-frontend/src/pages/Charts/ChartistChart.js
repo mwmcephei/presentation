@@ -1,6 +1,6 @@
 import React from "react"
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 // import charts
 import BarChart from "../AllCharts/chartist/barchart"
@@ -23,7 +23,9 @@ const ChartistChart = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Chartist Charts | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Chartist Charts | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid={true}>
           <Breadcrumbs title="Charts" breadcrumbItem="Chartist Charts" />

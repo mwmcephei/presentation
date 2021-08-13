@@ -20,12 +20,12 @@ const Comments = ({ comments }) => {
                   src={images[comment.userImg]}
                 />
               ) : (
-                  <div className="avatar-xs">
-                    <span className="avatar-title rounded-circle bg-soft bg-primary text-primary font-size-16">
-                      {comment.username.charAt(0)}
-                    </span>
-                  </div>
-                )}
+                <div className="avatar-xs">
+                  <span className="avatar-title rounded-circle bg-soft bg-primary text-primary font-size-16">
+                    {comment.username.charAt(0)}
+                  </span>
+                </div>
+              )}
             </div>
             <Media body>
               <h5 className="font-size-13 mb-1">{comment.username}</h5>
@@ -40,10 +40,10 @@ const Comments = ({ comments }) => {
                         src={images[comment.userImg]}
                       />
                     ) : (
-                        <span className="avatar-title rounded-circle bg-soft bg-primary text-primary font-size-16">
-                          {comment.reply.username.charAt(0)}
-                        </span>
-                      )}
+                      <span className="avatar-title rounded-circle bg-soft bg-primary text-primary font-size-16">
+                        {comment.reply.username.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <Media body>
                     <h5 className="font-size-13 mb-1">Jeffrey Walker</h5>
