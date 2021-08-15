@@ -4,7 +4,7 @@ import ChartistGraph from "react-chartist"
 const dountchart = () => {
   const dountChartData = {
     series: [10, 20, 50, 20, 5, 50, 15],
-    labels: [1, 2, 3, 4, 5, 6, 7]
+    labels: [1, 2, 3, 4, 5, 6, 7],
   }
   const dountChartOptions = {
     donut: true,
@@ -15,8 +15,8 @@ const dountchart = () => {
       // from: -pathLength + 'px',
       to: "0px",
       // easing: Chartist.Svg.Easing.easeOutQuint,
-      fill: "freeze"
-    }
+      fill: "freeze",
+    },
   }
 
   return (

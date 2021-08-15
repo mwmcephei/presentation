@@ -55,10 +55,7 @@ const CryptoBuySell = props => {
               <Card>
                 <CardBody>
                   <div className="float-end">
-                    <Dropdown
-                      isOpen={isMenu}
-                      toggle={toggleMenu}
-                    >
+                    <Dropdown isOpen={isMenu} toggle={toggleMenu}>
                       <DropdownToggle
                         type="button"
                         tag="button"

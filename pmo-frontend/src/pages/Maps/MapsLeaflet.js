@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import { Container, Row, Col, Card, CardBody } from "reactstrap"
 
@@ -18,7 +18,7 @@ const MapsLeaflet = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-      <MetaTags>
+        <MetaTags>
           <title>Leaflet Maps | Skote - React Admin & Dashboard Template</title>
         </MetaTags>
         <Container fluid>

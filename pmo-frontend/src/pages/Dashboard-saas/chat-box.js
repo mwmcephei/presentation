@@ -27,7 +27,7 @@ import Sender from "./Sender"
 import PerfectScrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
-const ChantBox = (props) => {
+const ChantBox = props => {
   const [searchMenu, setSearchMenu] = useState(false)
   const [settingsMenu, setSettingsMenu] = useState(false)
   const [otherMenu, setOtherMenu] = useState(false)
@@ -48,7 +48,6 @@ const ChantBox = (props) => {
       scrollToBottom()
     }
   }, [messages, scrollToBottom])
-
 
   const onSendMessage = () => {
     const obj = JSON.parse(localStorage.getItem("authUser"))

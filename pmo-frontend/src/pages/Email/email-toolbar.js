@@ -16,22 +16,13 @@ const EmailToolbar = () => {
     <React.Fragment>
       <div className="btn-toolbar p-3" role="toolbar">
         <div className="btn-group me-2 mb-2 mb-sm-0">
-          <Button
-            type="button"
-            color="primary"
-          >
+          <Button type="button" color="primary">
             <i className="fa fa-inbox" />
           </Button>
-          <Button
-            type="button"
-            color="primary"
-          >
+          <Button type="button" color="primary">
             <i className="fa fa-exclamation-circle" />
           </Button>
-          <Button
-            type="button"
-            color="primary"
-          >
+          <Button type="button" color="primary">
             <i className="far fa-trash-alt" />
           </Button>
         </div>
@@ -42,10 +33,7 @@ const EmailToolbar = () => {
           }}
           className="btn-group me-2 mb-2 mb-sm-0"
         >
-          <DropdownToggle
-            className="btn btn-primary  dropdown-toggle"
-            tag="i"
-          >
+          <DropdownToggle className="btn btn-primary  dropdown-toggle" tag="i">
             <i className="fa fa-folder" />{" "}
             <i className="mdi mdi-chevron-down ms-1" />
           </DropdownToggle>
@@ -62,10 +50,7 @@ const EmailToolbar = () => {
           }}
           className="btn-group me-2 mb-2 mb-sm-0"
         >
-          <DropdownToggle
-            className="btn btn-primary  dropdown-toggle"
-            tag="i"
-          >
+          <DropdownToggle className="btn btn-primary  dropdown-toggle" tag="i">
             <i className="fa fa-tag" />{" "}
             <i className="mdi mdi-chevron-down ms-1" />
           </DropdownToggle>

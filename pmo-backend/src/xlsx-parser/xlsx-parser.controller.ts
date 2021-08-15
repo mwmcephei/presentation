@@ -6,16 +6,6 @@ export class XlsxParserController {
     constructor(private xlsxParseService: XlsxParserService) {}
 
 
-
-    @Get('test')
-    test() {
-        console.log("parse")
-      this.xlsxParseService.getKPIProgressData("test");
-      return "ok"
-    }
-
-    
-
 // routes for creating data
 //
     @Get('parse')
@@ -86,5 +76,6 @@ export class XlsxParserController {
     }
 
 
+    
 }
 

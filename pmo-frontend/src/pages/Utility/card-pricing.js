@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "react-router-dom"
 import { Card, CardBody, Col, Media } from "reactstrap"
@@ -30,10 +30,7 @@ const CardPricing = props => {
               </h2>
             </div>
             <div className="text-center">
-              <Link
-                to={props.pricing.link}
-                className="btn btn-primary btn-sm "
-              >
+              <Link to={props.pricing.link} className="btn btn-primary btn-sm ">
                 Sign up Now
               </Link>
             </div>
@@ -54,7 +51,7 @@ const CardPricing = props => {
 }
 
 CardPricing.propTypes = {
-  pricing: PropTypes.object
+  pricing: PropTypes.object,
 }
 
 export default CardPricing

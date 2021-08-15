@@ -55,7 +55,7 @@ const TotalSellngProduct = props => {
     setSeletedMonth(value)
     dispatch(getTopSellingProduct(value))
   }
-  
+
   return (
     <React.Fragment>
       <Col xl="4">
@@ -98,7 +98,7 @@ const TotalSellngProduct = props => {
               <Table className="table align-middle mb-0">
                 <tbody>
                   {(sellingData || []).map((data, key) => {
-                    const options = getChartOptions(key + 1);
+                    const options = getChartOptions(key + 1)
                     return (
                       <tr key={key}>
                         <td>

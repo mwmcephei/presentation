@@ -40,8 +40,8 @@ const ContactsList = props => {
   const dispatch = useDispatch()
 
   const { users } = useSelector(state => ({
-    users: state.contacts.users
-  }));
+    users: state.contacts.users,
+  }))
 
   const [userList, setUserList] = useState([])
   const [modal, setModal] = useState(false)

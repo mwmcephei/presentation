@@ -7,21 +7,21 @@ const StackedColumnChart = ({ periodData }) => {
     chart: {
       stacked: !0,
       toolbar: {
-        show: 1
+        show: 1,
       },
       zoom: {
-        enabled: !0
-      }
+        enabled: !0,
+      },
     },
     plotOptions: {
       bar: {
         horizontal: !1,
-        columnWidth: "15%"
+        columnWidth: "15%",
         // endingShape: "rounded"
-      }
+      },
     },
     dataLabels: {
-      enabled: !1
+      enabled: !1,
     },
     xaxis: {
       show: true,
@@ -37,19 +37,19 @@ const StackedColumnChart = ({ periodData }) => {
         "Sep",
         "Oct",
         "Nov",
-        "Dec"
+        "Dec",
       ],
       labels: {
-        show: true
-      }
+        show: true,
+      },
     },
     colors: ["#556ee6", "#f1b44c", "#34c38f"],
     legend: {
-      position: "bottom"
+      position: "bottom",
     },
     fill: {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   }
   return (
     <React.Fragment>
@@ -61,7 +61,7 @@ const StackedColumnChart = ({ periodData }) => {
         className="apex-charts"
       />
     </React.Fragment>
-  );
+  )
 }
 
-export default StackedColumnChart;
+export default StackedColumnChart

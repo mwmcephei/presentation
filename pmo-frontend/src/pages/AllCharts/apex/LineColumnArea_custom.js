@@ -34,7 +34,7 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
   }, []);
 
 
-  const acumulateArray = (array) => {
+  const acumulateArray = array => {
     let result = []
     for (let i = 0; i < array.length; i++) {
       let acc = 0
@@ -46,9 +46,7 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
     return result
   }
 
-
   const series = [
-
     {
       name: "Accumulated Monthly Spendings",
       type: "area",
@@ -85,11 +83,11 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
     colors: [
       "#556ee6",
       "#f46a6a", // red
-      "#34c38f"
+      "#34c38f",
     ],
 
     fill: {
-      opacity: [0.25, 1, 1],  // [0.85, 0.25, 1],
+      opacity: [0.25, 1, 1], // [0.85, 0.25, 1],
       gradient: {
         inverseColors: false,
         shade: "light",

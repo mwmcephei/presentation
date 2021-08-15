@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React, { useState } from "react"
 
 import { connect } from "react-redux"
 import { Row, Col } from "reactstrap"
-import ReactDrawer from 'react-drawer';
+import ReactDrawer from "react-drawer"
 import { Link } from "react-router-dom"
 
 // Reactstrap
@@ -41,16 +41,16 @@ const Header = props => {
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 
-  const [position, setPosition] = useState();
-  const [open, setOpen] = useState(false);
+  const [position, setPosition] = useState()
+  const [open, setOpen] = useState(false)
 
   const toggleTopDrawer = () => {
-    setPosition('right');
+    setPosition("right")
     setOpen(!open)
   }
 
   const onDrawerClose = () => {
-    setOpen(false);
+    setOpen(false)
   }
 
   function toggleFullscreen() {
@@ -81,9 +81,9 @@ const Header = props => {
   }
 
   function tToggle() {
-    var body = document.body;
-    body.classList.toggle("vertical-collpsed");
-    body.classList.toggle("sidebar-enable");
+    var body = document.body
+    body.classList.toggle("vertical-collpsed")
+    body.classList.toggle("sidebar-enable")
   }
 
   return (
@@ -120,11 +120,7 @@ const Header = props => {
                 setmegaMenu(!megaMenu)
               }}
             >
-              <DropdownToggle
-                className="btn header-item "
-                caret
-                tag="button"
-              >
+              <DropdownToggle className="btn header-item " caret tag="button">
                 {" "}
                 {props.t("Mega Menu")} <i className="mdi mdi-chevron-down" />
               </DropdownToggle>
@@ -382,7 +378,8 @@ const Header = props => {
             <ProfileMenu />
 
             <div
-              onClick={toggleTopDrawer} disabled={open}
+              onClick={toggleTopDrawer}
+              disabled={open}
               className="dropdown d-inline-block"
             >
               <button
@@ -395,11 +392,7 @@ const Header = props => {
           </div>
         </div>
       </header>
-      <ReactDrawer
-        open={open}
-        position={position}
-        onClose={onDrawerClose}
-      >
+      <ReactDrawer open={open} position={position} onClose={onDrawerClose}>
         <RightSidebar onClose={onDrawerClose} />
       </ReactDrawer>
     </React.Fragment>
@@ -413,16 +406,12 @@ Header.propTypes = {
   showRightSidebar: PropTypes.any,
   showRightSidebarAction: PropTypes.func,
   t: PropTypes.any,
-  toggleLeftmenu: PropTypes.func
+  toggleLeftmenu: PropTypes.func,
 }
 
 const mapStatetoProps = state => {
-  const {
-    layoutType,
-    showRightSidebar,
-    leftMenu,
-    leftSideBarType,
-  } = state.Layout
+  const { layoutType, showRightSidebar, leftMenu, leftSideBarType } =
+    state.Layout
   return { layoutType, showRightSidebar, leftMenu, leftSideBarType }
 }
 

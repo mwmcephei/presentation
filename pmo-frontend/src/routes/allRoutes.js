@@ -110,7 +110,7 @@ import BasicTables from "../pages/Tables/BasicTables"
 import DatatableTables from "../pages/Tables/DatatableTables"
 import ResponsiveTables from "../pages/Tables/ResponsiveTables"
 import EditableTables from "../pages/Tables/EditableTables"
-import DragDropTables from '../pages/Tables/DragDropTables'
+import DragDropTables from "../pages/Tables/DragDropTables"
 
 //Blog
 import BlogList from "../pages/Blog/BlogList/index"
@@ -152,7 +152,7 @@ import UiRating from "../pages/Ui/UiRating"
 import UiRangeSlider from "../pages/Ui/UiRangeSlider"
 import UiNotifications from "../pages/Ui/ui-notifications"
 import UiDrawer from "pages/Ui/UiDrawer"
-import UiBreadcrumb from '../pages/Ui/UiBreadcrumb';
+import UiBreadcrumb from "../pages/Ui/UiBreadcrumb"
 
 //Pages
 import PagesStarter from "../pages/Utility/pages-starter"

@@ -14,8 +14,7 @@ const Blog = () => {
       tag: "Cryptocurrency",
       date: "04 Mar, 2020",
       title: "Donec pede justo, fringilla vele",
-      desc:
-        "If several languages coalesce, the grammar of the resulting language",
+      desc: "If several languages coalesce, the grammar of the resulting language",
     },
     {
       imgUrl: blog2,
@@ -29,8 +28,7 @@ const Blog = () => {
       tag: "Cryptocurrency",
       date: "06 Jan, 2020",
       title: "In turpis, pellentesque posuere",
-      desc:
-        "To an English person, it will seem like simplified English, as a skeptical Cambridge",
+      desc: "To an English person, it will seem like simplified English, as a skeptical Cambridge",
     },
   ]
   return (
@@ -63,7 +61,7 @@ const Blog = () => {
 
                   <div className="mt-4 text-muted">
                     <p className="mb-2">
-                      <i className="bx bx-calendar ms-1"/> {blog.date}
+                      <i className="bx bx-calendar ms-1" /> {blog.date}
                     </p>
                     <h5 className="mb-3">{blog.title}</h5>
                     <p>{blog.desc}</p>

@@ -154,10 +154,7 @@ const Activity = props => {
               </div>
             </SimpleBar>
             <div className="text-center mt-4">
-              <a
-                href=""
-                className="btn btn-primary  btn-sm"
-              >
+              <a href="" className="btn btn-primary  btn-sm">
                 View More <i className="mdi mdi-arrow-right ms-1"></i>
               </a>
             </div>

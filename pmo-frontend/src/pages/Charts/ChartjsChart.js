@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap"
 //Import Breadcrumb
@@ -18,7 +18,9 @@ const ChartjsChart = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Chartjs Charts | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Chartjs Charts | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid={true}>
           <Breadcrumbs title="Charts" breadcrumbItem="Chartjs Charts" />

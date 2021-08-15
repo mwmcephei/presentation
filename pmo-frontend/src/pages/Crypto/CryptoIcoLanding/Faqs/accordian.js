@@ -156,7 +156,7 @@ Accordian.propTypes = {
   question1: PropTypes.any,
   question2: PropTypes.any,
   question3: PropTypes.any,
-  question4: PropTypes.any
+  question4: PropTypes.any,
 }
 
 export default Accordian

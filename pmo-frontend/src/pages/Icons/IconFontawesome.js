@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -28,8 +28,8 @@ const IconFontawesome = props => {
                 '"></i> fab fa-' +
                 entry.id +
                 "\
-                      </div>";
-              break;
+                      </div>"
+              break
             case "solid":
               solid +=
                 '<div class="col-xl-3 col-lg-4 col-sm-6">\
@@ -38,8 +38,8 @@ const IconFontawesome = props => {
                 '"></i> fas fa-' +
                 entry.id +
                 "\
-                </div>";
-              break;
+                </div>"
+              break
             default:
               regular +=
                 '<div class="col-xl-3 col-lg-4 col-sm-6">\
@@ -48,7 +48,7 @@ const IconFontawesome = props => {
                 '"></i> far fa-' +
                 entry.id +
                 "\
-                      </div>";
+                      </div>"
           }
         }
       }

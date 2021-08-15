@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React, { Component } from "react"
 
 class ScrollspyNav extends Component {
@@ -9,8 +9,7 @@ class ScrollspyNav extends Component {
     this.scrollTargetIds = this.props.scrollTargetIds
     this.activeNavClass = this.props.activeNavClass
     this.scrollDuration = Number(this.props.scrollDuration) || 1000
-    this.headerBackground =
-      this.props.headerBackground === "true"
+    this.headerBackground = this.props.headerBackground === "true"
 
     if (this.props.router && this.props.router === "HashRouter") {
       this.homeDefaultLink = "#/"
@@ -142,7 +141,7 @@ class ScrollspyNav extends Component {
     })
   }
   clearOtherNavLinkActiveStyle(excludeSectionID) {
-    this.scrollTargetIds.forEach((sectionID) => {
+    this.scrollTargetIds.forEach(sectionID => {
       if (sectionID !== excludeSectionID) {
         this.getNavLinkElement(sectionID).classList.remove(this.activeNavClass)
         this.getNavLinkElement(sectionID).parentNode.classList.remove(
@@ -168,7 +167,7 @@ ScrollspyNav.propTypes = {
   headerBackground: PropTypes.any,
   router: PropTypes.any,
   scrollDuration: PropTypes.any,
-  scrollTargetIds: PropTypes.any
+  scrollTargetIds: PropTypes.any,
 }
 
 export default ScrollspyNav

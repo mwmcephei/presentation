@@ -78,7 +78,6 @@ const projects = (state = INIT_STATE, action) => {
         error: action.payload,
       }
 
-
     case GET_PROJECT_DETAIL_FAIL:
       return {
         ...state,

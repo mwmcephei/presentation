@@ -14,21 +14,38 @@ import {
 //Import Images
 import avatar1 from "../../assets/images/users/avatar-1.jpg"
 
-const getCircle = (number) => {
-  switch(number) {
-      case 0:
-        return (<div className="rounded-circle bg-success  text-muted text-truncate" style={{height:'30px', width:'30px'}} ></div>)
-      case 1:
-        return (<div className="rounded-circle bg-warning align-self-centerr" style={{height:'30px', width:'30px'}} ></div>)
-      case 2:
-          return (<div className="rounded-circle bg-danger align-self-center" style={{height:'30px', width:'30px'}} ></div>)
-      default: 
-        return (<div className="rounded-circle " style={{height:'30px', width:'30px'}} ></div>)
-    }
+const getCircle = number => {
+  switch (number) {
+    case 0:
+      return (
+        <div
+          className="rounded-circle bg-success  text-muted text-truncate"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
+    case 1:
+      return (
+        <div
+          className="rounded-circle bg-warning align-self-centerr"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
+    case 2:
+      return (
+        <div
+          className="rounded-circle bg-danger align-self-center"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
+    default:
+      return (
+        <div
+          className="rounded-circle "
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
+  }
 }
-
-
-
 
 function CardUser(props) {
   const [settingsMenu, setSettingsMenu] = useState(false)
@@ -44,7 +61,7 @@ function CardUser(props) {
           <Card>
             <CardBody>
               <Row>
-               { /*
+                {/*
                 <Col lg="4">
                   <Media>
                     <div className="me-3">
@@ -91,18 +108,15 @@ function CardUser(props) {
                           </p>
                           <Row>
                             <Col xs="5"></Col>
-                            <Col xs="2">
-                                {getCircle(props.signal)}
-                            </Col>
+                            <Col xs="2">{getCircle(props.signal)}</Col>
                             <Col xs="5"></Col>
                           </Row>
-                          
                         </div>
                       </Col>
                     </Row>
                   </div>
                 </Col>
-{/*
+                {/*
 style={{justify-content: "center"}}
 
 
@@ -126,7 +140,6 @@ style={{justify-content: "center"}}
                   </div>
                 </Col>
 */}
-
               </Row>
             </CardBody>
           </Card>

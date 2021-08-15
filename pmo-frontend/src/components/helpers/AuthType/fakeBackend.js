@@ -304,7 +304,6 @@ const fakeBackend = () => {
     })
   })
 
-
   mock.onGet(url.GET_STARRED_MAILS).reply(() => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -753,7 +752,6 @@ const fakeBackend = () => {
   })
 
   mock.onGet(url.GET_PROJECTS).reply(() => {
-
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (projects) {

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Button,
   Popover,
@@ -57,24 +57,12 @@ const UiGeneral = () => {
                         change the appearance of a badge.
                       </CardSubtitle>
                       <div>
-                        <Badge className="me-2 bg-primary">
-                          Primary
-                        </Badge>
-                        <Badge className="me-2 bg-success">
-                          Success
-                        </Badge>
-                        <Badge className="me-2 bg-info">
-                          Info
-                        </Badge>
-                        <Badge className="me-2 bg-warning">
-                          Warning
-                        </Badge>
-                        <Badge className="me-2 bg-danger">
-                          Danger
-                        </Badge>
-                        <Badge className="me-2 bg-dark">
-                          Dark
-                        </Badge>
+                        <Badge className="me-2 bg-primary">Primary</Badge>
+                        <Badge className="me-2 bg-success">Success</Badge>
+                        <Badge className="me-2 bg-info">Info</Badge>
+                        <Badge className="me-2 bg-warning">Warning</Badge>
+                        <Badge className="me-2 bg-danger">Danger</Badge>
+                        <Badge className="me-2 bg-dark">Dark</Badge>
                       </div>
 
                       <div className="mt-5">
@@ -132,22 +120,40 @@ const UiGeneral = () => {
 
                       <div className="mt-5">
                         <h5 className="font-size-14">Soft Badge</h5>
-                        <Badge pill className="rounded-pill badge-soft-primary ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-primary ms-1"
+                        >
                           Primary
                         </Badge>
-                        <Badge pill className="rounded-pill badge-soft-success ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-success ms-1"
+                        >
                           Success
                         </Badge>
-                        <Badge pill className="rounded-pill badge-soft-info ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-info ms-1"
+                        >
                           Info
                         </Badge>
-                        <Badge pill className="rounded-pill badge-soft-warning ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-warning ms-1"
+                        >
                           Warning
                         </Badge>
-                        <Badge pill className="rounded-pill badge-soft-danger ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-danger ms-1"
+                        >
                           Danger
                         </Badge>
-                        <Badge pill className="rounded-pill badge-soft-dark ms-1">
+                        <Badge
+                          pill
+                          className="rounded-pill badge-soft-dark ms-1"
+                        >
                           Dark
                         </Badge>
                       </div>
@@ -158,17 +164,26 @@ const UiGeneral = () => {
                     <Col xl="6">
                       <div className="mt-4">
                         <h4 className="card-title">Badges in Buttons</h4>
-                        <p className="card-title-desc">Badges can be used as part of links or buttons to provide a counter.</p>
+                        <p className="card-title-desc">
+                          Badges can be used as part of links or buttons to
+                          provide a counter.
+                        </p>
 
                         <div className="button-items">
                           <button type="button" className="btn btn-primary">
-                            Notifications <Badge className="bg-success ms-1">4</Badge>
+                            Notifications{" "}
+                            <Badge className="bg-success ms-1">4</Badge>
                           </button>
                           <button type="button" className="btn btn-success">
-                            Messages <span className="badge bg-danger ms-1">2</span>
+                            Messages{" "}
+                            <span className="badge bg-danger ms-1">2</span>
                           </button>
-                          <button type="button" className="btn btn-outline-secondary">
-                            Draft <span className="badge bg-success ms-1">2</span>
+                          <button
+                            type="button"
+                            className="btn btn-outline-secondary"
+                          >
+                            Draft{" "}
+                            <span className="badge bg-success ms-1">2</span>
                           </button>
                         </div>
                       </div>
@@ -177,43 +192,77 @@ const UiGeneral = () => {
                     <Col xl="6">
                       <div className="mt-4">
                         <h4 className="card-title">Badges Position Examples</h4>
-                        <p className="card-title-desc">Example of Badges Position</p>
+                        <p className="card-title-desc">
+                          Example of Badges Position
+                        </p>
 
                         <div className="d-flex flex-wrap gap-3">
-                          <button type="button" className="btn btn-primary position-relative">
-                            Mails <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">+99 <span className="visually-hidden">unread messages</span></span>
+                          <button
+                            type="button"
+                            className="btn btn-primary position-relative"
+                          >
+                            Mails{" "}
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                              +99{" "}
+                              <span className="visually-hidden">
+                                unread messages
+                              </span>
+                            </span>
                           </button>
 
-
-                          <button type="button" className="btn btn-light position-relative">
-                            Alerts <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span className="visually-hidden">unread messages</span></span>
+                          <button
+                            type="button"
+                            className="btn btn-light position-relative"
+                          >
+                            Alerts{" "}
+                            <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
+                              <span className="visually-hidden">
+                                unread messages
+                              </span>
+                            </span>
                           </button>
 
-                          <button type="button" className="btn btn-primary position-relative p-0 avatar-xs rounded">
+                          <button
+                            type="button"
+                            className="btn btn-primary position-relative p-0 avatar-xs rounded"
+                          >
                             <span className="avatar-title bg-transparent">
                               <i className="bx bxs-envelope"></i>
                             </span>
-                            <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><span className="visually-hidden">unread messages</span></span>
+                            <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
+                              <span className="visually-hidden">
+                                unread messages
+                              </span>
+                            </span>
                           </button>
 
-                          <button type="button" className="btn btn-light position-relative p-0 avatar-xs rounded-circle">
+                          <button
+                            type="button"
+                            className="btn btn-light position-relative p-0 avatar-xs rounded-circle"
+                          >
                             <span className="avatar-title bg-transparent text-reset">
                               <i className="bx bxs-bell"></i>
                             </span>
                           </button>
 
-                          <button type="button" className="btn btn-light position-relative p-0 avatar-xs rounded-circle">
+                          <button
+                            type="button"
+                            className="btn btn-light position-relative p-0 avatar-xs rounded-circle"
+                          >
                             <span className="avatar-title bg-transparent text-reset">
                               <i className="bx bx-menu"></i>
                             </span>
-                            <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1"><span className="visually-hidden">unread messages</span></span>
+                            <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-success p-1">
+                              <span className="visually-hidden">
+                                unread messages
+                              </span>
+                            </span>
                           </button>
                         </div>
                       </div>
                     </Col>
                   </Row>
                 </CardBody>
-
               </Card>
             </Col>
           </Row>

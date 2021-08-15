@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { Container, Row, Col, Card, CardBody, Media } from "reactstrap"
 
@@ -107,10 +107,7 @@ const EmailRead = () => {
                       </Col>
                     </Row>
 
-                    <Link
-                      to="#"
-                      className="btn btn-secondary  mt-4"
-                    >
+                    <Link to="#" className="btn btn-secondary  mt-4">
                       <i className="mdi mdi-reply"></i> Reply
                     </Link>
                   </CardBody>

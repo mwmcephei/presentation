@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react"
 import { connect } from "react-redux"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import LightData from "./LightData"
 import { Row, Col, Card, CardBody, CardTitle, CardSubtitle } from "reactstrap"
 //Import Breadcrumb
@@ -169,7 +169,7 @@ const MapsGoogle = props => {
 }
 
 MapsGoogle.propTypes = {
-  google: PropTypes.object
+  google: PropTypes.object,
 }
 
 export default connect(

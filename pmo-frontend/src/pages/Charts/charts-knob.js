@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Container, Row, Col, Card, CardBody } from "reactstrap"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import Knob from "../AllCharts/knob/knob"
 
@@ -31,7 +31,9 @@ const ChartsKnob = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Jquery Knob charts | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Jquery Knob charts | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid>
           <Breadcrumbs title="Charts" breadcrumbItem="Jquery Knob charts" />

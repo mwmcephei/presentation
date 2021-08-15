@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Row,
@@ -83,12 +83,11 @@ const UiModal = () => {
                 <CardBody>
                   <CardTitle className="h4">Modals Examples</CardTitle>
                   <p className="card-title-desc">
-                    Modals are streamlined, but flexible dialog prompts
-                    powered by JavaScript. They support a number of use cases
-                    from user notification to completely custom content and
-                    feature a handful of helpful subcomponents, sizes, and
-                    more.
-                    </p>
+                    Modals are streamlined, but flexible dialog prompts powered
+                    by JavaScript. They support a number of use cases from user
+                    notification to completely custom content and feature a
+                    handful of helpful subcomponents, sizes, and more.
+                  </p>
 
                   <div
                     className="modal bs-example-modal"
@@ -104,8 +103,7 @@ const UiModal = () => {
                             className="btn-close"
                             data-dismiss="modal"
                             aria-label="Close"
-                          >
-                          </button>
+                          ></button>
                         </div>
                         <div className="modal-body">
                           <p>One fine body&hellip;</p>
@@ -113,14 +111,14 @@ const UiModal = () => {
                         <div className="modal-footer">
                           <button type="button" className="btn btn-primary">
                             Save changes
-                            </button>
+                          </button>
                           <button
                             type="button"
                             className="btn btn-secondary"
                             data-dismiss="modal"
                           >
                             Close
-                            </button>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -133,10 +131,11 @@ const UiModal = () => {
             <Col lg={6}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h4">
-                    Default Modal
-                            </CardTitle>
-                  <p className="card-title-desc">Toggle a working modal demo by clicking the button below. It will slide down and fade in from the top of the page.</p>
+                  <CardTitle className="h4">Default Modal</CardTitle>
+                  <p className="card-title-desc">
+                    Toggle a working modal demo by clicking the button below. It
+                    will slide down and fade in from the top of the page.
+                  </p>
                   <div>
                     <button
                       type="button"
@@ -148,7 +147,7 @@ const UiModal = () => {
                       data-target="#myModal"
                     >
                       Standard Modal
-                          </button>
+                    </button>
 
                     <Modal
                       isOpen={modal_standard}
@@ -159,7 +158,7 @@ const UiModal = () => {
                       <div className="modal-header">
                         <h5 className="modal-title mt-0" id="myModalLabel">
                           Modal Heading
-                            </h5>
+                        </h5>
                         <button
                           type="button"
                           onClick={() => {
@@ -175,39 +174,39 @@ const UiModal = () => {
                       <div className="modal-body">
                         <h5>Overflowing text to show scroll behavior</h5>
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
-                        <p>
-                          Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
-                        <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p>
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                       </div>
                       <div className="modal-footer">
                         <button
@@ -219,13 +218,10 @@ const UiModal = () => {
                           data-dismiss="modal"
                         >
                           Close
-                            </button>
-                        <button
-                          type="button"
-                          className="btn btn-primary "
-                        >
+                        </button>
+                        <button type="button" className="btn btn-primary ">
                           Save changes
-                            </button>
+                        </button>
                       </div>
                     </Modal>
                   </div>
@@ -236,10 +232,12 @@ const UiModal = () => {
             <Col lg={6}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h4">
-                    Fullscreen Modal
-                            </CardTitle>
-                  <p className="card-title-desc">Another override is the option to pop up a modal that covers the user viewport, available via modifier classes that are placed on a <code>.modal-dialog</code>.</p>
+                  <CardTitle className="h4">Fullscreen Modal</CardTitle>
+                  <p className="card-title-desc">
+                    Another override is the option to pop up a modal that covers
+                    the user viewport, available via modifier classes that are
+                    placed on a <code>.modal-dialog</code>.
+                  </p>
                   <div>
                     <button
                       type="button"
@@ -250,7 +248,7 @@ const UiModal = () => {
                       data-toggle="modal"
                     >
                       Fullscreen Modal
-                          </button>
+                    </button>
                     <Modal
                       size="xl"
                       isOpen={modal_fullscreen}
@@ -265,7 +263,7 @@ const UiModal = () => {
                           id="exampleModalFullscreenLabel"
                         >
                           Fullscreen Modal
-                            </h5>
+                        </h5>
                         <button
                           onClick={() => {
                             setmodal_fullscreen(false)
@@ -280,34 +278,46 @@ const UiModal = () => {
                       </div>
                       <div className="modal-body">
                         <h5>Overflowing text to show scroll behavior</h5>
-                        <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Morbi leo risus, porta ac
-                                                                consectetur ac, vestibulum at eros.</p>
-                        <p>Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Vivamus sagittis lacus vel
-                                                                augue laoreet rutrum faucibus dolor auctor.</p>
-                        <p>Aenean lacinia bibendum nulla sed consectetur.
-                        Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Donec sed odio dui. Donec
-                        ullamcorper nulla non metus auctor
-                                                                fringilla.</p>
-                        <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Morbi leo risus, porta ac
-                                                                consectetur ac, vestibulum at eros.</p>
-                        <p>Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Vivamus sagittis lacus vel
-                                                                augue laoreet rutrum faucibus dolor auctor.</p>
-                        <p>Aenean lacinia bibendum nulla sed consectetur.
-                        Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Donec sed odio dui. Donec
-                        ullamcorper nulla non metus auctor
-                                                                fringilla.</p>
-                        <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Morbi leo risus, porta ac
-                                                                consectetur ac, vestibulum at eros.</p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                       </div>
                       <div className="modal-footer">
                         <button
@@ -319,13 +329,10 @@ const UiModal = () => {
                           data-dismiss="modal"
                         >
                           Close
-                                  </button>
-                        <button
-                          type="button"
-                          className="btn btn-primary "
-                        >
+                        </button>
+                        <button type="button" className="btn btn-primary ">
                           Save changes
-                                  </button>
+                        </button>
                       </div>
                     </Modal>
                   </div>
@@ -338,10 +345,11 @@ const UiModal = () => {
             <Col lg={6}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h4">
-                    Optional Sizes
-                    </CardTitle>
-                  <p className="card-title-desc">Modals have three optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
+                  <CardTitle className="h4">Optional Sizes</CardTitle>
+                  <p className="card-title-desc">
+                    Modals have three optional sizes, available via modifier
+                    classes to be placed on a <code>.modal-dialog</code>.
+                  </p>
                   <div className="button-items">
                     <button
                       type="button"
@@ -353,7 +361,7 @@ const UiModal = () => {
                       data-target=".bs-example-modal-xl"
                     >
                       Extra large modal
-                          </button>
+                    </button>
                     <button
                       type="button"
                       onClick={() => {
@@ -364,7 +372,7 @@ const UiModal = () => {
                       data-target=".bs-example-modal-lg"
                     >
                       Large modal
-                          </button>
+                    </button>
                     <button
                       type="button"
                       onClick={() => {
@@ -375,7 +383,7 @@ const UiModal = () => {
                       data-target=".bs-example-modal-sm"
                     >
                       Small modal
-                          </button>
+                    </button>
                   </div>
 
                   <div>
@@ -392,7 +400,7 @@ const UiModal = () => {
                           id="myExtraLargeModalLabel"
                         >
                           Extra large modal
-                            </h5>
+                        </h5>
                         <button
                           onClick={() => {
                             setmodal_xlarge(false)
@@ -406,18 +414,23 @@ const UiModal = () => {
                         </button>
                       </div>
                       <div className="modal-body">
-                        <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Morbi leo risus, porta ac
-                                                                consectetur ac, vestibulum at eros.</p>
-                        <p>Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Vivamus sagittis lacus vel
-                                                                augue laoreet rutrum faucibus dolor auctor.</p>
-                        <p className="mb-0">Aenean lacinia bibendum nulla sed consectetur.
-                        Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Donec sed odio dui. Donec
-                        ullamcorper nulla non metus auctor
-                                                                fringilla.</p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p className="mb-0">
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                       </div>
                     </Modal>
                     <Modal
@@ -428,12 +441,9 @@ const UiModal = () => {
                       }}
                     >
                       <div className="modal-header">
-                        <h5
-                          className="modal-title mt-0"
-                          id="myLargeModalLabel"
-                        >
+                        <h5 className="modal-title mt-0" id="myLargeModalLabel">
                           Large Modal
-                            </h5>
+                        </h5>
                         <button
                           onClick={() => {
                             setmodal_large(false)
@@ -447,18 +457,23 @@ const UiModal = () => {
                         </button>
                       </div>
                       <div className="modal-body">
-                        <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in,
-                        egestas eget quam. Morbi leo risus, porta ac
-                                                                consectetur ac, vestibulum at eros.</p>
-                        <p>Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Vivamus sagittis lacus vel
-                                                                augue laoreet rutrum faucibus dolor auctor.</p>
-                        <p className="mb-0">Aenean lacinia bibendum nulla sed consectetur.
-                        Praesent commodo cursus magna, vel scelerisque
-                        nisl consectetur et. Donec sed odio dui. Donec
-                        ullamcorper nulla non metus auctor
-                                                                fringilla.</p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p className="mb-0">
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                       </div>
                     </Modal>
                     <Modal
@@ -469,12 +484,9 @@ const UiModal = () => {
                       }}
                     >
                       <div className="modal-header">
-                        <h5
-                          className="modal-title mt-0"
-                          id="mySmallModalLabel"
-                        >
+                        <h5 className="modal-title mt-0" id="mySmallModalLabel">
                           Small Modal
-                            </h5>
+                        </h5>
                         <button
                           onClick={() => {
                             setmodal_small(false)
@@ -489,22 +501,22 @@ const UiModal = () => {
                       </div>
                       <div className="modal-body">
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p className="mb-0">
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                       </div>
                     </Modal>
                   </div>
@@ -515,10 +527,11 @@ const UiModal = () => {
             <Col lg={6}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h5">
-                    Vertically Centered
-                            </CardTitle>
-                  <p className="card-title-desc">Add <code>.modal-dialog-centered</code> to <code>.modal-dialog</code> to vertically center the modal.</p>
+                  <CardTitle className="h5">Vertically Centered</CardTitle>
+                  <p className="card-title-desc">
+                    Add <code>.modal-dialog-centered</code> to{" "}
+                    <code>.modal-dialog</code> to vertically center the modal.
+                  </p>
                   <div>
                     <button
                       type="button"
@@ -530,7 +543,7 @@ const UiModal = () => {
                       data-target=".bs-example-modal-center"
                     >
                       Center modal
-                          </button>
+                    </button>
                     <Modal
                       isOpen={modal_center}
                       toggle={() => {
@@ -554,22 +567,22 @@ const UiModal = () => {
                       </div>
                       <div className="modal-body">
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p className="mb-0">
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                       </div>
                     </Modal>
                   </div>
@@ -580,10 +593,12 @@ const UiModal = () => {
             <Col lg={6}>
               <Card>
                 <CardBody>
-                  <CardTitle className="h5">
-                    Scrollable modal
-                            </CardTitle>
-                  <p className="card-title-desc">Another override is the option to pop up a modal that covers the user viewport, available via modifier classes that are placed on a <code>.modal-dialog</code>.</p>
+                  <CardTitle className="h5">Scrollable modal</CardTitle>
+                  <p className="card-title-desc">
+                    Another override is the option to pop up a modal that covers
+                    the user viewport, available via modifier classes that are
+                    placed on a <code>.modal-dialog</code>.
+                  </p>
                   <div>
                     <button
                       type="button"
@@ -594,7 +609,7 @@ const UiModal = () => {
                       data-toggle="modal"
                     >
                       Scrollable modal
-                          </button>
+                    </button>
                     <Modal
                       isOpen={modal_scroll}
                       toggle={() => {
@@ -603,14 +618,10 @@ const UiModal = () => {
                       scrollable={true}
                     >
                       <div className="modal-header">
-                        <h5 className="modal-title mt-0">
-                          Scrollable modal
-                            </h5>
+                        <h5 className="modal-title mt-0">Scrollable modal</h5>
                         <button
                           type="button"
-                          onClick={() =>
-                            setmodal_scroll(false)
-                          }
+                          onClick={() => setmodal_scroll(false)}
                           className="close"
                           data-dismiss="modal"
                           aria-label="Close"
@@ -620,120 +631,118 @@ const UiModal = () => {
                       </div>
                       <div className="modal-body">
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
-                        <p>
-                          Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
-                        <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p>
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
-                        <p>
-                          Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
-                        <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p>
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                         <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
                         <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
-                        <p>
-                          Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
-                        <p>
-                          Cras mattis consectetur purus sit amet fermentum.
-                          Cras justo odio, dapibus ac facilisis in, egestas
-                          eget quam. Morbi leo risus, porta ac consectetur
-                          ac, vestibulum at eros.
-                            </p>
-                        <p>
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Vivamus sagittis lacus vel
-                          augue laoreet rutrum faucibus dolor auctor.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
                         <p>
                           Aenean lacinia bibendum nulla sed consectetur.
-                          Praesent commodo cursus magna, vel scelerisque
-                          nisl consectetur et. Donec sed odio dui. Donec
-                          ullamcorper nulla non metus auctor fringilla.
-                            </p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
+                        <p>
+                          Cras mattis consectetur purus sit amet fermentum. Cras
+                          justo odio, dapibus ac facilisis in, egestas eget
+                          quam. Morbi leo risus, porta ac consectetur ac,
+                          vestibulum at eros.
+                        </p>
+                        <p>
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Vivamus sagittis lacus vel augue
+                          laoreet rutrum faucibus dolor auctor.
+                        </p>
+                        <p>
+                          Aenean lacinia bibendum nulla sed consectetur.
+                          Praesent commodo cursus magna, vel scelerisque nisl
+                          consectetur et. Donec sed odio dui. Donec ullamcorper
+                          nulla non metus auctor fringilla.
+                        </p>
                         <div className="modal-footer">
                           <button
                             type="button"
                             className="btn btn-secondary"
-                            onClick={() =>
-                              setmodal_scroll(false)
-                            }
+                            onClick={() => setmodal_scroll(false)}
                           >
                             Close
-                              </button>
+                          </button>
                           <button type="button" className="btn btn-primary">
                             Save changes
-                              </button>
+                          </button>
                         </div>
                       </div>
                     </Modal>
@@ -745,9 +754,11 @@ const UiModal = () => {
               <Card>
                 <CardBody>
                   <CardTitle>Static Backdrop</CardTitle>
-                  <p className="card-title-desc">When backdrop is set to static, the modal will not close when clicking outside it. Click the button below to try it.</p>
+                  <p className="card-title-desc">
+                    When backdrop is set to static, the modal will not close
+                    when clicking outside it. Click the button below to try it.
+                  </p>
                   <div>
-
                     <button
                       type="button"
                       className="btn btn-primary "
@@ -757,40 +768,54 @@ const UiModal = () => {
                       data-toggle="modal"
                     >
                       Static backdrop modal
-                          </button>
+                    </button>
                     <Modal
                       isOpen={modal_backdrop}
                       toggle={() => {
                         tog_backdrop()
                       }}
-                      backdrop={'static'}
+                      backdrop={"static"}
                       id="staticBackdrop"
                     >
                       <div className="modal-header">
-                        <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" className="btn-close"
+                        <h5 className="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          className="btn-close"
                           onClick={() => {
                             setmodal_backdrop(false)
-                          }} aria-label="Close"></button>
+                          }}
+                          aria-label="Close"
+                        ></button>
                       </div>
                       <div className="modal-body">
-                        <p>I will not close if you click outside me. Don't even try to press escape key.</p>
+                        <p>
+                          I will not close if you click outside me. Don't even
+                          try to press escape key.
+                        </p>
                       </div>
                       <div className="modal-footer">
-                        <button type="button" className="btn btn-light" onClick={() => {
-                          setmodal_backdrop(false)
-                        }}>Close</button>
-                        <button type="button" className="btn btn-primary">Understood</button>
+                        <button
+                          type="button"
+                          className="btn btn-light"
+                          onClick={() => {
+                            setmodal_backdrop(false)
+                          }}
+                        >
+                          Close
+                        </button>
+                        <button type="button" className="btn btn-primary">
+                          Understood
+                        </button>
                       </div>
                     </Modal>
-
                   </div>
-
                 </CardBody>
               </Card>
             </Col>
           </Row>
-
         </Container>
       </div>
     </React.Fragment>

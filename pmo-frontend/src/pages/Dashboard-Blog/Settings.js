@@ -36,9 +36,7 @@ const Settings = props => {
                     </div>
                   </div>
 
-                  <UncontrolledDropdown
-                    className="ms-2"
-                  >
+                  <UncontrolledDropdown className="ms-2">
                     <DropdownToggle
                       className="btn btn-light btn-sm"
                       color="#eff2f7"

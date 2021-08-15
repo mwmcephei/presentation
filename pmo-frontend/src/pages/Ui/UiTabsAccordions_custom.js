@@ -156,8 +156,8 @@ function UiTabsAccordions(props) {
           </title>
         </MetaTags>
         <Container fluid={true}>
-         <Row>
-         <Card>
+          <Row>
+            <Card>
               <CardBody>
                 <Row>
                   <Col lg={6}>
@@ -413,11 +413,7 @@ function UiTabsAccordions(props) {
                 </Row>
               </CardBody>
             </Card>
-         </Row>
-
-
-            
-          
+          </Row>
         </Container>
       </div>
     </React.Fragment>

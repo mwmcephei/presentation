@@ -3,27 +3,36 @@ import * as fs from "fs";
 import { InjectModel } from '@nestjs/mongoose';
 import { Sheet, SheetSchema } from '../schemas/sheet.schema';
 import { Measure, MeasureSchema } from '../schemas/measure.schema';
-import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
+import { Artefact, ArtefactSchema } from '../schemas/artefact.schema';
 import { Budget, BudgetSchema } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
+import { resolve } from "path";
+import * as XLSX from "xlsx";
 
+<<<<<<< HEAD
 const XLSX = require('xlsx');
+=======
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
 
 @Injectable()
 export class XlsxParserService {
-  path: string = '/Users/mwm/Desktop/pmo_test/pmo/pmo-backend/src/xlsx-parser/';      // change to this directory
   fileName: string = 'test_data.xlsx'
   kpi_file_1: string = 'KPI-report_1.xlsx'
   kpi_file_2: string = 'KPI-report_2.xlsx'
   budget_file: string = 'budget_report.xlsx'
 
   constructor(
+<<<<<<< HEAD
     @InjectModel('Artifact') private artifactModel: Model<Artifact>,
+=======
+    @InjectModel('Artefact') private artefactModel: Model<Artefact>,
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     @InjectModel('Measure') private measureModel: Model<Measure>,
     @InjectModel('Sheet') private sheetModel: Model<Sheet>,
     @InjectModel('Budget') private budgetModel: Model<Budget>,
 
   ) { }
+<<<<<<< HEAD
 
 
   /*
@@ -39,11 +48,40 @@ export class XlsxParserService {
     return JSON.stringify(result.artefacts)
   }
 
+=======
+
+
+  /*
+    async getAllArtefacts(): Promise<string> {
+      const result = await this.artefactModel.find()
+      console.log(result)
+      return JSON.stringify(result)
+    }
+  */
+  async getArtefactsOfMeasure(measureID: string): Promise<string> {
+    const measure = await this.measureModel.findById(measureID)
+    if (measure) {
+      const populatedMeasure = await measure.populate("artefacts").execPopulate()
+      return JSON.stringify(populatedMeasure.artefacts)
+    } else {
+      return JSON.stringify("Error")
+    }
+  }
+
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
   async getAllMeasures(): Promise<string> {
     const result = await this.measureModel.find()
     console.log(result)
     return JSON.stringify(result)
   }
+<<<<<<< HEAD
+
+  async getOverview(): Promise<string> {
+    const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
+    console.log(excelSheet)
+    return JSON.stringify(excelSheet)
+  }
+=======
 
   async getOverview(): Promise<string> {
     const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
@@ -57,8 +95,18 @@ export class XlsxParserService {
     return JSON.stringify(excelSheet)
   }
 
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
+
+  async getBudget(): Promise<string> {
+    const excelSheet = await this.budgetModel.findOne()   // TO DO: safeguard for duplicates
+    console.log(excelSheet)
+    return JSON.stringify(excelSheet)
+  }
 
 
+  // ---------  parsing functions  -----------------------------
+
+<<<<<<< HEAD
 
   // ---------  parsing functions  -----------------------------
 
@@ -91,12 +139,83 @@ export class XlsxParserService {
           }
         }
       })
+=======
+  async createOverview(): Promise<string> {
+    const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
+    if (excelSheet) {
+      const numberOfMeasures = excelSheet.measures.length
+      console.log(numberOfMeasures)
+
+      const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+
+      const overview_object = workbook.Sheets["Status Overview"]
+      //    console.log[overview_object]
+
+      // ------total budget
+      let totalBudget = 0;
+      const allBudgetsOfMeasures = []                     // <-----------------  [{measureName, budget}, ...]
+      Object.keys(overview_object).filter(key => {
+        if (key.includes("I")) {
+          const row = parseInt(key.substring(1))
+          if (row > 4) {
+            const measureName = overview_object["D" + row]["v"]
+            //         console.log(overview_object[key])
+            const budgetAsString = overview_object[key]["v"]
+            const budget = parseInt(budgetAsString.substring(0, budgetAsString.indexOf("k"))) * 1000
+            totalBudget += budget
+            const currentBudget = {
+              [measureName]: budget
+            }
+            allBudgetsOfMeasures.push(currentBudget)
+          }
+        }
+      })
+
+      //   Object.keys(overview_object).map(key => {
+      //     totalBudget += allBudgetsOfMeasures[key]
+      //   })
+      //  console.log("totalBudget   " + totalBudget)
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
 
       //   Object.keys(overview_object).map(key => {
       //     totalBudget += allBudgetsOfMeasures[key]
       //   })
       //  console.log("totalBudget   " + totalBudget)
 
+<<<<<<< HEAD
+=======
+      // ------overall status
+      const all_risksBudgetsAndArtefacts = []
+      Object.keys(overview_object).filter(key => {
+        if (key.includes("P")) {
+          const row = parseInt(key.substring(1))
+          if (row > 4) {
+            all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+          }
+        }
+      })
+      Object.keys(overview_object).filter(key => {
+        if (key.includes("Q")) {
+          const row = parseInt(key.substring(1))
+          if (row > 4) {
+            all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+          }
+        }
+      })
+      Object.keys(overview_object).filter(key => {
+        if (key.includes("R")) {
+          const row = parseInt(key.substring(1))
+          if (row > 4) {
+            all_risksBudgetsAndArtefacts.push(overview_object[key]["v"])
+          }
+        }
+      })
+      //    console.log(all_risksBudgetsAndArtefacts)
+      let overallStatus = 0
+      all_risksBudgetsAndArtefacts.map(a => {
+        if (a > overallStatus) { overallStatus = a }
+      })
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
 
       // ------overall status
       let all_risksBudgetsAndArtefacts = []
@@ -135,12 +254,23 @@ export class XlsxParserService {
       // console.log(allBudgetsOfMeasures)
       let sum_avgProgressTimesBudgetOfMEasures = 0
 
+<<<<<<< HEAD
       for (let m = 0; m < excelSheet.measures.length; m++) {
         // console.log(excelSheet.measures[m])
         console.log("TEST")
 
         const measure = await (await this.measureModel.findById(excelSheet.measures[m])).populate("artefacts").execPopulate()
 
+=======
+
+
+      for (let m = 0; m < excelSheet.measures.length; m++) {
+        // console.log(excelSheet.measures[m])
+        console.log("TEST")
+
+        const measure = await (await this.measureModel.findById(excelSheet.measures[m])).populate("artefacts").execPopulate()
+
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
         console.log("TESTTEST")
         let avgProgressOfArtefacts = 0
         measure.artefacts.map(art => {
@@ -161,6 +291,7 @@ export class XlsxParserService {
       }
       const progressOverviewBar_result = sum_avgProgressTimesBudgetOfMEasures / totalBudget
 
+<<<<<<< HEAD
 
       // ------KPI Progress 
       const KPIprogressOfAllMeasures = this.getKPIProgressData('kpi_progress.xlsx')
@@ -176,8 +307,35 @@ export class XlsxParserService {
         })
       })
       const KPIProgress_result = sum / totalBudget
+=======
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
 
       //   console.log(avgProgress)
+
+<<<<<<< HEAD
+      excelSheet.update({
+        totalBudget: totalBudget,
+        overallStatus: overallStatus,
+        progress: Math.round(progressOverviewBar_result * 100) / 100,
+        kpiProgress: Math.round(KPIProgress_result * 100) / 100,
+      }).then(result => {
+        console.log("updated")
+      })
+=======
+      // ------KPI Progress 
+      const KPIprogressOfAllMeasures = this.getKPIProgressData('kpi_progress.xlsx')
+      let sum = 0
+      KPIprogressOfAllMeasures.map(item => {    //  [{measurename: ..., kpiProgress: ...}, ...]
+        let thisBudget = 0
+        allBudgetsOfMeasures.map(budgetOfMeasure => {
+          if (budgetOfMeasure[item.measureName]) {
+            const temp = item.progress * budgetOfMeasure[item.measureName]
+            sum += temp
+            console.log(item.measureName + "   " + item.progress + " *  " + budgetOfMeasure[item.measureName] + ":  " + temp)
+          }
+        })
+      })
+      const KPIProgress_result = sum / totalBudget
 
       excelSheet.update({
         totalBudget: totalBudget,
@@ -187,6 +345,7 @@ export class XlsxParserService {
       }).then(result => {
         console.log("updated")
       })
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
 
       console.log("numberOfMeasures   " + numberOfMeasures)
       console.log("totalBudget   " + totalBudget)
@@ -204,13 +363,21 @@ export class XlsxParserService {
 
   // aux function for createOverview()
   getKPIProgressData(kpiFile: string): any {
+<<<<<<< HEAD
     const workbook = XLSX.readFile(this.path + kpiFile);
+=======
+    const workbook = XLSX.readFile(resolve(__dirname, kpiFile))
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     const overview_object = workbook.Sheets["Plan view"]
     //  console.log(overview_object)
     // D:measure name, G current progress, H target progress
     // TO DO: get number of rows programmatically    ---   22
     const numbeOfRows = 22
+<<<<<<< HEAD
     let result = []
+=======
+    const result = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     for (let i = 1; i <= numbeOfRows; i++) {
       const key_measureName = "D" + (4 + i)       // first enry at row 4
       const key_actualProgress = "G" + (4 + i)
@@ -245,9 +412,17 @@ export class XlsxParserService {
       .then(newlySavedExcelSheet => {
         console.log(newlySavedExcelSheet)
 
+<<<<<<< HEAD
         const workbook = XLSX.readFile(this.path + this.fileName,);
         // 'sheet' corresponds to measure
         const sheet_name_list = workbook.SheetNames;
+=======
+        const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+        // 'sheet' corresponds to measure
+        const sheet_name_list = workbook.SheetNames;
+        console.log(typeof (workbook.SheetNames))
+
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
         sheet_name_list.map(sheetName => {
           // save measure to DB
           if (sheetName !== "Status Overview" && sheetName !== "Overview") {
@@ -267,7 +442,7 @@ export class XlsxParserService {
                 const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
                 const artefacts = this.getArtefacts_fromLinesArray(data)
 
-                let savedArtefact_IDs = []
+                const savedArtefact_IDs = []
                 artefacts.map(art => {
                   const toSave = {
                     id: art["__EMPTY_1"],
@@ -277,8 +452,13 @@ export class XlsxParserService {
                     achievement: art["__EMPTY_13"],
                     work: art["__EMPTY_21"],
                   }
+<<<<<<< HEAD
                   const artifact = new this.artifactModel(toSave)
                   artifact.save()
+=======
+                  const artefact = new this.artefactModel(toSave)
+                  artefact.save()
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
                     .then(async savedArtefact => {
                       savedArtefact_IDs.push(savedArtefact._id)
                       await this.measureModel.updateOne({ _id: savedMeasure._id }, { $push: { artefacts: savedArtefact } });
@@ -298,10 +478,17 @@ export class XlsxParserService {
     return sheet.filter(line => {
       const firstKey = Object.keys(line)[0]
       if (firstKey === "__EMPTY_1") {
+<<<<<<< HEAD
         let firstItem = line[firstKey]
         try {
           if (parseInt(firstItem) < 10 && Object.keys(line).length > 2) {
             //       console.log(line)
+=======
+        const firstItem = line[firstKey]
+        try {
+          if (parseInt(firstItem) < 10 && Object.keys(line).length > 2) {
+            // console.log(line)
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
             return line
           }
         } catch (e) {
@@ -322,11 +509,18 @@ export class XlsxParserService {
 
   // adds status info to measures 
   parse_overview(): string {
+<<<<<<< HEAD
     const workbook = XLSX.readFile(this.path + this.fileName);
     //     console.log(workbook.Sheets[workbook.SheetNames[0]])
     // parse overview
     const overview_object = workbook.Sheets["Status Overview"]
     let risks = []                                                    // RESTRUCTURE!!!!!!!
+=======
+    const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+    // parse overview
+    const overview_object = workbook.Sheets["Status Overview"]
+    const risks = []                                                    // RESTRUCTURE!!!!!!!
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(overview_object).filter(key => {
       if (key.includes("P")) {
         const row = parseInt(key.substring(1))
@@ -338,7 +532,11 @@ export class XlsxParserService {
         }
       }
     })
+<<<<<<< HEAD
     let budgets = []
+=======
+    const budgets = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(overview_object).filter(key => {
       if (key.includes("Q")) {
         const row = parseInt(key.substring(1))
@@ -350,7 +548,11 @@ export class XlsxParserService {
         }
       }
     })
+<<<<<<< HEAD
     let artefacts = []
+=======
+    const artefacts = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(overview_object).filter(key => {
       if (key.includes("R")) {
         const row = parseInt(key.substring(1))
@@ -362,7 +564,11 @@ export class XlsxParserService {
         }
       }
     })
+<<<<<<< HEAD
     let result = []
+=======
+    const result = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(overview_object)
       .filter(async key => {
         if (key.includes("D")) {
@@ -397,10 +603,17 @@ export class XlsxParserService {
 
 
   async parseKPI(): Promise<string> {
+<<<<<<< HEAD
     const workbook = XLSX.readFile(this.path + this.kpi_file_2);
     const overview_object = workbook.Sheets["Plan view"]
     // get row number of measures. measure names in column "D"
     let rowsOfMeasures = []
+=======
+    const workbook = XLSX.readFile(resolve(__dirname, this.kpi_file_2))
+    const overview_object = workbook.Sheets["Plan view"]
+    // get row number of measures. measure names in column "D"
+    const rowsOfMeasures = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(overview_object).filter(key => {
       if (key.includes("D")) {
         const row = parseInt(key.substring(1))
@@ -434,6 +647,7 @@ export class XlsxParserService {
           const row = parseInt(key.substring(1))
           if (row == rowOfThisMeasure) {
             actuals = overview_object[key]["v"]
+<<<<<<< HEAD
           }
         }
         if (key.includes("H")) {
@@ -442,6 +656,16 @@ export class XlsxParserService {
             target = overview_object[key]["v"]
           }
         }
+=======
+          }
+        }
+        if (key.includes("H")) {
+          const row = parseInt(key.substring(1))
+          if (row == rowOfThisMeasure) {
+            target = overview_object[key]["v"]
+          }
+        }
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
         if (key.includes("L")) {                        // TO DO: clarify which last month
           const row = parseInt(key.substring(1))
           if (row == rowOfThisMeasure) {
@@ -474,7 +698,11 @@ export class XlsxParserService {
 
 
   parseBudgetMonths(): string {
+<<<<<<< HEAD
     const workbook = XLSX.readFile(this.path + this.budget_file);
+=======
+    const workbook = XLSX.readFile(resolve(__dirname, this.budget_file))
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     const overview_object = workbook.Sheets["1. Overview"]
     const detailes_object = workbook.Sheets["2. Detailed view"]
 
@@ -483,7 +711,11 @@ export class XlsxParserService {
     const totalApprovedBudget = overview_object["M29"]["v"]
 
     // get month columns EUR1 EUR2 .... row 12
+<<<<<<< HEAD
     let month_columns = []
+=======
+    const month_columns = []
+>>>>>>> 691290d02993c7b54c9d932ce1d51e5f71ca454a
     Object.keys(detailes_object).map(key => {
       //       const test = key.substring(key.length - 2)
       //       console.log(test)

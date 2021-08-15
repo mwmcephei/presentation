@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 
 import { Col, Row, Card, CardBody, CardTitle, Container } from "reactstrap"
@@ -36,55 +36,31 @@ const UiButtons = () => {
                     serving its own semantic purpose.
                   </p>
                   <div className="button-items">
-                    <Button
-                      color="primary"
-                      className="btn btn-primary "
-                    >
+                    <Button color="primary" className="btn btn-primary ">
                       Primary
                     </Button>
-                    <Button
-                      color="secondary"
-                      className="btn btn-secondary "
-                    >
+                    <Button color="secondary" className="btn btn-secondary ">
                       Secondary
                     </Button>
-                    <Button
-                      color="success"
-                      className="btn btn-success "
-                    >
+                    <Button color="success" className="btn btn-success ">
                       Success
                     </Button>
-                    <Button
-                      color="info"
-                      className="btn btn-info "
-                    >
+                    <Button color="info" className="btn btn-info ">
                       Info
                     </Button>
-                    <Button
-                      color="warning"
-                      className="btn btn-warning "
-                    >
+                    <Button color="warning" className="btn btn-warning ">
                       Warning
                     </Button>
-                    <Button
-                      color="danger"
-                      className="btn btn-danger "
-                    >
+                    <Button color="danger" className="btn btn-danger ">
                       Danger
                     </Button>
-                    <Button
-                      color="dark"
-                      className="btn btn-dark "
-                    >
+                    <Button color="dark" className="btn btn-dark ">
                       Dark
                     </Button>
                     <Button color="link" className="btn btn-link ">
                       Link
                     </Button>
-                    <Button
-                      color="light"
-                      className="btn btn-light "
-                    >
+                    <Button color="light" className="btn btn-light ">
                       Light
                     </Button>
                   </div>
@@ -102,49 +78,25 @@ const UiButtons = () => {
                     button.
                   </p>
                   <div className="button-items">
-                    <Button
-                      color="primary"
-                      outline
-                      className=""
-                    >
+                    <Button color="primary" outline className="">
                       Primary
                     </Button>
                     <Button color="secondary" outline className="">
                       Secondary
                     </Button>
-                    <Button
-                      color="success"
-                      outline
-                      className=""
-                    >
+                    <Button color="success" outline className="">
                       Success
                     </Button>
-                    <Button
-                      color="info"
-                      outline
-                      className=""
-                    >
+                    <Button color="info" outline className="">
                       Info
                     </Button>
-                    <Button
-                      color="warning"
-                      outline
-                      className=""
-                    >
+                    <Button color="warning" outline className="">
                       Warning
                     </Button>
-                    <Button
-                      color="danger"
-                      outline
-                      className=""
-                    >
+                    <Button color="danger" outline className="">
                       Danger
                     </Button>
-                    <Button
-                      color="dark"
-                      outline
-                      className=""
-                    >
+                    <Button color="dark" outline className="">
                       Dark
                     </Button>
                     <Button color="light" outline className="">
@@ -164,46 +116,25 @@ const UiButtons = () => {
                     Use class <code>.btn-rounded</code> for button round border.
                   </p>
                   <div className="button-items">
-                    <Button
-                      color="primary"
-                      className="btn-rounded "
-                    >
+                    <Button color="primary" className="btn-rounded ">
                       Primary
                     </Button>
-                    <Button
-                      color="secondary"
-                      className="btn-rounded "
-                    >
+                    <Button color="secondary" className="btn-rounded ">
                       Secondary
                     </Button>
-                    <Button
-                      color="success"
-                      className="btn-rounded "
-                    >
+                    <Button color="success" className="btn-rounded ">
                       Success
                     </Button>
-                    <Button
-                      color="info"
-                      className="btn-rounded "
-                    >
+                    <Button color="info" className="btn-rounded ">
                       Info
                     </Button>
-                    <Button
-                      color="warning"
-                      className="btn-rounded "
-                    >
+                    <Button color="warning" className="btn-rounded ">
                       Warning
                     </Button>
-                    <Button
-                      color="danger"
-                      className="btn-rounded "
-                    >
+                    <Button color="danger" className="btn-rounded ">
                       Danger
                     </Button>
-                    <Button
-                      color="dark"
-                      className="btn-rounded "
-                    >
+                    <Button color="dark" className="btn-rounded ">
                       Dark
                     </Button>
                     <Button color="link" className="btn-rounded ">
@@ -223,45 +154,27 @@ const UiButtons = () => {
                   <p className="mb-4 card-title-desc">Add icon in button.</p>
 
                   <div className="button-items">
-                    <button
-                      type="button"
-                      className="btn btn-primary "
-                    >
+                    <button type="button" className="btn btn-primary ">
                       <i className="bx bx-smile font-size-16 align-middle me-2"></i>{" "}
                       Primary
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-success "
-                    >
+                    <button type="button" className="btn btn-success ">
                       <i className="bx bx-check-double font-size-16 align-middle me-2"></i>{" "}
                       Success
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-warning "
-                    >
+                    <button type="button" className="btn btn-warning ">
                       <i className="bx bx-error font-size-16 align-middle me-2"></i>{" "}
                       Warning
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-danger "
-                    >
+                    <button type="button" className="btn btn-danger ">
                       <i className="bx bx-block font-size-16 align-middle me-2"></i>{" "}
                       Danger
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-dark "
-                    >
+                    <button type="button" className="btn btn-dark ">
                       <i className="bx bx-loader bx-spin font-size-16 align-middle me-2"></i>{" "}
                       Loading
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-light "
-                    >
+                    <button type="button" className="btn btn-light ">
                       <i className="bx bx-hourglass bx-spin font-size-16 align-middle me-2"></i>{" "}
                       Loading
                     </button>
@@ -415,10 +328,7 @@ const UiButtons = () => {
                             <i className="mdi mdi-download d-block font-size-16"></i>{" "}
                             Download
                           </button>
-                          <button
-                            type="button"
-                            className="btn btn-light  w-sm"
-                          >
+                          <button type="button" className="btn btn-light  w-sm">
                             <i className="mdi mdi-upload d-block font-size-16"></i>{" "}
                             Upload
                           </button>
@@ -456,10 +366,7 @@ const UiButtons = () => {
                   </p>
 
                   <div className="button-items">
-                    <Button
-                      color="primary"
-                      className="btn btn-primary btn-lg "
-                    >
+                    <Button color="primary" className="btn btn-primary btn-lg ">
                       Large button
                     </Button>
                     <Button
@@ -468,10 +375,7 @@ const UiButtons = () => {
                     >
                       Large button
                     </Button>
-                    <Button
-                      color="primary"
-                      className="btn btn-primary btn-sm "
-                    >
+                    <Button color="primary" className="btn btn-primary btn-sm ">
                       Small button
                     </Button>
                     <Button
@@ -496,28 +400,16 @@ const UiButtons = () => {
                   </p>
 
                   <div className="button-items">
-                    <button
-                      type="button"
-                      className="btn btn-primary w-xs "
-                    >
+                    <button type="button" className="btn btn-primary w-xs ">
                       Xs
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-danger w-sm "
-                    >
+                    <button type="button" className="btn btn-danger w-sm ">
                       Small
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-warning w-md "
-                    >
+                    <button type="button" className="btn btn-warning w-md ">
                       Medium
                     </button>
-                    <button
-                      type="button"
-                      className="btn btn-success w-lg "
-                    >
+                    <button type="button" className="btn btn-success w-lg ">
                       Large
                     </button>
                   </div>
@@ -545,11 +437,7 @@ const UiButtons = () => {
                   </p>
 
                   <div className="button-items">
-                    <Link
-                      className="btn btn-primary "
-                      to="#"
-                      role="button"
-                    >
+                    <Link className="btn btn-primary " to="#" role="button">
                       Link
                     </Link>
                     <Button
@@ -670,26 +558,86 @@ const UiButtons = () => {
                         className="btn-group btn-group-toggle"
                         data-toggle="buttons"
                       >
-                        <input type="checkbox" className="btn-check" id="btncheck1" autoComplete="off" defaultChecked />
-                        <label className="btn btn-primary" htmlFor="btncheck1">Checkbox 1</label>
+                        <input
+                          type="checkbox"
+                          className="btn-check"
+                          id="btncheck1"
+                          autoComplete="off"
+                          defaultChecked
+                        />
+                        <label className="btn btn-primary" htmlFor="btncheck1">
+                          Checkbox 1
+                        </label>
 
-                        <input type="checkbox" className="btn-check" id="btncheck2" autoComplete="off" />
-                        <label className="btn btn-primary" htmlFor="btncheck2">Checkbox 2</label>
+                        <input
+                          type="checkbox"
+                          className="btn-check"
+                          id="btncheck2"
+                          autoComplete="off"
+                        />
+                        <label className="btn btn-primary" htmlFor="btncheck2">
+                          Checkbox 2
+                        </label>
 
-                        <input type="checkbox" className="btn-check" id="btncheck3" autoComplete="off" />
-                        <label className="btn btn-primary" htmlFor="btncheck3">Checkbox 3</label>
+                        <input
+                          type="checkbox"
+                          className="btn-check"
+                          id="btncheck3"
+                          autoComplete="off"
+                        />
+                        <label className="btn btn-primary" htmlFor="btncheck3">
+                          Checkbox 3
+                        </label>
                       </div>
                     </Col>
                     <Col xl={6}>
-                      <div className="btn-group mt-2 mt-xl-0" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" defaultChecked />
-                        <label className="btn btn-secondary" htmlFor="btnradio1">Radio 1</label>
+                      <div
+                        className="btn-group mt-2 mt-xl-0"
+                        role="group"
+                        aria-label="Basic radio toggle button group"
+                      >
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="btnradio"
+                          id="btnradio1"
+                          autoComplete="off"
+                          defaultChecked
+                        />
+                        <label
+                          className="btn btn-secondary"
+                          htmlFor="btnradio1"
+                        >
+                          Radio 1
+                        </label>
 
-                        <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autoComplete="off" />
-                        <label className="btn btn-secondary" htmlFor="btnradio2">Radio 2</label>
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="btnradio"
+                          id="btnradio2"
+                          autoComplete="off"
+                        />
+                        <label
+                          className="btn btn-secondary"
+                          htmlFor="btnradio2"
+                        >
+                          Radio 2
+                        </label>
 
-                        <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autoComplete="off" />
-                        <label className="btn btn-secondary" htmlFor="btnradio3">Radio 3</label>
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="btnradio"
+                          id="btnradio3"
+                          autoComplete="off"
+                        />
+                        <label
+                          className="btn btn-secondary"
+                          htmlFor="btnradio3"
+                        >
+                          Radio 3
+                        </label>
                       </div>
                     </Col>
                   </Row>
@@ -749,8 +697,8 @@ const UiButtons = () => {
                   <CardTitle>Button toolbar</CardTitle>
                   <p className="mb-3 card-title-desc">
                     Combine sets of button groups into button toolbars for more
-                    complex components. Use utility className as needed to
-                    space out groups, buttons, and more.
+                    complex components. Use utility className as needed to space
+                    out groups, buttons, and more.
                   </p>
 
                   <div

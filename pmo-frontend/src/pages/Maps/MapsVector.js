@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Row,
@@ -18,7 +18,7 @@ const MapsVector = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-      <MetaTags>
+        <MetaTags>
           <title>Vector Maps | Skote - React Admin & Dashboard Template</title>
         </MetaTags>
         <Container fluid={true}>

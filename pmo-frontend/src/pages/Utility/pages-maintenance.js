@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { Container, Row, Col } from "reactstrap"
 
@@ -22,7 +22,7 @@ const PagesMaintenance = () => {
             <Col xs="12" className="text-center">
               <div className="home-wrapper">
                 <div className="mb-5">
-                  <Link to="/dashboard" className="d-block auth-logo" >
+                  <Link to="/dashboard" className="d-block auth-logo">
                     <img src={logo} alt="logo" height="20" />
                   </Link>
                 </div>

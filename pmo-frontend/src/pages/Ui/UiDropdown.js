@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Col,
   Row,
@@ -74,8 +74,7 @@ const UiDropdown = () => {
                         toggle={() => setSinglebtn(!singlebtn)}
                       >
                         <DropdownToggle className="btn btn-secondary" caret>
-                          Dropdown button{" "}
-                          <i className="mdi mdi-chevron-down" />
+                          Dropdown button <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
                         <DropdownMenu>
                           <DropdownItem>Action</DropdownItem>
@@ -133,7 +132,10 @@ const UiDropdown = () => {
                       isOpen={btnsecondary1}
                       toggle={() => setBtnsecondary1(!btnsecondary1)}
                     >
-                      <DropdownToggle tag="button" className="btn btn-secondary">
+                      <DropdownToggle
+                        tag="button"
+                        className="btn btn-secondary"
+                      >
                         Secondary <i className="mdi mdi-chevron-down" />
                       </DropdownToggle>
                       <DropdownMenu>
@@ -298,7 +300,6 @@ const UiDropdown = () => {
                       </ButtonDropdown>
                     </div>
 
-
                     <div className="btn-group">
                       <ButtonDropdown
                         isOpen={drp_warning1}
@@ -306,7 +307,7 @@ const UiDropdown = () => {
                       >
                         <Button id="caret" color="warning">
                           Warning
-                      </Button>
+                        </Button>
                         <DropdownToggle caret color="warning">
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
@@ -327,7 +328,7 @@ const UiDropdown = () => {
                       >
                         <Button id="caret" color="danger">
                           Danger
-                      </Button>
+                        </Button>
                         <DropdownToggle caret color="danger">
                           <i className="mdi mdi-chevron-down" />
                         </DropdownToggle>
@@ -576,7 +577,11 @@ const UiDropdown = () => {
                       <Button id="caret" color="info">
                         Split dropright
                       </Button>
-                      <DropdownToggle caret color="info" className="dropdown-toggle-split">
+                      <DropdownToggle
+                        caret
+                        color="info"
+                        className="dropdown-toggle-split"
+                      >
                         <i className="mdi mdi-chevron-right" />
                       </DropdownToggle>
                       <DropdownMenu data-popper-placement="right-start">

@@ -47,10 +47,9 @@ import {
   ON_ADD_REPLY,
   ON_ADD_REPLY_SUCCESS,
   ON_ADD_REPLY_FAIL,
-
   ON_ADD_COMMENT,
   ON_ADD_COMMENT_SUCCESS,
-  ON_ADD_COMMENT_FAIL
+  ON_ADD_COMMENT_FAIL,
 } from "./actionTypes"
 
 export const getProducts = () => ({

@@ -35,4 +35,4 @@ Authmiddleware.propTypes = {
   layout: PropTypes.any,
 }
 
-export default Authmiddleware;
+export default Authmiddleware

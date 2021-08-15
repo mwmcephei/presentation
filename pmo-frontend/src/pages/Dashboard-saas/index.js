@@ -41,8 +41,8 @@ const DashboardSaas = props => {
       color: "warning",
       desc: "From previous period",
     },
-  ];
-  
+  ]
+
   return (
     <React.Fragment>
       <div className="page-content">

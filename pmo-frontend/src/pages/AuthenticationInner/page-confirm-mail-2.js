@@ -1,6 +1,6 @@
 import React from "react"
 import CarouselPage from "./CarouselPage"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 // import images
 import logodark from "../../assets/images/logo-dark.png"
@@ -13,7 +13,9 @@ const ConfirmMail2 = () => {
     <React.Fragment>
       <div>
         <MetaTags>
-          <title>Confirm Mail 2 | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Confirm Mail 2 | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container fluid className="p-0">
           <Row className="row g-0">

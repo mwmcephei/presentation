@@ -2,13 +2,12 @@ import React from "react"
 import { propTypes } from "react-bootstrap-editable"
 import { Card, CardBody, CardTitle, Progress } from "reactstrap"
 
-const TopCities = (props) => {
+const TopCities = props => {
   return (
     <React.Fragment>
-
       <Card>
         <CardBody>
-{/*
+          {/*
           <CardTitle className="mb-4">Top Cities Selling Product</CardTitle>
           <div className="text-center">
             <div className="mb-4">
@@ -55,7 +54,7 @@ const TopCities = (props) => {
                   </td>
                 </tr>
 
-{ /*              
+                {/*              
                 <tr>
                   <td>
                     <p className="mb-0">San Diego</p>
@@ -73,15 +72,11 @@ const TopCities = (props) => {
                   </td>
                 </tr>
 */}
-
               </tbody>
             </table>
           </div>
-
-         
         </CardBody>
       </Card>
-
     </React.Fragment>
   )
 }

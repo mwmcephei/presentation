@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import SweetAlert from "react-bootstrap-sweetalert"
 import { Card, Row, Col, CardBody, CardTitle, Container } from "reactstrap"
@@ -46,7 +46,7 @@ class UiSessionTimeout extends Component {
   function1() {
     if (window.location.pathname === "/ui-session-timeout") {
       window.location = "/login"
-    }else {
+    } else {
     }
   }
   function2() {
@@ -71,9 +71,11 @@ class UiSessionTimeout extends Component {
     return (
       <React.Fragment>
         <div className="page-content">
-        <MetaTags>
-          <title>Session Timeout | Skote - React Admin & Dashboard Template</title>
-        </MetaTags>
+          <MetaTags>
+            <title>
+              Session Timeout | Skote - React Admin & Dashboard Template
+            </title>
+          </MetaTags>
           <Container fluid={true}>
             {this.state.timeralert}
 

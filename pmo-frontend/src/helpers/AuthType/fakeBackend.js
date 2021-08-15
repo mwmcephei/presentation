@@ -959,7 +959,7 @@ const fakeBackend = () => {
               if (replyIdx > -1) {
                 if (
                   modifiedProductComments[commentIdx]["replies"][replyIdx][
-                  "hasLiked"
+                    "hasLiked"
                   ]
                 ) {
                   modifiedProductComments[commentIdx]["replies"][replyIdx][

@@ -1,9 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Document } from 'mongoose';
-import { Artifact } from './artifact.schema';
+import { Artefact } from './artefact.schema';
 
-export type MeasureDocument = Measure & Document;
+export type MeasureDocument = Measure & mongoose.Document;
 
 @Schema()
 export class Measure {
@@ -22,8 +21,8 @@ export class Measure {
   @Prop()
   kpiProgress: number;
 
-  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Artifact' })
-  artefacts: [Artifact];
+  @Prop({ type: [mongoose.Schema.Types.ObjectId], ref: 'Artefact' })
+  artefacts: [Artefact];
 }
 
 export const MeasureSchema = SchemaFactory.createForClass(Measure);
