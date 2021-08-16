@@ -56,7 +56,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -65,7 +65,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -74,7 +74,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -105,7 +105,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -114,7 +114,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -123,7 +123,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -151,7 +151,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -160,7 +160,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -169,7 +169,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -204,7 +204,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -213,7 +213,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -222,7 +222,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -252,7 +252,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -261,7 +261,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -270,7 +270,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -299,7 +299,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Facebook"
                                   >
-                                    <i className="mdi mdi-facebook"/>
+                                    <i className="mdi mdi-facebook" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -308,7 +308,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Linkedin"
                                   >
-                                    <i className="mdi mdi-linkedin"/>
+                                    <i className="mdi mdi-linkedin" />
                                   </Link>
                                 </div>
                                 <div className="flex-fill">
@@ -317,7 +317,7 @@ const OurTeam = () => {
                                     data-toggle="tooltip"
                                     title="Google"
                                   >
-                                    <i className="mdi mdi-google"/>
+                                    <i className="mdi mdi-google" />
                                   </Link>
                                 </div>
                               </div>
@@ -339,7 +339,7 @@ const OurTeam = () => {
                     className="border-0"
                     disabled={step1}
                   >
-                    <i className="mdi mdi-chevron-left"/>
+                    <i className="mdi mdi-chevron-left" />
                   </button>
                   <button
                     type="button"
@@ -350,7 +350,7 @@ const OurTeam = () => {
                     className="border-0"
                     disabled={step2}
                   >
-                    <i className="mdi mdi-chevron-right"/>
+                    <i className="mdi mdi-chevron-right" />
                   </button>
                 </div>
               </div>

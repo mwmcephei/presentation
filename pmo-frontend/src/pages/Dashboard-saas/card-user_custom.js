@@ -10,21 +10,38 @@ import {
 //Import Images
 import avatar1 from "../../assets/images/users/avatar-1.jpg"
 
-const getCircle = (number) => {
+const getCircle = number => {
   switch (number) {
     case 0:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-success  text-muted text-truncate" style={{ height: '30px', width: '30px' }} ></div>)
+      return (
+        <div
+          className="rounded-circle bg-success  text-muted text-truncate"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
     case 1:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-warning align-self-centerr" style={{ height: '30px', width: '30px' }} ></div>)
+      return (
+        <div
+          className="rounded-circle bg-warning align-self-centerr"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
     case 2:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-danger align-self-center" style={{ height: '30px', width: '30px' }} ></div>)
+      return (
+        <div
+          className="rounded-circle bg-danger align-self-center"
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
     default:
-      return (<div className="text-center rounded-circle " style={{ height: '30px', width: '30px' }} ></div>)
+      return (
+        <div
+          className="rounded-circle "
+          style={{ height: "30px", width: "30px" }}
+        ></div>
+      )
   }
 }
-
-
-
 
 function CardUser(props) {
   const [settingsMenu, setSettingsMenu] = useState(false)
@@ -60,7 +77,6 @@ function CardUser(props) {
               <CardTitle className="mb-4">Short Summary</CardTitle>
               <Row>
                 <div>
-
                   <div className="text-lg-center mt-4 mt-lg-0">
                     <Row>
                       <Col xs="4">
@@ -95,14 +111,10 @@ function CardUser(props) {
                             <div className="justify-content-center mx-auto">
                               {getCircle(props.signal)}
                             </div>
-
                           </div>
-
-
                         </div>
                       </Col>
                     </Row>
-
 
                     <Row className="mt-3">
                       <div>
@@ -146,7 +158,6 @@ function CardUser(props) {
                       </div>
                     </Row>
                   </div>
-
                 </div>
               </Row>
             </CardBody>

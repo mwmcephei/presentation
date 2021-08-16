@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { Col, Container, Form, Row } from "reactstrap"
 
@@ -14,7 +14,7 @@ const Register2 = () => {
   return (
     <React.Fragment>
       <div>
-      <MetaTags>
+        <MetaTags>
           <title>Register 2 | Skote - React Admin & Dashboard Template</title>
         </MetaTags>
         <Container fluid className="p-0">
@@ -50,41 +50,40 @@ const Register2 = () => {
                       </div>
 
                       <div className="mt-4">
+                        <AvForm className="form-horizontal">
+                          <div className="mb-3">
+                            <AvField
+                              name="username"
+                              label="Username"
+                              className="form-control"
+                              placeholder="Enter username"
+                              type="text"
+                              required
+                            />
+                          </div>
 
-                      <AvForm className="form-horizontal">
-                      <div className="mb-3">
-                          <AvField
-                            name="username"
-                            label="Username"
-                            className="form-control"
-                            placeholder="Enter username"
-                            type="text"
-                            required
-                          />
-                        </div>
+                          <div className="mb-3">
+                            <AvField
+                              name="email"
+                              label="Email"
+                              className="form-control"
+                              placeholder="Enter email"
+                              type="email"
+                              required
+                            />
+                          </div>
+                          <div className="mb-3">
+                            <AvField
+                              name="password"
+                              label="Password"
+                              className="form-control"
+                              placeholder="Enter password"
+                              type="password"
+                              required
+                            />
+                          </div>
 
-                        <div className="mb-3">
-                          <AvField
-                            name="email"
-                            label="Email"
-                            className="form-control"
-                            placeholder="Enter email"
-                            type="email"
-                            required
-                          />
-                        </div>
-                        <div className="mb-3">
-                          <AvField
-                            name="password"
-                            label="Password"
-                            className="form-control"
-                            placeholder="Enter password"
-                            type="password"
-                            required
-                          />
-                        </div>
-
-                        <div>
+                          <div>
                             <p className="mb-0">
                               By registering you agree to the Skote{" "}
                               <a href="#" className="text-primary">
@@ -101,12 +100,9 @@ const Register2 = () => {
                               Register
                             </button>
                           </div>
-
                         </AvForm>
 
-
                         <Form action="dashboard">
-
                           <div className="mt-4 text-center">
                             <h5 className="font-size-14 mb-3">Sign up using</h5>
 

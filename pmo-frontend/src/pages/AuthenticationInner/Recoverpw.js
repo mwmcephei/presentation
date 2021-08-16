@@ -1,14 +1,8 @@
 import React from "react"
-import MetaTags from 'react-meta-tags'
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { AvForm, AvField } from "availity-reactstrap-validation"
-import {
-  Card,
-  CardBody,
-  Col,
-  Container,
-  Row,
-} from "reactstrap"
+import { Card, CardBody, Col, Container, Row } from "reactstrap"
 
 // import images
 import profile from "../../assets/images/profile-img.png"
@@ -19,7 +13,9 @@ const Recoverpw = () => {
     <React.Fragment>
       <div className="account-pages my-5 pt-sm-5">
         <MetaTags>
-          <title>Recover Password | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Recover Password | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <Container>
           <Row className="justify-content-center">
@@ -34,11 +30,7 @@ const Recoverpw = () => {
                       </div>
                     </Col>
                     <Col xs={5} className="align-self-end">
-                      <img
-                        src={profile}
-                        alt=""
-                        className="img-fluid"
-                      />
+                      <img src={profile} alt="" className="img-fluid" />
                     </Col>
                   </Row>
                 </div>
@@ -62,7 +54,10 @@ const Recoverpw = () => {
                     <div
                       className="alert alert-success text-center mb-4"
                       role="alert"
-                    > Enter your Email and instructions will be sent to you! </div>
+                    >
+                      {" "}
+                      Enter your Email and instructions will be sent to you!{" "}
+                    </div>
 
                     <AvForm className="form-horizontal">
                       <div className="mb-3">
@@ -76,12 +71,9 @@ const Recoverpw = () => {
                         />
                       </div>
                       <div className="text-end">
-                        <button
-                          className="btn btn-primary w-md "
-                          type="submit"
-                        >
+                        <button className="btn btn-primary w-md " type="submit">
                           Reset
-                            </button>
+                        </button>
                       </div>
                     </AvForm>
                   </div>
@@ -90,18 +82,15 @@ const Recoverpw = () => {
               <div className="mt-5 text-center">
                 <p>
                   Remember It ?{" "}
-                  <Link
-                    to="pages-login"
-                    className="fw-medium text-primary"
-                  >
+                  <Link to="pages-login" className="fw-medium text-primary">
                     {" "}
-                      Sign In here
-                    </Link>{" "}
+                    Sign In here
+                  </Link>{" "}
                 </p>
                 <p>
                   © {new Date().getFullYear()} Skote. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger"></i> by Themesbrand
-                  </p>
+                </p>
               </div>
             </Col>
           </Row>

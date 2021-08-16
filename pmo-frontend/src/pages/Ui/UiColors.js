@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import { Col, Row, Container, Card, CardBody } from "reactstrap"
 //Import Breadcrumb

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { Link, withRouter } from "react-router-dom"
@@ -110,10 +110,7 @@ const ContactsProfile = props => {
                           </Col>
                         </Row>
                         <div className="mt-4">
-                          <Link
-                            to=""
-                            className="btn btn-primary  btn-sm"
-                          >
+                          <Link to="" className="btn btn-primary  btn-sm">
                             View Profile{" "}
                             <i className="mdi mdi-arrow-right ms-1" />
                           </Link>

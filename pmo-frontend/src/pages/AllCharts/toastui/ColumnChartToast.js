@@ -9,41 +9,41 @@ const theme = {
   chart: {
     background: {
       color: "#fff",
-      opacity: 0
-    }
+      opacity: 0,
+    },
   },
   title: {
-    color: "#8791af"
+    color: "#8791af",
   },
   xAxis: {
     title: {
-      color: "#8791af"
+      color: "#8791af",
     },
     label: {
-      color: "#8791af"
+      color: "#8791af",
     },
-    tickColor: "#8791af"
+    tickColor: "#8791af",
   },
   yAxis: {
     title: {
-      color: "#8791af"
+      color: "#8791af",
     },
     label: {
-      color: "#8791af"
+      color: "#8791af",
     },
-    tickColor: "#8791af"
+    tickColor: "#8791af",
   },
   plot: {
-    lineColor: "rgba(166, 176, 207, 0.1)"
+    lineColor: "rgba(166, 176, 207, 0.1)",
   },
   legend: {
     label: {
-      color: "#8791af"
-    }
+      color: "#8791af",
+    },
   },
   series: {
-    colors: ["#34c38f", "#556ee6", "#f46a6a"]
-  }
+    colors: ["#34c38f", "#556ee6", "#f46a6a"],
+  },
 }
 TuiChart.registerTheme("skoteTheme", theme)
 

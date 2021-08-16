@@ -174,7 +174,6 @@ const EcommerceCustomers = props => {
    * Handling submit customer on customer form
    */
   const handleValidCustomerSubmit = (e, values) => {
-
     if (isEdit) {
       const updateCustomer = {
         id: customerList.id,

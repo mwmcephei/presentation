@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React, { useEffect } from "react"
 
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom"
@@ -30,12 +30,10 @@ import Budget_Report from "./components/PMO_Components/Budget_Report"
 import Test from "./components/PMO_Components/test"
 import CapacitorTest from "./components/PMO_Components/capacitorTest"
 
-import UiTabsAccordions from 'pages/Ui/UiTabsAccordions_custom'
-import BarChart from 'pages/AllCharts/chartjs/barchart'
-import LineChart from 'pages/AllCharts/chartjs/linechart'
-import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics'
-
-
+import UiTabsAccordions from "pages/Ui/UiTabsAccordions_custom"
+import BarChart from "pages/AllCharts/chartjs/barchart"
+import LineChart from "pages/AllCharts/chartjs/linechart"
+import SalesAnalytics from "pages/Dashboard-saas/sales-analytics"
 
 // Import scss
 import "./assets/scss/theme.scss"
@@ -44,8 +42,6 @@ import "./assets/scss/theme.scss"
 // import { initFirebaseBackend } from "./helpers/firebase_helper"
 
 import fakeBackend from "./helpers/AuthType/fakeBackend"
-
-
 
 // Activating fake backend
 //fakeBackend()
@@ -65,7 +61,6 @@ import fakeBackend from "./helpers/AuthType/fakeBackend"
 // initFirebaseBackend(firebaseConfig)
 
 const App = props => {
-
   function getLayout() {
     let layoutCls = VerticalLayout
     switch (props.layout.layoutType) {
@@ -82,7 +77,6 @@ const App = props => {
   const Layout = getLayout()
   return (
     <React.Fragment>
-     
       {/*
       <Header />   
       <Navbar />
@@ -90,7 +84,7 @@ const App = props => {
       <Footer />
  */}
 
-      <Router>   
+      <Router>
         <Index />
 
         <Switch>
@@ -106,16 +100,14 @@ const App = props => {
           <Route path="/budget_reports">
             <Budget_Report />
           </Route>
-{ /*
+          {/*
           <Route path="/test">
             <Test />
           </Route>
-*/  }
+*/}
         </Switch>
-        
 
-
-  {/*        <CapacitorTest />
+        {/*        <CapacitorTest />
         
         <Switch>
         
@@ -147,17 +139,12 @@ const App = props => {
         </Switch>
         */}
       </Router>
-      
-      
-
-
-
     </React.Fragment>
   )
 }
 
 App.propTypes = {
-  layout: PropTypes.any
+  layout: PropTypes.any,
 }
 
 const mapStateToProps = state => {

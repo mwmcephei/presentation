@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Table,
@@ -32,7 +32,7 @@ const BasicTable = () => {
                   <CardSubtitle className="mb-3">
                     For basic styling—light padding and only horizontal
                     dividers—add the base className <code>.table</code> to any
-                     <code>&lt;table&gt;</code>.
+                    <code>&lt;table&gt;</code>.
                   </CardSubtitle>
 
                   <div className="table-responsive">
@@ -303,79 +303,26 @@ const BasicTable = () => {
           </Row>
 
           <Row>
-              <Col xl={6}>
-                <Card>
-                  <CardBody>
-                    <div className="table-responsive">
-                      <h4 className="card-title">Vertical alignment</h4>
-                      <p className="card-title-desc">Table cells in <code>&lt;tbody&gt;</code> inherit their alignment from <code>&lt;table&gt;</code> and are aligned to the the top by default. Use the vertical align classes to re-align where needed.</p>
-
-                      <div className="table-responsive">
-                        <Table className="align-middle mb-0">
-
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Action</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>
-                                <button type="button" className="btn btn-light btn-sm">View</button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>
-                                <button type="button" className="btn btn-light btn-sm">View</button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>
-                                <button type="button" className="btn btn-light btn-sm">View</button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">4</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>
-                                <button type="button" className="btn btn-light btn-sm">View</button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </div>
-
-                    </div>
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col xl={6}>
-                <Card>
-                  <CardBody>
-                    <h4 className="card-title">Nesting</h4>
-                    <p className="card-title-desc"> Border styles, active styles, and table variants are not inherited by nested tables.</p>
+            <Col xl={6}>
+              <Card>
+                <CardBody>
+                  <div className="table-responsive">
+                    <h4 className="card-title">Vertical alignment</h4>
+                    <p className="card-title-desc">
+                      Table cells in <code>&lt;tbody&gt;</code> inherit their
+                      alignment from <code>&lt;table&gt;</code> and are aligned
+                      to the the top by default. Use the vertical align classes
+                      to re-align where needed.
+                    </p>
 
                     <div className="table-responsive">
-                      <Table className="table-striped table-bordered mb-0">
+                      <Table className="align-middle mb-0">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -383,47 +330,126 @@ const BasicTable = () => {
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>
+                              <button
+                                type="button"
+                                className="btn btn-light btn-sm"
+                              >
+                                View
+                              </button>
+                            </td>
                           </tr>
                           <tr>
-                            <td colSpan="4">
-                              <table className="table mb-0">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Header</th>
-                                    <th scope="col">Header</th>
-                                    <th scope="col">Header</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">A</th>
-                                    <td>First</td>
-                                    <td>Last</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">B</th>
-                                    <td>First</td>
-                                    <td>Last</td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>
+                              <button
+                                type="button"
+                                className="btn btn-light btn-sm"
+                              >
+                                View
+                              </button>
                             </td>
                           </tr>
                           <tr>
                             <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>
+                              <button
+                                type="button"
+                                className="btn btn-light btn-sm"
+                              >
+                                View
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>
+                              <button
+                                type="button"
+                                className="btn btn-light btn-sm"
+                              >
+                                View
+                              </button>
+                            </td>
                           </tr>
                         </tbody>
                       </Table>
                     </div>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+            <Col xl={6}>
+              <Card>
+                <CardBody>
+                  <h4 className="card-title">Nesting</h4>
+                  <p className="card-title-desc">
+                    {" "}
+                    Border styles, active styles, and table variants are not
+                    inherited by nested tables.
+                  </p>
 
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
+                  <div className="table-responsive">
+                    <Table className="table-striped table-bordered mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <td colSpan="4">
+                            <table className="table mb-0">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Header</th>
+                                  <th scope="col">Header</th>
+                                  <th scope="col">Header</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">A</th>
+                                  <td>First</td>
+                                  <td>Last</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">B</th>
+                                  <td>First</td>
+                                  <td>Last</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
 
           <Row>
             <Col xl={6}>

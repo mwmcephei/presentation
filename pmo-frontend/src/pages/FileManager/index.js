@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, CardBody, Container } from "reactstrap"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -60,9 +60,9 @@ const Index = () => {
   return (
     <React.Fragment>
       <div className="page-content">
-          <MetaTags>
-            <title>File Manager | Skote - React Admin & Dashboard Template</title>
-          </MetaTags>
+        <MetaTags>
+          <title>File Manager | Skote - React Admin & Dashboard Template</title>
+        </MetaTags>
         <Container fluid>
           <Breadcrumbs title="Apps" breadcrumbItem="File Manager" />
           <div className="d-xl-flex">

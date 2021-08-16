@@ -4,7 +4,7 @@ import { XlsxParserService } from './xlsx-parser.service';
 import { XlsxParserController } from './xlsx-parser.controller';
 import { Sheet, SheetSchema } from '../schemas/sheet.schema';
 import { Measure, MeasureSchema } from '../schemas/measure.schema';
-import { Artifact, ArtifactSchema } from '../schemas/artifact.schema';
+import { Artefact, ArtefactSchema } from '../schemas/artefact.schema';
 import { Budget, BudgetSchema } from '../schemas/budget.schema';
 
 @Module({
@@ -12,7 +12,7 @@ import { Budget, BudgetSchema } from '../schemas/budget.schema';
     MongooseModule.forFeature([
       { name: "Sheet", schema: SheetSchema },
       { name: "Measure", schema: MeasureSchema },
-      { name: "Artifact", schema: ArtifactSchema },
+      { name: "Artefact", schema: ArtefactSchema },
       { name: "Budget", schema: BudgetSchema },
     ])
   ],

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Import Components
 import Navbar from "./Navbar/Navbar"
@@ -20,7 +20,7 @@ const CryptoIcoLanding = () => {
   // Use ComponentDidMount
   useEffect(() => {
     window.addEventListener("scroll", scrollNavigation, true)
-  },[])
+  }, [])
 
   function scrollNavigation() {
     var scrollup = document.documentElement.scrollTop

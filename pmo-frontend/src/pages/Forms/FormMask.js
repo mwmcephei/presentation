@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import {
   Row,
   Col,
@@ -18,15 +18,13 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 import InputMask from "react-input-mask"
 
 const FormMask = () => {
-
   const ISBN1 = props => (
     <InputMask
       mask="999-99-999-9999-99-9"
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const ISBN2 = props => (
@@ -35,8 +33,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const ISBN3 = props => (
@@ -45,8 +42,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const IPV4 = props => (
@@ -55,8 +51,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const IPV6 = props => (
@@ -65,8 +60,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const TAX = props => (
@@ -75,8 +69,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const Phone = props => (
@@ -85,8 +78,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const Currency = props => (
@@ -95,8 +87,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const Date1 = props => (
@@ -105,8 +96,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   const Date2 = props => (
@@ -115,8 +105,7 @@ const FormMask = () => {
       value={props.value}
       className="form-control input-color"
       onChange={props.onChange}
-    >
-    </InputMask>
+    ></InputMask>
   )
 
   return (

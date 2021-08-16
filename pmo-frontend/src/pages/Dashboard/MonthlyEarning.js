@@ -24,17 +24,14 @@ const MonthlyEarning = () => {
                 From previous period
               </p>
               <div className="mt-4">
-                <Link
-                  to=""
-                  className="btn btn-primary  btn-sm"
-                >
+                <Link to="" className="btn btn-primary  btn-sm">
                   View More <i className="mdi mdi-arrow-right ms-1"></i>
                 </Link>
               </div>
             </Col>
             <Col sm="6">
               <div className="mt-4 mt-sm-0">
-                <ApexRadial progress={33}/>
+                <ApexRadial progress={33} />
               </div>
             </Col>
           </Row>

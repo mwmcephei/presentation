@@ -12,7 +12,7 @@ import Breadcrumbs from "components/Common/Breadcrumb"
 import CardContact from "./card-contact"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"
 
 import { getUsers as onGetUsers } from "../../store/contacts/actions"
 

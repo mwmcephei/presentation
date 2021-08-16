@@ -224,7 +224,7 @@ const Login = props => {
                                 </Link>
                               )}
                               onSuccess={googleResponse}
-                              onFailure={() => { }}
+                              onFailure={() => {}}
                             />
                           </li>
                         </ul>

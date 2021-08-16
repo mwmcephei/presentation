@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Button,
@@ -14,7 +14,7 @@ import {
   FormGroup,
   Input,
   Label,
-  Row
+  Row,
 } from "reactstrap"
 import Select from "react-select"
 import Dropzone from "react-dropzone"
@@ -31,14 +31,14 @@ const EcommerceAddProduct = () => {
     { value: "CA", label: "California" },
     { value: "NV", label: "Nevada" },
     { value: "OR", label: "Oregon" },
-    { value: "WA", label: "Washington" }
+    { value: "WA", label: "Washington" },
   ]
 
   function handleAcceptedFiles(files) {
     files.map(file =>
       Object.assign(file, {
         preview: URL.createObjectURL(file),
-        formattedSize: formatBytes(file.size)
+        formattedSize: formatBytes(file.size),
       })
     )
 
@@ -151,20 +151,12 @@ const EcommerceAddProduct = () => {
                       </Col>
                     </Row>
                     <div className="d-flex flex-wrap gap-2">
-                      <Button
-                        type="submit"
-                        color="primary"
-                        className="btn "
-                      >
+                      <Button type="submit" color="primary" className="btn ">
                         Save Changes
-                    </Button>
-                      <Button
-                        type="submit"
-                        color="secondary"
-                        className=" "
-                      >
+                      </Button>
+                      <Button type="submit" color="secondary" className=" ">
                         Cancel
-                    </Button>
+                      </Button>
                     </div>
                   </Form>
                 </CardBody>
@@ -279,20 +271,12 @@ const EcommerceAddProduct = () => {
                       </Col>
                     </Row>
                     <div className="d-flex flex-wrap gap-2">
-                      <Button
-                        type="submit"
-                        color="primary"
-                        className=""
-                      >
+                      <Button type="submit" color="primary" className="">
                         Save Changes
-                    </Button>
-                      <Button
-                        type="submit"
-                        color="secondary"
-                        className=""
-                      >
+                      </Button>
+                      <Button type="submit" color="secondary" className="">
                         Cancel
-                    </Button>
+                      </Button>
                     </div>
                   </Form>
                 </CardBody>

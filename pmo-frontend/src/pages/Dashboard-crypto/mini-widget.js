@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Row, Col, Card, CardBody } from "reactstrap"
 import ReactApexChart from "react-apexcharts"
@@ -27,8 +27,7 @@ const MiniWidget = props => {
                   <div>
                     <h5>{report.value}</h5>
                     <p className="text-muted text-truncate mb-0">
-                      {report.desc}{" "}
-                      <i className={report.arrowUpDown}/>
+                      {report.desc} <i className={report.arrowUpDown} />
                     </p>
                   </div>
                 </Col>
@@ -57,5 +56,5 @@ const MiniWidget = props => {
 export default MiniWidget
 
 MiniWidget.propTypes = {
-  reports: PropTypes.array
+  reports: PropTypes.array,
 }

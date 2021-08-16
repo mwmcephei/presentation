@@ -1,20 +1,12 @@
 import React from "react"
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, Progress } from "reactstrap"
 
-const TopCities = (props) => {
 
-
-  useEffect(() => {
-    console.log("PROPS")
-    console.log(props)
-}, []);
-
-
+const TopCities = props => {
 
   return (
     <React.Fragment>
-
       <Card>
         <CardBody>
           <div className="table-responsive mt-4">
@@ -29,7 +21,7 @@ const TopCities = (props) => {
                   </td>
                   <td>
                     <Progress
-                      value= {props.overallProgress}
+                      value={props.overallProgress}
                       color="secondary"
                       className="bg-transparent progress-sm"
                       size="sm"
@@ -56,11 +48,8 @@ const TopCities = (props) => {
               </tbody>
             </table>
           </div>
-
-         
         </CardBody>
       </Card>
-
     </React.Fragment>
   )
 }

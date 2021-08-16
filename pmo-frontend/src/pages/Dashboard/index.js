@@ -51,7 +51,7 @@ const Dashboard = props => {
   const [subscribemodal, setSubscribemodal] = useState(false)
 
   const { chartsData } = useSelector(state => ({
-    chartsData: state.Dashboard.chartsData
+    chartsData: state.Dashboard.chartsData,
   }))
 
   const reports = [
@@ -85,7 +85,7 @@ const Dashboard = props => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(onGetChartsData("yearly"))
-  }, [dispatch]);
+  }, [dispatch])
 
   return (
     <React.Fragment>
@@ -251,9 +251,7 @@ const Dashboard = props => {
                     Subscribe our newletter and get notification to stay update.
                   </p>
 
-                  <div
-                    className="input-group rounded bg-light"
-                  >
+                  <div className="input-group rounded bg-light">
                     <Input
                       type="email"
                       className="form-control bg-transparent border-0"

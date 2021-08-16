@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap"
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"

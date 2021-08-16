@@ -8,30 +8,30 @@ const theme = {
   chart: {
     background: {
       color: "#fff",
-      opacity: 0
-    }
+      opacity: 0,
+    },
   },
   title: {
-    color: "#8791af"
+    color: "#8791af",
   },
 
   plot: {
-    lineColor: "rgba(166, 176, 207, 0.1)"
+    lineColor: "rgba(166, 176, 207, 0.1)",
   },
   legend: {
     label: {
-      color: "#8791af"
-    }
+      color: "#8791af",
+    },
   },
   series: {
     series: {
-      colors: ["#556ee6", "#34c38f", "#f46a6a", "#50a5f1", "#f1b44c"]
+      colors: ["#556ee6", "#34c38f", "#f46a6a", "#50a5f1", "#f1b44c"],
     },
     label: {
       color: "#fff",
-      fontFamily: "sans-serif"
-    }
-  }
+      fontFamily: "sans-serif",
+    },
+  },
 }
 TuiChart.registerTheme("skoteTheme", theme)
 
@@ -100,17 +100,17 @@ const TreeMapChartToast = props => {
     chart: {
       width: props.chartWidth,
       height: 380,
-      title: "Used disk space"
+      title: "Used disk space",
     },
     series: {
       showLabel: true,
       zoomable: false,
-      useLeafLabel: true
+      useLeafLabel: true,
     },
 
     tooltip: {
-      suffix: "GB"
-    }
+      suffix: "GB",
+    },
   }
 
   return (

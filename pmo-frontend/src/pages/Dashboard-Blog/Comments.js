@@ -143,9 +143,7 @@ const Comments = props => {
                       <div className="media-body">
                         <h5 className="font-size-14 mb-1">
                           Keith McCoy{" "}
-                          <small className="text-muted float-end">
-                            12 Aug
-                          </small>
+                          <small className="text-muted float-end">12 Aug</small>
                         </h5>
                         <p className="text-muted">
                           Donec posuere vulputate arcu. phasellus accumsan

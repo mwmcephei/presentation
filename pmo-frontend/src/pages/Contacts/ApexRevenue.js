@@ -65,7 +65,13 @@ const ApexRevenue = () => {
   ]
 
   return (
-    <ReactApexChart options={options} series={series} type="bar" height="320" className="apex-charts" />
+    <ReactApexChart
+      options={options}
+      series={series}
+      type="bar"
+      height="320"
+      className="apex-charts"
+    />
   )
 }
 

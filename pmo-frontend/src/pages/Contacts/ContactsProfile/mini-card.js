@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Card, CardBody, Col, Media } from "reactstrap"
 
@@ -30,7 +30,7 @@ const MiniCards = props => {
 MiniCards.propTypes = {
   iconClass: PropTypes.string,
   text: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 }
 
 export default MiniCards

@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 // availity-reactstrap-validation
 import { AvForm, AvField } from "availity-reactstrap-validation"
@@ -85,7 +85,7 @@ const LockScreen = () => {
                             type="submit"
                           >
                             Unlock
-                            </Button>
+                          </Button>
                         </Col>
                       </div>
                     </AvForm>
@@ -95,18 +95,15 @@ const LockScreen = () => {
               <div className="mt-5 text-center">
                 <p>
                   Not you ? return{" "}
-                  <Link
-                    to="/login"
-                    className="fw-medium text-primary"
-                  >
+                  <Link to="/login" className="fw-medium text-primary">
                     {" "}
-                      Sign In{" "}
+                    Sign In{" "}
                   </Link>{" "}
                 </p>
                 <p>
                   © 2021 Skote. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
-                  </p>
+                </p>
               </div>
             </Col>
           </Row>

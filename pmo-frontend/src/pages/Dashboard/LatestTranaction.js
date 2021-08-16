@@ -26,7 +26,7 @@ const LatestTranaction = props => {
 
   useEffect(() => {
     dispatch(onGetOrders())
-  }, [dispatch]);
+  }, [dispatch])
 
   const selectRow = {
     mode: "checkbox",

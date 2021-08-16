@@ -77,16 +77,13 @@ const BuySell = () => {
                   <div>
                     <Label>Add Amount :</Label>
                     <InputGroup className="mb-3">
-
                       <Label className="input-group-text">Amount</Label>
                       <select
                         defaultValue="1"
                         className="form-select"
                         style={{ maxWidth: "90px" }}
                       >
-                        <option value="1" >
-                          BTC
-                        </option>
+                        <option value="1">BTC</option>
                         <option value="2">ETH</option>
                         <option value="3">LTC</option>
                       </select>
@@ -94,7 +91,6 @@ const BuySell = () => {
                     </InputGroup>
 
                     <InputGroup className="mb-3">
-
                       <Label className="input-group-text">Price</Label>
                       <Input type="text" className="form-control" />
                       <InputGroupAddon addonType="append">
@@ -103,7 +99,6 @@ const BuySell = () => {
                     </InputGroup>
 
                     <InputGroup className="mb-3">
-
                       <Label className="input-group-text">Total</Label>
                       <Input type="text" className="form-control" />
                     </InputGroup>
@@ -140,9 +135,7 @@ const BuySell = () => {
                         className="form-select"
                         style={{ maxWidth: "90px" }}
                       >
-                        <option value="1">
-                          BTC
-                        </option>
+                        <option value="1">BTC</option>
                         <option value="2">ETH</option>
                         <option value="3">LTC</option>
                       </select>
@@ -150,7 +143,6 @@ const BuySell = () => {
                     </InputGroup>
 
                     <InputGroup className="mb-3">
-
                       <Label className="input-group-text">Price</Label>
                       <Input type="text" className="form-control" />
                       <InputGroupAddon addonType="append">
@@ -159,7 +151,6 @@ const BuySell = () => {
                     </InputGroup>
 
                     <InputGroup className="mb-3">
-
                       <Label className="input-group-text">Total</Label>
                       <Input type="text" className="form-control" />
                     </InputGroup>
