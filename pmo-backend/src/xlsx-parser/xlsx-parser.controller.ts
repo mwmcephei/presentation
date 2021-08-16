@@ -1,17 +1,17 @@
-import {Controller, Get, Param} from '@nestjs/common';
-import {XlsxParserService} from "./xlsx-parser.service";
+import { Controller, Get, Param } from '@nestjs/common';
+import { XlsxParserService } from "./xlsx-parser.service";
 
 @Controller('xlsx-parser')
 export class XlsxParserController {
-    constructor(private xlsxParseService: XlsxParserService) {}
+    constructor(private xlsxParseService: XlsxParserService) { }
 
 
-// routes for creating data
-//
+    // routes for creating data
+    //
     @Get('parse')
     parse() {
         console.log("parse")
-      return this.xlsxParseService.parse();
+        return this.xlsxParseService.parse();
     }
 
     @Get('parse_overview')
@@ -40,20 +40,20 @@ export class XlsxParserController {
     }
 
 
-// routes for retrieving data 
-//
+    // routes for retrieving data 
+    //
     @Get('artefacts/:measureID')
-    getArtefactsOfMeasure(@Param() params){
+    getArtefactsOfMeasure(@Param() params) {
         console.log("getAllArtefacts")
-        console.log(params.measureID )
-       return this.xlsxParseService.getArtefactsOfMeasure(params.measureID);
+        console.log(params.measureID)
+        return this.xlsxParseService.getArtefactsOfMeasure(params.measureID);
     }
 
     @Get("all_artefacts")
     getAllArtefacts() {
         console.log("getAllArtefacts")
         return "hi"
- //       return this.xlsxParseService.getAllArtefacts();
+        //       return this.xlsxParseService.getAllArtefacts();
     }
 
     @Get("overview")
@@ -62,7 +62,7 @@ export class XlsxParserController {
 
         return this.xlsxParseService.getOverview();
     }
-    
+
     @Get("measures")
     getAllMeasures() {
         console.log("getAllMeasures")
@@ -76,6 +76,6 @@ export class XlsxParserController {
     }
 
 
-    
+
 }
 
