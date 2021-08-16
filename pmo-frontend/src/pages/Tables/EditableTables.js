@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import { Row, Col, Card, CardBody, CardTitle } from "reactstrap"
 // Editable
@@ -41,7 +41,9 @@ const EditableTables = () => {
     <React.Fragment>
       <div className="page-content">
         <MetaTags>
-          <title>Editable Table | Skote - React Admin & Dashboard Template</title>
+          <title>
+            Editable Table | Skote - React Admin & Dashboard Template
+          </title>
         </MetaTags>
         <div className="container-fluid">
           <Breadcrumbs title="Tables" breadcrumbItem="Editable Table" />

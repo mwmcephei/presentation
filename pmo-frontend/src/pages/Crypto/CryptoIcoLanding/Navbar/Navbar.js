@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React, { useState } from "react"
 import {
   Navbar,
@@ -67,7 +67,7 @@ const Navbar_Page = props => {
               setisOpenMenu()
             }}
           >
-            <i className="fa fa-fw fa-bars"/>
+            <i className="fa fa-fw fa-bars" />
           </NavbarToggler>
 
           <Collapse id="topnav-menu-content" isOpen={isOpenMenu} navbar>
@@ -103,7 +103,7 @@ const Navbar_Page = props => {
 
 Navbar_Page.propTypes = {
   imglight: PropTypes.any,
-  navClass: PropTypes.string
+  navClass: PropTypes.string,
 }
 
 export default Navbar_Page

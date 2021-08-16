@@ -30,7 +30,7 @@ const FormWizard = () => {
 
   const [passedSteps, setPassedSteps] = useState([1])
   const [passedStepsVertical, setPassedStepsVertical] = useState([1])
-  
+
   function toggleTab(tab) {
     if (activeTab !== tab) {
       var modifiedSteps = [...passedSteps, tab]

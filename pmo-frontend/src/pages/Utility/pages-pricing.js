@@ -1,7 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
-import MetaTags from 'react-meta-tags';
-
+import MetaTags from "react-meta-tags"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"

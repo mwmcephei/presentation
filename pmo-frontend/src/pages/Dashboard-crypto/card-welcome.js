@@ -17,15 +17,15 @@ const CardWelcome = () => {
 
                 <div className="text-muted">
                   <p className="mb-1">
-                    <i className="mdi mdi-circle-medium align-middle text-primary me-1"/>{" "}
+                    <i className="mdi mdi-circle-medium align-middle text-primary me-1" />{" "}
                     If several languages coalesce
                   </p>
                   <p className="mb-1">
-                    <i className="mdi mdi-circle-medium align-middle text-primary me-1"/>{" "}
+                    <i className="mdi mdi-circle-medium align-middle text-primary me-1" />{" "}
                     Sed ut perspiciatis unde
                   </p>
                   <p className="mb-0">
-                    <i className="mdi mdi-circle-medium align-middle text-primary me-1"/>{" "}
+                    <i className="mdi mdi-circle-medium align-middle text-primary me-1" />{" "}
                     It would be necessary
                   </p>
                 </div>

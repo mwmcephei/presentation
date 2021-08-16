@@ -8,20 +8,20 @@ import "toastr/build/toastr.min.css"
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const UiNotifications = () => {
-  const [showEasing, setshowEasing] = useState("swing");
-  const [hideEasing, sethideEasing] = useState("linear");
-  const [showMethod, setshowMethod] = useState("fadeIn");
-  const [hideMethod, sethideMethod] = useState("fadeOut");
-  const [showDuration, setshowDuration] = useState(300);
-  const [hideDuration, sethideDuration] = useState(1000);
-  const [timeOut, settimeOut] = useState(5000);
-  const [extendedTimeOut, setextendedTimeOut] = useState(1000);
+  const [showEasing, setshowEasing] = useState("swing")
+  const [hideEasing, sethideEasing] = useState("linear")
+  const [showMethod, setshowMethod] = useState("fadeIn")
+  const [hideMethod, sethideMethod] = useState("fadeOut")
+  const [showDuration, setshowDuration] = useState(300)
+  const [hideDuration, sethideDuration] = useState(1000)
+  const [timeOut, settimeOut] = useState(5000)
+  const [extendedTimeOut, setextendedTimeOut] = useState(1000)
 
   function showToast() {
-    const ele = document.getElementsByName("toastType");
-    const position = document.getElementsByName("positions");
+    const ele = document.getElementsByName("toastType")
+    const position = document.getElementsByName("positions")
     let toastType
-    const title = document.getElementById("title").value;
+    const title = document.getElementById("title").value
     let message = "Have fun storming the castle!"
 
     if (document.getElementById("message").value !== "")
@@ -37,7 +37,8 @@ const UiNotifications = () => {
     const progressBar = document.getElementById("progressBar").checked
 
     //Duplicates
-    const preventDuplicates = document.getElementById("preventDuplicates").checked
+    const preventDuplicates =
+      document.getElementById("preventDuplicates").checked
 
     //Newest on Top
     const newestOnTop = document.getElementById("newestOnTop").checked
@@ -93,7 +94,7 @@ const UiNotifications = () => {
       showMethod: showMethod,
       hideMethod: hideMethod,
       showDuration: showDuration,
-      hideDuration: hideDuration
+      hideDuration: hideDuration,
     }
 
     // setTimeout(() => toastr.success(`Settings updated `), 300)
@@ -159,8 +160,18 @@ const UiNotifications = () => {
                         </div>
 
                         <div className="form-check mb-2">
-                          <input type="checkbox" className="form-check-input input-mini" id="addBehaviorOnToastClick" value="checked" />
-                          <Label className="form-check-label" htmlFor="addBehaviorOnToastClick">Add behavior on toast click</Label>
+                          <input
+                            type="checkbox"
+                            className="form-check-input input-mini"
+                            id="addBehaviorOnToastClick"
+                            value="checked"
+                          />
+                          <Label
+                            className="form-check-label"
+                            htmlFor="addBehaviorOnToastClick"
+                          >
+                            Add behavior on toast click
+                          </Label>
                         </div>
 
                         <div className="form-check mb-2">

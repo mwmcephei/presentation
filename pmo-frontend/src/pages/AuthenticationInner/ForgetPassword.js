@@ -66,7 +66,13 @@ const ForgetPasswordPage = () => {
                       <Row className="form-group mt-1">
                         <Col className="text-end">
                           <div class="text-end">
-                            <Button color="primary" class="btn btn-primary w-md " type="submit">Reset</Button>
+                            <Button
+                              color="primary"
+                              class="btn btn-primary w-md "
+                              type="submit"
+                            >
+                              Reset
+                            </Button>
                           </div>
                         </Col>
                       </Row>

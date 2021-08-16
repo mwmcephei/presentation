@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 import { Link } from "react-router-dom"
 import { Card, CardBody, Col, Container, Row } from "reactstrap"
 
@@ -14,7 +14,6 @@ const ConfirmMail = () => {
         <title>Confirm Mail | Skote - React Admin & Dashboard Template</title>
       </MetaTags>
       <div className="account-pages my-5 pt-sm-5">
-
         <Container>
           <Row>
             <Col lg={12}>
@@ -52,8 +51,8 @@ const ConfirmMail = () => {
                         <h4>Success !</h4>
                         <p className="text-muted">
                           At vero eos et accusamus et iusto odio dignissimos
-                          ducimus qui blanditiis praesentium voluptatum
-                          deleniti atque corrupti quos dolores et
+                          ducimus qui blanditiis praesentium voluptatum deleniti
+                          atque corrupti quos dolores et
                         </p>
                         <div className="mt-4">
                           <Link to="dashboard" className="btn btn-success">

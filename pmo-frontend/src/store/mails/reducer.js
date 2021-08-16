@@ -79,8 +79,6 @@ const Mails = (state = INIT_STATE, action) => {
         error: action.payload,
       }
 
-
-
     case GET_IMPORTANT_MAILS_SUCCESS:
       return {
         ...state,

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import PropTypes from 'prop-types'
-import ReactDrawer from 'react-drawer';
+import PropTypes from "prop-types"
+import ReactDrawer from "react-drawer"
 
 import { connect } from "react-redux"
 
@@ -19,16 +19,16 @@ import headerLogog from "../../assets/images/headerLogo.png"
 import { withTranslation } from "react-i18next"
 
 const Header = props => {
-  const [position, setPosition] = useState();
-  const [open, setOpen] = useState(false);
+  const [position, setPosition] = useState()
+  const [open, setOpen] = useState(false)
 
   const toggleTopDrawer = () => {
-    setPosition('right');
+    setPosition("right")
     setOpen(!open)
   }
 
   const onDrawerClose = () => {
-    setOpen(false);
+    setOpen(false)
   }
 
   function toggleFullscreen() {
@@ -70,7 +70,7 @@ const Header = props => {
                 <span className="logo-lg">
                   <img src={headerLogog} alt="" height="60" />
                 </span>
-              </Link>         
+              </Link>
             </div>
 
             <button
@@ -87,20 +87,13 @@ const Header = props => {
           </div>
 
           <div className="d-flex">
- 
-
             <NotificationDropdown />
 
             <ProfileMenu />
-
           </div>
         </div>
       </header>
-      <ReactDrawer
-        open={open}
-        position={position}
-        onClose={onDrawerClose}
-      >
+      <ReactDrawer open={open} position={position} onClose={onDrawerClose}>
         <RightSidebar onClose={onDrawerClose} />
       </ReactDrawer>
     </React.Fragment>
@@ -112,7 +105,7 @@ Header.propTypes = {
   showRightSidebar: PropTypes.any,
   showRightSidebarAction: PropTypes.func,
   t: PropTypes.any,
-  toggleLeftmenu: PropTypes.func
+  toggleLeftmenu: PropTypes.func,
 }
 
 const mapStatetoProps = state => {

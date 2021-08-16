@@ -41,7 +41,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">First event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -66,7 +66,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">Second event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -91,7 +91,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">Third event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -123,7 +123,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">Fourth event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -148,7 +148,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">Sixth event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -173,7 +173,7 @@ const RoadMap = () => {
                                 <h5 className="mb-4">Seventh event</h5>
                               </div>
                               <div className="event-down-icon">
-                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"/>
+                                <i className="bx bx-down-arrow-circle h1 text-primary down-arrow-icon" />
                               </div>
 
                               <div className="mt-3 px-3">
@@ -199,7 +199,7 @@ const RoadMap = () => {
                       className="border-0"
                       disabled={step1}
                     >
-                      <i className="mdi mdi-chevron-left"/>
+                      <i className="mdi mdi-chevron-left" />
                     </button>
                     <button
                       type="button"
@@ -210,7 +210,7 @@ const RoadMap = () => {
                       className="border-0"
                       disabled={step2}
                     >
-                      <i className="mdi mdi-chevron-right"/>
+                      <i className="mdi mdi-chevron-right" />
                     </button>
                   </div>
                 </div>

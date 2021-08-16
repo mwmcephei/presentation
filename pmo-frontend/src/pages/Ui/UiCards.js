@@ -1,5 +1,5 @@
 import React from "react"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 import {
   Col,
@@ -51,10 +51,7 @@ const UiCards = props => {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </CardText>
-                  <Link
-                    to="#"
-                    className="btn btn-primary "
-                  >
+                  <Link to="#" className="btn btn-primary ">
                     Button
                   </Link>
                 </CardBody>
@@ -129,10 +126,7 @@ const UiCards = props => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </CardText>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                >
+                <Link to="#" className="btn btn-primary ">
                   Go somewhere
                 </Link>
               </Card>
@@ -144,10 +138,7 @@ const UiCards = props => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </CardText>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                >
+                <Link to="#" className="btn btn-primary ">
                   Go somewhere
                 </Link>
               </Card>
@@ -162,10 +153,7 @@ const UiCards = props => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </CardText>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                >
+                <Link to="#" className="btn btn-primary ">
                   Go somewhere
                 </Link>
               </Card>
@@ -178,10 +166,7 @@ const UiCards = props => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </CardText>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                >
+                <Link to="#" className="btn btn-primary ">
                   Go somewhere
                 </Link>
               </Card>
@@ -194,10 +179,7 @@ const UiCards = props => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </CardText>
-                <Link
-                  to="#"
-                  className="btn btn-primary "
-                >
+                <Link to="#" className="btn btn-primary ">
                   Go somewhere
                 </Link>
               </Card>
@@ -207,7 +189,9 @@ const UiCards = props => {
           <Row>
             <Col lg={4}>
               <Card>
-                <h5 className="card-header bg-transparent border-bottom text-uppercase">Featured</h5>
+                <h5 className="card-header bg-transparent border-bottom text-uppercase">
+                  Featured
+                </h5>
                 <CardBody>
                   <CardTitle className="mt-0">
                     Special title treatment
@@ -225,7 +209,9 @@ const UiCards = props => {
 
             <Col lg={4}>
               <Card>
-                <CardHeader className="bg-transparent border-bottom text-uppercase">Quote</CardHeader>
+                <CardHeader className="bg-transparent border-bottom text-uppercase">
+                  Quote
+                </CardHeader>
                 <CardBody>
                   <blockquote className="card-blockquote mb-0">
                     <CardText>
@@ -243,7 +229,9 @@ const UiCards = props => {
 
             <Col lg={4}>
               <Card>
-                <CardHeader className="bg-transparent border-bottom text-uppercase">Featured</CardHeader>
+                <CardHeader className="bg-transparent border-bottom text-uppercase">
+                  Featured
+                </CardHeader>
                 <CardBody>
                   <CardTitle className="mt-0">
                     Special title treatment
@@ -252,10 +240,7 @@ const UiCards = props => {
                     With supporting text below as a natural lead-in to
                     additional content.
                   </CardText>
-                  <Link
-                    to="#"
-                    className="btn btn-primary "
-                  >
+                  <Link to="#" className="btn btn-primary ">
                     Go somewhere
                   </Link>
                 </CardBody>
@@ -405,8 +390,8 @@ const UiCards = props => {
               <Card color="info" className="text-white-50">
                 <CardBody>
                   <CardTitle className="mb-4 text-white">
-                    <i className="mdi mdi-alert-circle-outline me-3" />Info
-                    Card
+                    <i className="mdi mdi-alert-circle-outline me-3" />
+                    Info Card
                   </CardTitle>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -422,7 +407,8 @@ const UiCards = props => {
               <Card color="warning" className="text-white-50">
                 <CardBody>
                   <CardTitle className="mb-4 text-white">
-                    <i className="mdi mdi-alert-outline me-3" />Warning Card
+                    <i className="mdi mdi-alert-outline me-3" />
+                    Warning Card
                   </CardTitle>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -436,7 +422,8 @@ const UiCards = props => {
               <Card color="danger" className="text-white-50">
                 <CardBody>
                   <CardTitle className="mb-4 text-white">
-                    <i className="mdi mdi-block-helper me-3" />Danger Card
+                    <i className="mdi mdi-block-helper me-3" />
+                    Danger Card
                   </CardTitle>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -450,8 +437,8 @@ const UiCards = props => {
               <Card color="dark" className="text-light">
                 <CardBody>
                   <CardTitle className="mb-4 text-white">
-                    <i className="mdi mdi-alert-circle-outline me-3" />Dark
-                    Card
+                    <i className="mdi mdi-alert-circle-outline me-3" />
+                    Dark Card
                   </CardTitle>
                   <CardText>
                     Some quick example text to build on the card title and make
@@ -467,8 +454,8 @@ const UiCards = props => {
               <Card outline color="primary" className="border">
                 <CardHeader className="bg-transparent">
                   <h5 className="my-0 text-primary">
-                    <i className="mdi mdi-bullseye-arrow me-3" />Primary
-                    outline Card
+                    <i className="mdi mdi-bullseye-arrow me-3" />
+                    Primary outline Card
                   </h5>
                 </CardHeader>
                 <CardBody>
@@ -485,8 +472,8 @@ const UiCards = props => {
               <Card outline color="danger" className="border">
                 <CardHeader className="bg-transparent">
                   <h5 className="my-0 text-danger">
-                    <i className="mdi mdi-block-helper me-3" />Danger outline
-                    Card
+                    <i className="mdi mdi-block-helper me-3" />
+                    Danger outline Card
                   </h5>
                 </CardHeader>
                 <CardBody>
@@ -503,7 +490,8 @@ const UiCards = props => {
               <Card outline color="success" className="border">
                 <CardHeader className="bg-transparent">
                   <h5 className="my-0 text-success">
-                    <i className="mdi mdi-check-all me-3" />Success Card
+                    <i className="mdi mdi-check-all me-3" />
+                    Success Card
                   </h5>
                 </CardHeader>
                 <CardBody>
@@ -530,11 +518,11 @@ const UiCards = props => {
                         This is a longer card with supporting text below as a
                         natural lead-in to additional content. This content is a
                         little bit longer.
-                    </CardText>
+                      </CardText>
                       <CardText>
                         <small className="text-muted">
                           Last updated 3 mins ago
-                      </small>
+                        </small>
                       </CardText>
                     </CardBody>
                   </Card>
@@ -545,11 +533,11 @@ const UiCards = props => {
                       <CardText>
                         This card has supporting text below as a natural lead-in
                         to additional content.
-                    </CardText>
+                      </CardText>
                       <CardText>
                         <small className="text-muted">
                           Last updated 3 mins ago
-                      </small>
+                        </small>
                       </CardText>
                     </CardBody>
                   </Card>
@@ -559,14 +547,14 @@ const UiCards = props => {
                       <CardTitle className="mt-0">Card title</CardTitle>
                       <CardText>
                         This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This card has even
-                        longer content than the first to show that equal height
-                        action.
-                    </CardText>
+                        natural lead-in to additional content. This card has
+                        even longer content than the first to show that equal
+                        height action.
+                      </CardText>
                       <CardText>
                         <small className="text-muted">
                           Last updated 3 mins ago
-                      </small>
+                        </small>
                       </CardText>
                     </CardBody>
                   </Card>

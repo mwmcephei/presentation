@@ -146,7 +146,7 @@ const EcommerceProducts = props => {
     setProductList(productsData.filter(product => product.rating === value))
   }
 
-  const onUncheckMark = (value) => {
+  const onUncheckMark = value => {
     var modifiedRating = [...ratingvalues]
     const modifiedData = (modifiedRating || []).filter(x => x !== value)
     /*

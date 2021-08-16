@@ -19,7 +19,7 @@ const FileRightBar = () => {
       <Card className="filemanager-sidebar me-md-2">
         <CardBody>
           <div className="d-flex flex-column h-100">
-            <div className="mb-4">  
+            <div className="mb-4">
               <div className="mb-3">
                 <UncontrolledDropdown>
                   <DropdownToggle
@@ -131,7 +131,10 @@ const FileRightBar = () => {
             </div>
 
             <div className="mt-auto">
-              <UncontrolledAlert color="success" className="px-3 mb-0 alert-dismissible">
+              <UncontrolledAlert
+                color="success"
+                className="px-3 mb-0 alert-dismissible"
+              >
                 <div className="mb-3">
                   <i className="bx bxs-folder-open h1 text-success"></i>
                 </div>

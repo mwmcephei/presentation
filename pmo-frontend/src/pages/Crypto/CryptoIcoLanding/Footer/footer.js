@@ -66,7 +66,7 @@ const Features = () => {
                     </div>
                     <h5 className="post-title">Donec pede justo aliquet nec</h5>
                     <p className="mb-0">
-                      <i className="bx bx-calendar me-1"/> 04 Mar, 2020
+                      <i className="bx bx-calendar me-1" /> 04 Mar, 2020
                     </p>
                   </Link>
                   <Link to="#" className="post">
@@ -75,7 +75,7 @@ const Features = () => {
                     </div>
                     <h5 className="post-title">In turpis, Pellentesque</h5>
                     <p className="mb-0">
-                      <i className="bx bx-calendar me-1"/> 12 Mar, 2020
+                      <i className="bx bx-calendar me-1" /> 12 Mar, 2020
                     </p>
                   </Link>
                 </div>

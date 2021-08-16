@@ -72,7 +72,7 @@ const AboutUs = () => {
                     <Card className="border">
                       <CardBody>
                         <div className="mb-3">
-                          <i className="mdi mdi-bitcoin h2 text-success"/>
+                          <i className="mdi mdi-bitcoin h2 text-success" />
                         </div>
                         <h5>Lending</h5>
                         <p className="text-muted mb-0">
@@ -90,7 +90,7 @@ const AboutUs = () => {
                     <Card className="border mt-lg-5">
                       <CardBody>
                         <div className="mb-3">
-                          <i className="mdi mdi-wallet-outline h2 text-success"/>
+                          <i className="mdi mdi-wallet-outline h2 text-success" />
                         </div>
                         <h5>Wallet</h5>
                         <p className="text-muted mb-0">
@@ -220,7 +220,7 @@ const AboutUs = () => {
                         className="border-0"
                         disabled={step1}
                       >
-                        <i className="mdi mdi-chevron-left"/>
+                        <i className="mdi mdi-chevron-left" />
                       </button>
                       <button
                         type="button"
@@ -231,7 +231,7 @@ const AboutUs = () => {
                         className="border-0"
                         disabled={step2}
                       >
-                        <i className="mdi mdi-chevron-right"/>
+                        <i className="mdi mdi-chevron-right" />
                       </button>
                     </div>
                   </div>

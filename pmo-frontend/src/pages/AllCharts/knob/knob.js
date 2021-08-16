@@ -326,13 +326,8 @@ class Knob extends React.Component {
   }
 
   renderCenter = () => {
-    const {
-      displayCustom,
-      displayInput,
-      disableTextInput,
-      readOnly,
-      value,
-    } = this.props
+    const { displayCustom, displayInput, disableTextInput, readOnly, value } =
+      this.props
 
     if (displayInput) {
       return (

@@ -7,7 +7,6 @@ import {
   UncontrolledDropdown,
 } from "reactstrap"
 
-
 const RecentFile = props => {
   const recentfile = [
     {
@@ -81,7 +80,9 @@ const RecentFile = props => {
           <h5 className="font-size-16 me-3">Recent Files</h5>
 
           <div className="ms-auto">
-            <Link to="#" className="fw-medium text-reset">View All</Link>
+            <Link to="#" className="fw-medium text-reset">
+              View All
+            </Link>
           </div>
         </div>
         <hr className="mt-2" />
@@ -143,4 +144,4 @@ const RecentFile = props => {
   )
 }
 
-export default RecentFile;
+export default RecentFile

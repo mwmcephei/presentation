@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "react-router-dom"
 import classNames from "classnames"
@@ -17,35 +17,31 @@ const CardTaskBox = props => {
       <Card className="task-box">
         <CardBody className="borad-width">
           <div className="float-end ms-2">
-          <span
-                className={classNames(
-                  "badge rounded-pill badge-soft-secondary font-size-12",
-                  statusClasses[data.status.toLowerCase()]
-                )}
-              >
-                {data.status}
-              </span>
+            <span
+              className={classNames(
+                "badge rounded-pill badge-soft-secondary font-size-12",
+                statusClasses[data.status.toLowerCase()]
+              )}
+            >
+              {data.status}
+            </span>
           </div>
           <div>
             <h5 className="font-size-15">
               <Link to="#" className="text-dark">
-              {data.description}
+                {data.description}
               </Link>
             </h5>
             <p className="text-muted mb-4">{data.dueDate}</p>
           </div>
 
           <div className="avatar-group float-start">
-              {map(
-                data.members,
-                (member, index) =>
-                  index < 2 && (
-                    <div className="avatar-group-item"  key={index}>
-                    <Link
-                      to="#"
-                      className="d-inline-block"
-                
-                    >
+            {map(
+              data.members,
+              (member, index) =>
+                index < 2 && (
+                  <div className="avatar-group-item" key={index}>
+                    <Link to="#" className="d-inline-block">
                       {member.userImg ? (
                         <img
                           src={images[member.userImg]}
@@ -60,11 +56,11 @@ const CardTaskBox = props => {
                         </div>
                       )}
                     </Link>
-                    </div>
-                  )
-              )}
-              {size(data.members) > 2 && (
-                <div className="avatar-group-item">
+                  </div>
+                )
+            )}
+            {size(data.members) > 2 && (
+              <div className="avatar-group-item">
                 <Link to="#" className="d-inline-block">
                   <div className="avatar-xs">
                     <span className="avatar-title rounded-circle bg-info text-white font-size-16">
@@ -72,9 +68,9 @@ const CardTaskBox = props => {
                     </span>
                   </div>
                 </Link>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
+          </div>
 
           <div className="text-end">
             <h5 className="font-size-15 mb-1">{data.budget}</h5>
@@ -87,7 +83,7 @@ const CardTaskBox = props => {
 }
 
 CardTaskBox.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 }
 
 export default CardTaskBox

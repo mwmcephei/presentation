@@ -17,7 +17,6 @@ const SalesAnalytics = props => {
     },
   }
 
-
   return (
     <React.Fragment>
       <Card>
@@ -40,6 +39,7 @@ const SalesAnalytics = props => {
             <Row>
               <Col xs="4">
                 <div className="mt-4">
+
                   <span className="mb-2 ">
                     <span>Behind </span>
                     <i className="mdi mdi-circle text-danger me-1 " />

@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Row, Col } from "reactstrap"
-import MetaTags from 'react-meta-tags';
+import MetaTags from "react-meta-tags"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -88,7 +88,7 @@ const Dashboard = () => {
       desc: "+ 0.0012 ( 0.2 % )",
       series: series1,
       options: options1,
-      arrowUpDown : 'mdi mdi-arrow-up ms-1 text-success'
+      arrowUpDown: "mdi mdi-arrow-up ms-1 text-success",
     },
     {
       title: "Ethereum",
@@ -98,7 +98,7 @@ const Dashboard = () => {
       desc: "- 4.102 ( 0.1 % )",
       series: series2,
       options: options2,
-      arrowUpDown : 'mdi mdi-arrow-down ms-1 text-danger'
+      arrowUpDown: "mdi mdi-arrow-down ms-1 text-danger",
     },
     {
       title: "litecoin",
@@ -108,15 +108,17 @@ const Dashboard = () => {
       desc: "+ 1.792 ( 0.1 % )",
       series: series3,
       options: options3,
-      arrowUpDown : 'mdi mdi-arrow-up ms-1 text-success'
+      arrowUpDown: "mdi mdi-arrow-up ms-1 text-success",
     },
   ]
   return (
     <React.Fragment>
       <div className="page-content">
-      <MetaTags>
-            <title>Crypto Dashboard | Skote - React Admin & Dashboard Template</title>
-          </MetaTags>
+        <MetaTags>
+          <title>
+            Crypto Dashboard | Skote - React Admin & Dashboard Template
+          </title>
+        </MetaTags>
         <Container fluid>
           {/* Render Breadcrumb */}
           <Breadcrumbs title="Dashboards" breadcrumbItem="Crypto" />

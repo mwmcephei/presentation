@@ -66,7 +66,7 @@ const Transactions = () => {
                         <tr>
                           <td style={{ width: "50px" }}>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -95,7 +95,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -124,7 +124,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -153,7 +153,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -182,7 +182,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -211,7 +211,7 @@ const Transactions = () => {
                         <tr>
                           <td style={{ width: "50px" }}>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -240,7 +240,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -275,11 +275,10 @@ const Transactions = () => {
                   <div className="table-responsive">
                     <Table className="table align-middle table-nowrap">
                       <tbody>
-
                         <tr>
                           <td style={{ width: "50px" }}>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -308,7 +307,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -337,7 +336,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -366,7 +365,7 @@ const Transactions = () => {
                         <tr>
                           <td style={{ width: "50px" }}>
                             <div className="font-size-22 text-primary">
-                              <i className="bx bx-down-arrow-circle"/>
+                              <i className="bx bx-down-arrow-circle" />
                             </div>
                           </td>
 
@@ -391,7 +390,6 @@ const Transactions = () => {
                             </div>
                           </td>
                         </tr>
-                      
                       </tbody>
                     </Table>
                   </div>
@@ -403,11 +401,10 @@ const Transactions = () => {
                   <div className="table-responsive">
                     <Table className="table align-middle table-nowrap">
                       <tbody>
-                       
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -435,7 +432,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -463,7 +460,7 @@ const Transactions = () => {
                         <tr>
                           <td>
                             <div className="font-size-22 text-danger">
-                              <i className="bx bx-up-arrow-circle"/>
+                              <i className="bx bx-up-arrow-circle" />
                             </div>
                           </td>
 
@@ -488,7 +485,6 @@ const Transactions = () => {
                             </div>
                           </td>
                         </tr>
-
                       </tbody>
                     </Table>
                   </div>

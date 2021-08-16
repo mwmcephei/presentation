@@ -13,7 +13,7 @@ import CardShop from "./CardShop"
 import { getShops as onGetShops } from "store/e-commerce/actions"
 
 //redux
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux"
 
 const EcommerceShops = props => {
   const dispatch = useDispatch()
@@ -24,7 +24,7 @@ const EcommerceShops = props => {
 
   useEffect(() => {
     dispatch(onGetShops())
-  }, [dispatch]);
+  }, [dispatch])
 
   return (
     <React.Fragment>
@@ -61,4 +61,4 @@ EcommerceShops.propTypes = {
   onGetShops: PropTypes.func,
 }
 
-export default EcommerceShops;
+export default EcommerceShops

@@ -10,7 +10,6 @@ import { withTranslation } from "react-i18next"
 import { connect } from "react-redux"
 
 const Navbar = props => {
-
   const [dashboard, setdashboard] = useState(false)
   const [ui, setui] = useState(false)
   const [app, setapp] = useState(false)
@@ -210,7 +209,10 @@ const Navbar = props => {
                           <Link to="/ui-rating" className="dropdown-item">
                             {props.t("Rating")}
                           </Link>
-                          <Link to="/ui-notifications" className="dropdown-item">
+                          <Link
+                            to="/ui-notifications"
+                            className="dropdown-item"
+                          >
                             {props.t("Notifications")}
                           </Link>
                           <Link to="/ui-breadcrumb" className="dropdown-item">
@@ -323,7 +325,10 @@ const Navbar = props => {
                           show: ecommerce,
                         })}
                       >
-                        <Link to="/ecommerce-products" className="dropdown-item">
+                        <Link
+                          to="/ecommerce-products"
+                          className="dropdown-item"
+                        >
                           {props.t("Products")}
                         </Link>
                         <Link
@@ -344,7 +349,10 @@ const Navbar = props => {
                         <Link to="/ecommerce-cart" className="dropdown-item">
                           {props.t("Cart")}
                         </Link>
-                        <Link to="/ecommerce-checkout" className="dropdown-item">
+                        <Link
+                          to="/ecommerce-checkout"
+                          className="dropdown-item"
+                        >
                           {props.t("Checkout")}
                         </Link>
                         <Link to="/ecommerce-shops" className="dropdown-item">
@@ -394,7 +402,10 @@ const Navbar = props => {
                         >
                           {props.t("KYC Application")}
                         </Link>
-                        <Link to="/crypto-ico-landing" className="dropdown-item">
+                        <Link
+                          to="/crypto-ico-landing"
+                          className="dropdown-item"
+                        >
                           {props.t("ICO Landing")}
                         </Link>
                       </div>
@@ -781,7 +792,10 @@ const Navbar = props => {
                         <Link to="/auth-lock-screen" className="dropdown-item">
                           {props.t("Lock Screen")}
                         </Link>
-                        <Link to="/auth-lock-screen-2" className="dropdown-item">
+                        <Link
+                          to="/auth-lock-screen-2"
+                          className="dropdown-item"
+                        >
                           {props.t("Lock Screen 2")}
                         </Link>
                         <Link to="/page-confirm-mail" className="dropdown-item">

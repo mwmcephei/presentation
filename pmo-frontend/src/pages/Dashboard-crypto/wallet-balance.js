@@ -81,7 +81,10 @@ const WalletBalance = () => {
         <Card>
           <CardBody>
             <div className="float-end">
-              <select  defaultValue="MA" className="form-select form-select-sm ms-2">
+              <select
+                defaultValue="MA"
+                className="form-select form-select-sm ms-2"
+              >
                 <option value="MA">March</option>
                 <option value="FE">February</option>
                 <option value="JA">January</option>

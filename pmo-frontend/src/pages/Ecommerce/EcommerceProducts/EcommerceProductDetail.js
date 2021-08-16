@@ -162,10 +162,7 @@ const EcommerceProductDetail = props => {
                                       src={product["subImage"][0]}
                                       alt=""
                                       onClick={() => {
-                                        imageShow(
-                                          product["subImage"][0],
-                                          1
-                                        )
+                                        imageShow(product["subImage"][0], 1)
                                       }}
                                       className="img-fluid mx-auto d-block rounded"
                                     />
@@ -184,10 +181,7 @@ const EcommerceProductDetail = props => {
                                       src={product["subImage"][1]}
                                       alt=""
                                       onClick={() => {
-                                        imageShow(
-                                          product["subImage"][1],
-                                          2
-                                        )
+                                        imageShow(product["subImage"][1], 2)
                                       }}
                                       className="img-fluid mx-auto d-block rounded"
                                     />
@@ -206,10 +200,7 @@ const EcommerceProductDetail = props => {
                                       src={product["subImage"][2]}
                                       alt=""
                                       onClick={() => {
-                                        imageShow(
-                                          product["subImage"][2],
-                                          3
-                                        )
+                                        imageShow(product["subImage"][2], 3)
                                       }}
                                       className="img-fluid mx-auto d-block rounded"
                                     />

@@ -5,17 +5,9 @@ import {
     Container,
     Row,
     Col,
-    Button,
     Card,
     CardBody,
     CardTitle,
-    Input,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    Media,
-    Table,
 } from "reactstrap"
 import MonthlyEarning_Custom from "../../pages/Dashboard/MonthlyEarning_custom"
 import CardUser from "../../pages/Dashboard-saas/card-user_custom"
@@ -52,26 +44,29 @@ const Overview = (props) => {
         fetch(parserBaseURL + "/budget")
             .then(response => response.json())
             .then(response => {
-                setMonthlySpendings(response.monthlySpendings)
-                console.log("budget")
-                console.log(response)
-                let labels = []
-                for (let i = 0; i < response.monthlySpendings.length; i++) {
-                    const date = "0" + (i + 1) + "/01/" + response.year
-                    labels.push(date)
-                }
-                setLabels(labels)
-                setApproved(response.approvedBudgetPerMonth)
+                if (response.monthlySpendings && response.approvedBudgetPerMonth) {
+                    setMonthlySpendings(response.monthlySpendings)
+                    console.log("budget")
+                    console.log(response)
+                    let labels = []
+                    for (let i = 0; i < response.monthlySpendings.length; i++) {
+                        const date = "0" + (i + 1) + "/01/" + response.year
+                        labels.push(date)
+                    }
+                    setLabels(labels)
+                    setApproved(response.approvedBudgetPerMonth)
 
-                console.log("in useeffect")
-                console.log(labels)
-                console.log(response.approvedBudgetPerMonth)
-                console.log(response.monthlySpendings)
+                    console.log("in useeffect")
+                    console.log(labels)
+                    console.log(response.approvedBudgetPerMonth)
+                    console.log(response.monthlySpendings)
+                }
             })
             .catch(error => {
                 console.log(error)
             })
     }, []);
+
 
 
     useEffect(() => {
@@ -94,7 +89,6 @@ const Overview = (props) => {
                 })
                 .catch(error => console.log(error));
         }
-
     }, [approved]);
 
 
@@ -144,10 +138,6 @@ const Overview = (props) => {
             greenCounter: greenCounter_kpi
         })
     }, [measures]);
-    /*
-  */
-
-
 
 
     const getMax = (array) => {
@@ -157,8 +147,6 @@ const Overview = (props) => {
         })
         return res
     }
-
-
 
 
     let overview = "overview"
@@ -173,10 +161,9 @@ const Overview = (props) => {
         </div>
     }
 
-    /* 
- */
 
-    let budgetChart = "budgetChart"
+
+    let budgetChart = ""
     if (labels && monthlySpendings && approved) {
         budgetChart = <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved} />
     }
@@ -227,13 +214,10 @@ const Overview = (props) => {
 
                     </Row>
 
-
                 </Container>
             </div>
         </>
     )
-
 }
 
-
-export default Overview;
+export default Overview

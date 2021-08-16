@@ -130,9 +130,7 @@ const PopularPost = () => {
                           >
                             <i className="mdi mdi-dots-horizontal"></i>
                           </DropdownToggle>
-                          <DropdownMenu
-                            className="dropdown-menu-end"
-                          >
+                          <DropdownMenu className="dropdown-menu-end">
                             <Link className="dropdown-item" to="#">
                               Action
                             </Link>
