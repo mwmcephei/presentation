@@ -228,9 +228,12 @@ export class XlsxParserService {
     const excelFile = new this.sheetModel(newSheet)
     excelFile.save()
       .then(newlySavedExcelSheet => {
+        console.log(newlySavedExcelSheet)
+
         const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
         // 'sheet' corresponds to measure
         const sheet_name_list = workbook.SheetNames;
+        console.log(typeof (workbook.SheetNames))
         sheet_name_list.map(sheetName => {
           // save measure to DB
           if (sheetName !== "Status Overview" && sheetName !== "Overview") {
@@ -421,7 +424,6 @@ export class XlsxParserService {
             target = overview_object[key]["v"]
           }
         }
-
         if (key.includes("L")) {                        // TO DO: clarify which last month
           const row = parseInt(key.substring(1))
           if (row == rowOfThisMeasure) {
