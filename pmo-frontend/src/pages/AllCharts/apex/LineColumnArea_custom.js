@@ -2,8 +2,8 @@ import React from "react"
 import { useState, useEffect } from 'react';
 import ReactApexChart from "react-apexcharts"
 
-const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
 
+const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
   const [approvedArray, setApproved] = useState()
   const [accumulatedSpendings, setAccumulatedSpendings] = useState()
 
@@ -27,9 +27,6 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
       setAccumulatedSpendings(acumulateSpendingsAray)
     } else {
       console.log("NO PROPS")
-      console.log(labels)
-      console.log(monthlySpendings)
-      console.log(approved)
     }
   }, []);
 
@@ -50,17 +47,17 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
     {
       name: "Accumulated Monthly Spendings",
       type: "area",
-      data: accumulatedSpendings,
+      data: accumulatedSpendings ? accumulatedSpendings : [],
     },
     {
       name: "Monthly Spendings",
       type: "column",
-      data: monthlySpendings,
+      data: monthlySpendings ? monthlySpendings : [],
     },
     {
       name: "Approved",
       type: "line",
-      data: approvedArray,
+      data: approvedArray ? approvedArray : [],
     },
   ]
   const options = {
@@ -151,7 +148,6 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
     <div>
       {result}
     </div>
-
   )
 }
 
