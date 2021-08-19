@@ -68,110 +68,110 @@ const Overview = (props) => {
             })
     }, []);
 
-    /*
-        useEffect(() => {
+
+    useEffect(() => {
+        if (approved) {
             fetch(parserBaseURL + "/overview")
                 .then(response => response.json())
                 .then(response => {
                     setOverviewData(response)
                     console.log("overview")
                     console.log(response)
-    
+
                     fetch(parserBaseURL + "/measures")
                         .then(response => response.json())
                         .then(response => {
                             setMeasures(response)
                             console.log("measures")
                             console.log(response)
-    
-                            fetch(parserBaseURL + "/measures")
-                                .then(response => response.json())
-                                .then(response => {
-                                    setMeasures(response)
-                                    console.log("measures")
-                                    console.log(response)
-                                })
-                                .catch(error => console.log(error));
                         })
                         .catch(error => console.log(error));
-                }, [approved]);
-    
-    
-            useEffect(() => {
-                let greenCounter = 0
-                let yellowCounter = 0
-                let redCounter = 0
-                measures.map(measure => {
-                    const max = getMax([measure.budget, measure.risk, measure.artefact])
-                    switch (max) {
-                        case 0:
-                            greenCounter += 1
-                            break;
-                        case 1:
-                            yellowCounter += 1
-                            break;
-                        case 2:
-                            redCounter += 1
-                            break;
-                    }
                 })
-                setMeasuresPieChart({
-                    redCounter,
-                    yellowCounter,
-                    greenCounter
-                })
-                // kpi pie chart
-                let greenCounter_kpi = 0
-                let yellowCounter_kpi = 0
-                let redCounter_kpi = 0
-                measures.map(measure => {
-                    switch (measure.kpiProgress) {
-                        case 0:
-                            redCounter_kpi += 1
-                            break;
-                        case 1:
-                            yellowCounter_kpi += 1
-                            break;
-                        case 2:
-                            greenCounter_kpi += 1
-                            break;
-                    }
-                })
-                setMeasurePKI_pieChart({
-                    redCounter: redCounter_kpi,
-                    yellowCounter: yellowCounter_kpi,
-                    greenCounter: greenCounter_kpi
-                })
-            }, [measures]);
-        * /
-    
-    
-    
-    
-            const getMax = (array) => {
-                let res = 0
-                array.map(a => {
-                    if (a > res) { res = a }
-                })
-                return res
-            }
-    
-    
-    
-    
-            let status1 = "test"
-            let status2 = "test"
-            /*     
-                if(overviewData){
-                    status1 = <CardUser signal={ overviewData.overallStatus} 
-                    budget={ overviewData.totalBudget }
-                    numberOfMeasures={overviewData.measures.length}
-                    />
-                    status2 =  <TopCities overallProgress={overviewData.progress * 100} kpiProgress={overviewData.kpiProgress * 100} />
-                }
-             */
+                .catch(error => console.log(error));
+        }
 
-    let budgetChart = ""
+    }, [approved]);
+
+
+    useEffect(() => {
+        let greenCounter = 0
+        let yellowCounter = 0
+        let redCounter = 0
+        measures.map(measure => {
+            const max = getMax([measure.budget, measure.risk, measure.artefact])
+            switch (max) {
+                case 0:
+                    greenCounter += 1
+                    break;
+                case 1:
+                    yellowCounter += 1
+                    break;
+                case 2:
+                    redCounter += 1
+                    break;
+            }
+        })
+        setMeasuresPieChart({
+            redCounter,
+            yellowCounter,
+            greenCounter
+        })
+        // kpi pie chart
+        let greenCounter_kpi = 0
+        let yellowCounter_kpi = 0
+        let redCounter_kpi = 0
+        measures.map(measure => {
+            switch (measure.kpiProgress) {
+                case 0:
+                    redCounter_kpi += 1
+                    break;
+                case 1:
+                    yellowCounter_kpi += 1
+                    break;
+                case 2:
+                    greenCounter_kpi += 1
+                    break;
+            }
+        })
+        setMeasurePKI_pieChart({
+            redCounter: redCounter_kpi,
+            yellowCounter: yellowCounter_kpi,
+            greenCounter: greenCounter_kpi
+        })
+    }, [measures]);
+    /*
+  */
+
+
+
+
+    const getMax = (array) => {
+        let res = 0
+        array.map(a => {
+            if (a > res) { res = a }
+        })
+        return res
+    }
+
+
+
+
+    let overview = "overview"
+    if (overviewData) {
+        overview = <div>
+            <CardUser signal={overviewData.overallStatus}
+                budget={overviewData.totalBudget}
+                numberOfMeasures={overviewData.measures.length}
+                overallProgress={overviewData.progress * 100}
+                kpiProgress={overviewData.kpiProgress * 100}
+            />
+        </div>
+    }
+
+    /* 
+ */
+
+    let budgetChart = "budgetChart"
     if (labels && monthlySpendings && approved) {
         budgetChart = <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved} />
     }
@@ -182,35 +182,42 @@ const Overview = (props) => {
             <div className="page-content">
                 <Container fluid>
                     <Row>
-                        {"status1"}
+                        <Container>
+                            {overview}
+                        </Container>
                     </Row>
 
                     <Row>
-                        {"status2"}
+                        <Container className="">
+                            <Row>
+                                <Col xs="12" xm="6" lg="6" xl="6">
+                                    <SalesAnalytics title={"Status of Projects"}
+                                        green={measuresPieChart.greenCounter}
+                                        yellow={measuresPieChart.yellowCounter}
+                                        red={measuresPieChart.redCounter}
+                                    />
+                                </Col>
+                                <Col xs="12" xm="6" lg="6" xl="6">
+                                    <SalesAnalytics title={"KPI"}
+                                        green={measurePKI_pieChart.greenCounter}
+                                        yellow={measurePKI_pieChart.yellowCounter}
+                                        red={measurePKI_pieChart.redCounter}
+                                    />
+                                </Col>
+                            </Row>
+                        </Container>
                     </Row>
 
-                    { /*     <Row>
-                    <SalesAnalytics title={"Status of Projects"}
-                        green={measuresPieChart.greenCounter} 
-                        yellow={measuresPieChart.yellowCounter} 
-                        red={measuresPieChart.redCounter} 
-                    />
-                </Row>
-                <Row>
-                    <SalesAnalytics title={"KPI"}
-                        green={measurePKI_pieChart.greenCounter} 
-                        yellow={measurePKI_pieChart.yellowCounter} 
-                        red={measurePKI_pieChart.redCounter} 
-                    />
-                </Row>
-          */ }
                     <Row>
-                        <Card>
-                            <CardBody>
-                                <CardTitle className="mb-4"></CardTitle>
-                                {budgetChart}
-                            </CardBody>
-                        </Card>
+                        <Container>
+                            <Card>
+                                <CardBody>
+                                    <CardTitle className="mb-4">Budget</CardTitle>
+                                    {budgetChart}
+                                </CardBody>
+                            </Card>
+                        </Container>
+
                     </Row>
 
 
