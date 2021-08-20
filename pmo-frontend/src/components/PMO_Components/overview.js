@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
 
 const Overview = (props) => {
     //   const parserBaseURL = "http://192.168.2.112:5000/xlsx-parser"  // Michael
-    const parserBaseURL = "http://localhost:5000/xlsx-parser" // Matthias Browser
+    const parserBaseURL = "http://localhost:4000/xlsx-parser" // Matthias Browser
     //   const parserBaseURL = "http://10.0.2.2:5000/xlsx-parser"   // android emulator
 
 
@@ -66,7 +66,6 @@ const Overview = (props) => {
                 console.log(error)
             })
     }, []);
-
 
 
     useEffect(() => {
@@ -149,6 +148,8 @@ const Overview = (props) => {
     }
 
 
+
+
     let overview = "overview"
     if (overviewData) {
         overview = <div>
@@ -161,9 +162,10 @@ const Overview = (props) => {
         </div>
     }
 
+    /* 
+ */
 
-
-    let budgetChart = ""
+    let budgetChart = "budgetChart"
     if (labels && monthlySpendings && approved) {
         budgetChart = <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved} />
     }
@@ -182,7 +184,6 @@ const Overview = (props) => {
                     <Row>
                         <Container className="">
                             <Row>
-
                                 <Col xs="12" xm="6" lg="6" xl="6">
                                     <SalesAnalytics title={"Status of Projects"}
                                         green={measuresPieChart.greenCounter}
@@ -201,7 +202,6 @@ const Overview = (props) => {
                         </Container>
                     </Row>
 
-
                     <Row>
                         <Container>
                             <Card>
@@ -211,7 +211,6 @@ const Overview = (props) => {
                                 </CardBody>
                             </Card>
                         </Container>
-
                     </Row>
 
                 </Container>

@@ -1,9 +1,8 @@
 import React from "react"
 import { useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, Progress } from "reactstrap"
+const TopCities = () => {
 
-
-const TopCities = props => {
 
   return (
     <React.Fragment>

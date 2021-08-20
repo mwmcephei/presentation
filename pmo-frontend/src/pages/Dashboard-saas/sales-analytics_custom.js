@@ -39,7 +39,6 @@ const SalesAnalytics = props => {
             <Row>
               <Col xs="4">
                 <div className="mt-4">
-
                   <span className="mb-2 ">
                     <span>Behind </span>
                     <i className="mdi mdi-circle text-danger me-1 " />
@@ -65,7 +64,6 @@ const SalesAnalytics = props => {
                   <h5 className="mt-2">{props.green}</h5>
                 </div>
               </Col>
-
             </Row>
           </div>
         </CardBody>
