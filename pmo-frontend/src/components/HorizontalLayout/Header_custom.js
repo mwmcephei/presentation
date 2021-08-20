@@ -19,7 +19,7 @@ import headerLogog from "../../assets/images/headerLogo.png"
 import { withTranslation } from "react-i18next"
 
 const Header = props => {
-  const [position, setPosition] = useState()
+  const [position, setPosition] = useState("")
   const [open, setOpen] = useState(false)
 
   const toggleTopDrawer = () => {
@@ -44,6 +44,7 @@ const Header = props => {
         document.documentElement.mozRequestFullScreen()
       } else if (document.documentElement.webkitRequestFullscreen) {
         document.documentElement.webkitRequestFullscreen(
+          // @ts-ignore
           Element.ALLOW_KEYBOARD_INPUT
         )
       }
