@@ -3,11 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { XlsxParserModule } from './xlsx-parser/xlsx-parser.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ApiModule } from './api/api.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb+srv://mwm:matthias88@cluster0.f8xt0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
     XlsxParserModule,
+    ApiModule,
     //   ServeStaticModule.forRoot({
     //      rootPath: join(__dirname, '', 'client'),
     //    rootPath: join("/Users/mwm/Desktop/PMO/pmo/packages/pmo-backend/src/", '', 'client'),  

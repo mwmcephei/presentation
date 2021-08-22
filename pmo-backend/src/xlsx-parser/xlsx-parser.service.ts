@@ -8,14 +8,10 @@ import { Budget, BudgetSchema } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
 import { resolve } from "path";
 import * as XLSX from "xlsx";
-
+import { fileNames } from '../globalVars'
 
 @Injectable()
 export class XlsxParserService {
-  fileName: string = 'test_data.xlsx'
-  kpi_file_1: string = 'KPI-report_1.xlsx'
-  kpi_file_2: string = 'KPI-report_2.xlsx'
-  budget_file: string = 'budget_report.xlsx'
 
   constructor(
     @InjectModel('Artefact') private artefactModel: Model<Artefact>,
@@ -25,55 +21,16 @@ export class XlsxParserService {
   ) { }
 
 
-  /*
-    async getAllArtefacts(): Promise<string> {
-      const result = await this.artefactModel.find()
-      console.log(result)
-      return JSON.stringify(result)
-    }
-  */
-
-  async getArtefactsOfMeasure(measureID: string): Promise<string> {
-    const measure = await this.measureModel.findById(measureID)
-    if (measure) {
-      const populatedMeasure = await measure.populate("artefacts").execPopulate()
-      return JSON.stringify(populatedMeasure.artefacts)
-    } else {
-      return JSON.stringify("Error")
-    }
-  }
-
-
-  async getAllMeasures(): Promise<string> {
-    const result = await this.measureModel.find()
-    console.log(result)
-    return JSON.stringify(result)
-  }
-
-
-  async getOverview(): Promise<string> {
-    const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
-    console.log(excelSheet)
-    return JSON.stringify(excelSheet)
-  }
-
-
-  async getBudget(): Promise<string> {
-    const excelSheet = await this.budgetModel.findOne()   // TO DO: safeguard for duplicates
-    console.log(excelSheet)
-    return JSON.stringify(excelSheet)
-  }
-
 
   // ---------  parsing functions  -----------------------------
 
   async createOverview(): Promise<string> {
-    const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
+    const excelSheet = await this.sheetModel.findOne({ name: fileNames.main_file })   // TO DO: safeguard for duplicates
     if (excelSheet) {
       const numberOfMeasures = excelSheet.measures.length
       console.log(numberOfMeasures)
 
-      const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+      const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.main_file))
       const overview_object = workbook.Sheets["Status Overview"]
       //    console.log[overview_object]
 
@@ -193,7 +150,7 @@ export class XlsxParserService {
 
   // aux function for createOverview()
   getKPIProgressData(kpiFile: string): any {
-    const workbook = XLSX.readFile(resolve(__dirname, kpiFile))
+    const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, kpiFile))
     const overview_object = workbook.Sheets["Plan view"]
     //  console.log(overview_object)
     // D:measure name, G current progress, H target progress
@@ -223,14 +180,14 @@ export class XlsxParserService {
   parse(): string {
     // create Sheet Table
     const newSheet = {
-      name: this.fileName,
+      name: fileNames.main_file,
     }
     const excelFile = new this.sheetModel(newSheet)
     excelFile.save()
       .then(newlySavedExcelSheet => {
         console.log(newlySavedExcelSheet)
 
-        const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+        const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.main_file))
         // 'sheet' corresponds to measure
         const sheet_name_list = workbook.SheetNames;
         console.log(typeof (workbook.SheetNames))
@@ -305,7 +262,7 @@ export class XlsxParserService {
 
   // adds status info to measures 
   parse_overview(): string {
-    const workbook = XLSX.readFile(resolve(__dirname, this.fileName))
+    const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.main_file))
     // parse overview
     const overview_object = workbook.Sheets["Status Overview"]
     const risks = []                                                    // RESTRUCTURE!!!!!!!
@@ -379,7 +336,7 @@ export class XlsxParserService {
 
 
   async parseKPI(): Promise<string> {
-    const workbook = XLSX.readFile(resolve(__dirname, this.kpi_file_2))
+    const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.kpi_file_2))
     const overview_object = workbook.Sheets["Plan view"]
     // get row number of measures. measure names in column "D"
     const rowsOfMeasures = []
@@ -456,7 +413,7 @@ export class XlsxParserService {
 
 
   async parseBudgetMonths(): Promise<string> {
-    const workbook = XLSX.readFile(resolve(__dirname, this.budget_file))
+    const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.budget_file))
     const overview_object = workbook.Sheets["1. Overview"]
     const detailes_object = workbook.Sheets["2. Detailed view"]
     // M > 5,  D measure names
@@ -505,7 +462,7 @@ export class XlsxParserService {
       }
       )
     // add totalapprovedbudget to Sheet Table
-    const excelSheet = await this.sheetModel.findOne({ name: this.fileName })   // TO DO: safeguard for duplicates
+    const excelSheet = await this.sheetModel.findOne({ name: fileNames.main_file })   // TO DO: safeguard for duplicates
     excelSheet.update({ totalBudget: totalApprovedBudget })
       .then(result => {
         console.log(result)

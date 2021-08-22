@@ -40,42 +40,5 @@ export class XlsxParserController {
     }
 
 
-    // routes for retrieving data 
-    //
-    @Get('artefacts/:measureID')
-    getArtefactsOfMeasure(@Param() params) {
-        console.log("getAllArtefacts")
-        console.log(params.measureID)
-        return this.xlsxParseService.getArtefactsOfMeasure(params.measureID);
-    }
-
-    @Get("all_artefacts")
-    getAllArtefacts() {
-        console.log("getAllArtefacts")
-        return "hi"
-        //       return this.xlsxParseService.getAllArtefacts();
-    }
-
-    @Get("overview")
-    getOverview() {
-        console.log("getOverview")
-
-        return this.xlsxParseService.getOverview();
-    }
-
-    @Get("measures")
-    getAllMeasures() {
-        console.log("getAllMeasures")
-        return this.xlsxParseService.getAllMeasures();
-    }
-
-    @Get("budget")
-    getBudget() {
-        console.log("getBudget")
-        return this.xlsxParseService.getBudget();
-    }
-
-
-
 }
 
