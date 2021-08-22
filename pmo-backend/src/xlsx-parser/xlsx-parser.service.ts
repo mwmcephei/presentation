@@ -10,9 +10,9 @@ import { resolve } from "path";
 import * as XLSX from "xlsx";
 import { fileNames } from '../globalVars'
 
+
 @Injectable()
 export class XlsxParserService {
-
   constructor(
     @InjectModel('Artefact') private artefactModel: Model<Artefact>,
     @InjectModel('Measure') private measureModel: Model<Measure>,
@@ -149,7 +149,7 @@ export class XlsxParserService {
 
 
   // aux function for createOverview()
-  getKPIProgressData(kpiFile: string): any {
+  getKPIProgressData(kpiFile: string) {
     const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, kpiFile))
     const overview_object = workbook.Sheets["Plan view"]
     //  console.log(overview_object)
