@@ -1,11 +1,20 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import { useState, useEffect } from 'react';
 import ReactApexChart from "react-apexcharts"
 
 
-const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
-  const [approvedArray, setApproved] = useState()
-  const [accumulatedSpendings, setAccumulatedSpendings] = useState()
+type budgetPropType = {
+  labels: string[],
+  monthlySpendings: number[],
+  approved: number,
+}
+
+
+
+
+const LineColumnArea = ({ labels, monthlySpendings, approved }: budgetPropType): ReactElement => {
+  const [approvedArray, setApproved] = useState([0])
+  const [accumulatedSpendings, setAccumulatedSpendings] = useState([0])
 
   useEffect(() => {
     if (typeof labels != 'undefined' && labels &&
@@ -31,7 +40,7 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
   }, []);
 
 
-  const acumulateArray = array => {
+  const acumulateArray = (array: number[]): number[] => {
     let result = []
     for (let i = 0; i < array.length; i++) {
       let acc = 0
@@ -60,7 +69,7 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
       data: approvedArray ? approvedArray : [],
     },
   ]
-  const options = {
+  const options: object = {
     chart: {
       stacked: false,
       toolbar: {
@@ -131,9 +140,11 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
     },
   }
 
-  let result = ""
+
+
+  let budgetChart = <div></div>
   if (labels && monthlySpendings && approved) {
-    result = <ReactApexChart
+    budgetChart = <ReactApexChart
       options={options}
       series={series}
       type="line"
@@ -144,9 +155,12 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }) => {
 
 
 
+
+
+
   return (
     <div>
-      {result}
+      {budgetChart}
     </div>
   )
 }

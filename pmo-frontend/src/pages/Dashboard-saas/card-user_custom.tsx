@@ -32,7 +32,6 @@ type overviewPropType = {
 
 
 function CardUser(props: overviewPropType): ReactElement {
-
   const overallProgress_style: CSS.Properties = {
     width: props.overallProgress + "%"
   };
