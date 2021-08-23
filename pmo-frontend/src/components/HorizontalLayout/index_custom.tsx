@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+// @ts-ignore
 import { withRouter } from "react-router-dom"
 import PropTypes from "prop-types"
 
@@ -22,9 +23,13 @@ const Layout = props => {
 
   const { topbarTheme, layoutWidth, isPreloader, showRightSidebar } =
     useSelector(state => ({
+      // @ts-ignore
       topbarTheme: state.Layout.topbarTheme,
+      // @ts-ignore
       layoutWidth: state.Layout.layoutWidth,
+      // @ts-ignore
       isPreloader: state.Layout.isPreloader,
+      // @ts-ignore
       showRightSidebar: state.Layout.showRightSidebar,
     }))
 

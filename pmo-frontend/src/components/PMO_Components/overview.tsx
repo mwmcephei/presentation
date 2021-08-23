@@ -9,19 +9,21 @@ import {
     CardBody,
     CardTitle,
 } from "reactstrap"
-import MonthlyEarning_Custom from "../../pages/Dashboard/MonthlyEarning_custom"
 import CardUser from "../../pages/Dashboard-saas/card-user_custom"
-import TopCities from "../../pages/Dashboard/TopCities_custom"
-import Apexchart from "../../pages/Charts/Apexcharts_custom"
 import LineColumnArea from "pages/AllCharts/apex/LineColumnArea_custom"
-
-import ApexRadial from "../../pages/Dashboard/ApexRadial"
-import BarChart from 'pages/AllCharts/chartjs/barchart'
-import LineChart from 'pages/AllCharts/chartjs/linechart'
 import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics_custom'
-import { Link } from 'react-router-dom';
 import { number } from 'prop-types';
 
+
+type getOverView_propType = {
+    _id: String,
+    name: String,
+    kpiProgress: number,
+    overallStatus: number,
+    totalBudget: number,
+    progress: number,
+    measures: [""]
+}
 
 
 
@@ -32,15 +34,7 @@ const Overview = (): ReactElement => {
     //   const parserBaseURL = "https://pmo-ios-backend.herokuapp.com/api"   // backend hosted on heroku
 
 
-    const [overviewData, setOverviewData] = useState({
-        _id: String,
-        name: String,
-        kpiProgress: number,
-        overallStatus: number,
-        totalBudget: number,
-        progress: number,
-        measures: [""]
-    })
+    const [overviewData, setOverviewData] = useState()
     const [measures, setMeasures] = useState([])
     const [measuresPieChart, setMeasuresPieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
     const [measurePKI_pieChart, setMeasurePKI_pieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
@@ -158,7 +152,7 @@ const Overview = (): ReactElement => {
     }
 
 
-    const getOverview = (overViewProps): ReactElement => {
+    const getOverview = (overViewProps: getOverView_propType): ReactElement => {
         let overview = <div>overview</div>
         if (overViewProps && typeof overViewProps != 'undefined') {
             overview = <div>
@@ -174,7 +168,7 @@ const Overview = (): ReactElement => {
     }
 
 
-    const getBudgetChart = (labels: String[], monthlySpendings: number[], approved: number): ReactElement => {
+    const getBudgetChart = (labels: string[], monthlySpendings: number[], approved: number): ReactElement => {
         let budgetChart = <div>budgetChart</div>
         if (labels && monthlySpendings && approved) {
             budgetChart = <LineColumnArea labels={labels} monthlySpendings={monthlySpendings} approved={approved} />
