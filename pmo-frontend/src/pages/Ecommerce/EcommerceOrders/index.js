@@ -39,7 +39,6 @@ import {
   deleteOrder as onDeleteOrder,
 } from "store/actions"
 
-import EcommerceOrdersModal from "./EcommerceOrdersModal"
 
 const EcommerceOrders = props => {
   const dispatch = useDispatch()
@@ -278,7 +277,6 @@ const EcommerceOrders = props => {
 
   return (
     <React.Fragment>
-      <EcommerceOrdersModal isOpen={modal1} toggle={toggleViewModal} />
       <div className="page-content">
         <MetaTags>
           <title>Orders | Skote - React Admin & Dashboard Template</title>

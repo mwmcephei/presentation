@@ -10,7 +10,7 @@ import { Container, Row, Col, CardBody, Card, Button } from "reactstrap"
 // import images
 import profileImg from "../../assets/images/profile-img.png"
 import logoImg from "../../assets/images/logo.svg"
-import avatar from "../../assets/images/users/avatar-1.jpg"
+
 
 const LockScreen = () => {
   return (
@@ -59,11 +59,7 @@ const LockScreen = () => {
                   <div className="p-2">
                     <AvForm className="form-horizontal">
                       <div className="user-thumb text-center mb-4">
-                        <img
-                          src={avatar}
-                          className="rounded-circle img-thumbnail avatar-md"
-                          alt="thumbnail"
-                        />
+
                         <h5 className="font-size-15 mt-3">Maria Laird</h5>
                       </div>
 

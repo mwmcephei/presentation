@@ -5,11 +5,9 @@ import MetaTags from "react-meta-tags"
 //import component
 import CardUser from "./CardUser"
 import Settings from "./Settings"
-import Posts from "./Posts"
 import Comments from "./Comments"
 import TapVisitors from "./TapVisitors"
 import Activity from "./Activity"
-import PopularPost from "./PopularPost"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -101,14 +99,12 @@ const index = props => {
             <Settings />
           </Row>
           <Row>
-            <Posts />
             <Comments />
             <TapVisitors />
           </Row>
           <Row>
             {" "}
             <Activity />
-            <PopularPost />
           </Row>
         </Container>
       </div>

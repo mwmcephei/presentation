@@ -1,10 +1,6 @@
 import React from "react"
 import { Card, CardBody, Col } from "reactstrap"
 
-// import images
-import img1 from "../../../assets/images/small/img-7.jpg"
-import img2 from "../../../assets/images/small/img-4.jpg"
-import img3 from "../../../assets/images/small/img-6.jpg"
 
 function RightBar(props) {
   return (
@@ -107,7 +103,6 @@ function RightBar(props) {
                   <div className="media align-items-center">
                     <div className="me-3">
                       <img
-                        src={img1}
                         alt=""
                         className="avatar-md h-auto d-block rounded"
                       />
@@ -125,7 +120,7 @@ function RightBar(props) {
                   <div className="media align-items-center">
                     <div className="me-3">
                       <img
-                        src={img2}
+
                         alt=""
                         className="avatar-md h-auto d-block rounded"
                       />
@@ -143,7 +138,6 @@ function RightBar(props) {
                   <div className="media align-items-center">
                     <div className="me-3">
                       <img
-                        src={img3}
                         alt=""
                         className="avatar-md h-auto d-block rounded"
                       />

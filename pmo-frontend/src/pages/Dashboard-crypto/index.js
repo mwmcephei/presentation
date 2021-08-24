@@ -6,7 +6,6 @@ import MetaTags from "react-meta-tags"
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 //Import Components
-import CardUser from "./card-user"
 import CardWelcome from "./card-welcome"
 import MiniWidget from "./mini-widget"
 import WalletBalance from "./wallet-balance"
@@ -123,7 +122,6 @@ const Dashboard = () => {
           {/* Render Breadcrumb */}
           <Breadcrumbs title="Dashboards" breadcrumbItem="Crypto" />
           <Row>
-            <CardUser />
 
             <Col xl="8">
               <CardWelcome />

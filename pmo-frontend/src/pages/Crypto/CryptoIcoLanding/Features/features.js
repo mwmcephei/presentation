@@ -4,9 +4,6 @@ import { Container, Row, Col } from "reactstrap"
 //Import Components
 import FeatureBox from "./feature-box"
 
-//Import images
-import feature1 from "../../../../assets/images/crypto/features-img/img-1.png"
-import feature2 from "../../../../assets/images/crypto/features-img/img-2.png"
 
 const Features = () => {
   const features1 = [
@@ -33,13 +30,7 @@ const Features = () => {
 
           <Row className="align-items-center pt-4">
             <Col md="6" sm="8">
-              <div>
-                <img
-                  src={feature1}
-                  alt=""
-                  className="img-fluid mx-auto d-block"
-                />
-              </div>
+
             </Col>
             <Col md="5" className="ms-auto">
               {/* featurebox */}
@@ -63,13 +54,7 @@ const Features = () => {
               />
             </Col>
             <Col md="6" sm="8" className="ms-md-auto">
-              <div className="mt-4 me-md-0">
-                <img
-                  src={feature2}
-                  alt=""
-                  className="img-fluid mx-auto d-block"
-                />
-              </div>
+
             </Col>
           </Row>
         </Container>

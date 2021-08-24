@@ -29,14 +29,10 @@ import EcommerceProducts from "../pages/Ecommerce/EcommerceProducts/index"
 import EcommerceProductDetail from "../pages/Ecommerce/EcommerceProducts/EcommerceProductDetail"
 import EcommerceOrders from "../pages/Ecommerce/EcommerceOrders/index"
 import EcommerceCustomers from "../pages/Ecommerce/EcommerceCustomers/index"
-import EcommerceCart from "../pages/Ecommerce/EcommerceCart"
-import EcommerceCheckout from "../pages/Ecommerce/EcommerceCheckout"
 import EcommerceShops from "../pages/Ecommerce/EcommerceShops/index"
 import EcommerceAddProduct from "../pages/Ecommerce/EcommerceAddProduct"
 
 //Email
-import EmailInbox from "../pages/Email/email-inbox"
-import EmailRead from "../pages/Email/email-read"
 import EmailBasicTemplte from "../pages/Email/email-basic-templte"
 import EmailAlertTemplte from "../pages/Email/email-template-alert"
 import EmailTemplateBilling from "../pages/Email/email-template-billing"
@@ -73,12 +69,10 @@ import TwostepVerification2 from "../pages/AuthenticationInner/auth-two-step-ver
 import Dashboard from "../pages/Dashboard/index"
 import DashboardSaas from "../pages/Dashboard-saas/index"
 import DashboardCrypto from "../pages/Dashboard-crypto/index"
-import Blog from "../pages/Dashboard-Blog/index"
 
 //Crypto
 import CryptoWallet from "../pages/Crypto/CryptoWallet/crypto-wallet"
 import CryptoBuySell from "../pages/Crypto/crypto-buy-sell"
-import CryptoExchange from "../pages/Crypto/crypto-exchange"
 import CryptoLending from "../pages/Crypto/crypto-lending"
 import CryptoOrders from "../pages/Crypto/CryptoOrders/crypto-orders"
 import CryptoKYCApplication from "../pages/Crypto/crypto-kyc-application"
@@ -112,10 +106,6 @@ import ResponsiveTables from "../pages/Tables/ResponsiveTables"
 import EditableTables from "../pages/Tables/EditableTables"
 import DragDropTables from "../pages/Tables/DragDropTables"
 
-//Blog
-import BlogList from "../pages/Blog/BlogList/index"
-import BlogGrid from "../pages/Blog/BlogGrid/index"
-import BlogDetails from "../pages/Blog/BlogDetails"
 
 // Forms
 import FormElements from "../pages/Forms/FormElements"
@@ -133,14 +123,11 @@ import DualListbox from "../pages/Tables/DualListbox"
 //Ui
 import UiAlert from "../pages/Ui/UiAlert"
 import UiButtons from "../pages/Ui/UiButtons"
-import UiCards from "../pages/Ui/UiCards"
 import UiCarousel from "../pages/Ui/UiCarousel"
 import UiColors from "../pages/Ui/UiColors"
 import UiDropdown from "../pages/Ui/UiDropdown"
 import UiGeneral from "../pages/Ui/UiGeneral"
 import UiGrid from "../pages/Ui/UiGrid"
-import UiImages from "../pages/Ui/UiImages"
-import UiLightbox from "../pages/Ui/UiLightbox"
 import UiModal from "../pages/Ui/UiModal"
 import UiProgressbar from "../pages/Ui/UiProgressbar"
 import UiSweetAlert from "../pages/Ui/UiSweetAlert"
@@ -173,12 +160,10 @@ const userRoutes = [
   { path: "/dashboard", component: Dashboard },
   { path: "/dashboard-saas", component: DashboardSaas },
   { path: "/dashboard-crypto", component: DashboardCrypto },
-  { path: "/blog", component: Blog },
 
   //Crypto
   { path: "/crypto-wallet", component: CryptoWallet },
   { path: "/crypto-buy-sell", component: CryptoBuySell },
-  { path: "/crypto-exchange", component: CryptoExchange },
   { path: "/crypto-lending", component: CryptoLending },
   { path: "/crypto-orders", component: CryptoOrders },
   { path: "/crypto-kyc-application", component: CryptoKYCApplication },
@@ -200,14 +185,10 @@ const userRoutes = [
   { path: "/ecommerce-products", component: EcommerceProducts },
   { path: "/ecommerce-orders", component: EcommerceOrders },
   { path: "/ecommerce-customers", component: EcommerceCustomers },
-  { path: "/ecommerce-cart", component: EcommerceCart },
-  { path: "/ecommerce-checkout", component: EcommerceCheckout },
   { path: "/ecommerce-shops", component: EcommerceShops },
   { path: "/ecommerce-add-product", component: EcommerceAddProduct },
 
   //Email
-  { path: "/email-inbox", component: EmailInbox },
-  { path: "/email-read", component: EmailRead },
   { path: "/email-template-basic", component: EmailBasicTemplte },
   { path: "/email-template-alert", component: EmailAlertTemplte },
   { path: "/email-template-billing", component: EmailTemplateBilling },
@@ -228,10 +209,6 @@ const userRoutes = [
   { path: "/projects-overview/:id", component: ProjectsOverview },
   { path: "/projects-create", component: ProjectsCreate },
 
-  //Blog
-  { path: "/blog-list", component: BlogList },
-  { path: "/blog-grid", component: BlogGrid },
-  { path: "/blog-details", component: BlogDetails },
 
   // Contacts
   { path: "/contacts-grid", component: ContactsGrid },
@@ -282,14 +259,11 @@ const userRoutes = [
   // Ui
   { path: "/ui-alerts", component: UiAlert },
   { path: "/ui-buttons", component: UiButtons },
-  { path: "/ui-cards", component: UiCards },
   { path: "/ui-carousel", component: UiCarousel },
   { path: "/ui-colors", component: UiColors },
   { path: "/ui-dropdowns", component: UiDropdown },
   { path: "/ui-general", component: UiGeneral },
   { path: "/ui-grid", component: UiGrid },
-  { path: "/ui-images", component: UiImages },
-  { path: "/ui-lightbox", component: UiLightbox },
   { path: "/ui-modals", component: UiModal },
   { path: "/ui-progressbars", component: UiProgressbar },
   { path: "/ui-sweet-alert", component: UiSweetAlert },

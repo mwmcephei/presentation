@@ -6,7 +6,6 @@ import MetaTags from "react-meta-tags"
 import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 //Import Components
-import CardUser from "./card-user"
 import CardWelcome from "./card-welcome"
 import MiniWidget from "./mini-widget"
 import Earning from "./earning"
@@ -55,8 +54,6 @@ const DashboardSaas = props => {
           {/* Render Breadcrumb */}
           <Breadcrumbs title="Dashboards" breadcrumbItem="Saas" />
 
-          {/* Card User */}
-          <CardUser />
 
           <Row>
             {/* welcome card */}

@@ -5,7 +5,6 @@ import { Container, Row } from "reactstrap"
 //Import Breadcrumb
 import Breadcrumbs from "../../../components/Common/Breadcrumb"
 
-import BlogGrid from "./BlogGrid"
 import RightBar from "../BlogList/RightBar"
 
 const Index = props => {
@@ -18,7 +17,6 @@ const Index = props => {
         <Container fluid>
           <Breadcrumbs title="Blog" breadcrumbItem="Blog Grid" />
           <Row>
-            <BlogGrid />
             <RightBar />
           </Row>
         </Container>

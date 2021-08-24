@@ -1,8 +1,6 @@
 import React from "react"
 import { Row, Col, Card } from "reactstrap"
 
-//Import Image
-import features from "../../assets/images/crypto/features-img/img-1.png"
 
 const CardWelcome = () => {
   return (
@@ -33,7 +31,7 @@ const CardWelcome = () => {
             </Col>
             <Col lg="3" sm="4" className="align-self-center">
               <div>
-                <img src={features} alt="" className="img-fluid d-block" />
+
               </div>
             </Col>
           </Row>

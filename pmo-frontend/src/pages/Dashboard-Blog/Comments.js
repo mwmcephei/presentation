@@ -11,8 +11,7 @@ import {
 
 //SimpleBar
 import SimpleBar from "simplebar-react"
-// import images
-import user1 from "../../assets/images/users/avatar-2.jpg"
+
 
 const Comments = props => {
   return (
@@ -82,11 +81,7 @@ const Comments = props => {
                   <li className="list-group-item py-3">
                     <div className="media">
                       <div className="avatar-xs me-3">
-                        <img
-                          src={user1}
-                          alt=""
-                          className="img-fluid d-block rounded-circle"
-                        />
+
                       </div>
                       <div className="media-body">
                         <h5 className="font-size-14 mb-1">

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 // import images
 import logodark from "../../assets/images/logo-dark.png"
 import logolight from "../../assets/images/logo-light.png"
-import user from "../../assets/images/users/avatar-1.jpg"
+
 import CarouselPage from "./CarouselPage"
 
 const LockScreen2 = props => {
@@ -59,11 +59,7 @@ const LockScreen2 = props => {
                           ) : null}
 
                           <div className="user-thumb text-center mb-4">
-                            <img
-                              src={user}
-                              className="rounded-circle img-thumbnail avatar-md"
-                              alt="thumbnail"
-                            />
+
                             <h5 className="font-size-15 mt-3">Maria Laird</h5>
                           </div>
 

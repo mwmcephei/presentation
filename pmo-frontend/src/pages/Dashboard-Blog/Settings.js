@@ -11,7 +11,6 @@ import {
   Media,
 } from "reactstrap"
 
-import avatar from "../../assets/images/users/avatar-1.jpg"
 
 const Settings = props => {
   return (
@@ -21,11 +20,7 @@ const Settings = props => {
           <CardBody>
             <div className="media">
               <div className="me-3">
-                <img
-                  src={avatar}
-                  alt=""
-                  className="avatar-sm rounded-circle img-thumbnail"
-                />
+
               </div>
               <div className="media-body">
                 <Media>

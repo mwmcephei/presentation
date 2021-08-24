@@ -109,9 +109,7 @@ const SidebarContent = props => {
                 <li>
                   <Link to="/dashboard-crypto">{props.t("Crypto")}</Link>
                 </li>
-                <li>
-                  <Link to="/blog">{props.t("Blog")}</Link>
-                </li>
+
               </ul>
             </li>
 
@@ -190,9 +188,6 @@ const SidebarContent = props => {
                   <Link to="/crypto-buy-sell">{props.t("Buy/Sell")}</Link>
                 </li>
                 <li>
-                  <Link to="/crypto-exchange">{props.t("Exchange")}</Link>
-                </li>
-                <li>
                   <Link to="/crypto-lending">{props.t("Lending")}</Link>
                 </li>
                 <li>
@@ -215,12 +210,7 @@ const SidebarContent = props => {
                 <span>{props.t("Email")}</span>
               </Link>
               <ul className="sub-menu" aria-expanded="false">
-                <li>
-                  <Link to="/email-inbox">{props.t("Inbox")}</Link>
-                </li>
-                <li>
-                  <Link to="/email-read">{props.t("Read Email")} </Link>
-                </li>
+
                 <li>
                   <Link to="/#">
                     <span
@@ -333,18 +323,10 @@ const SidebarContent = props => {
                 </span>
                 <i className="bx bxs-detail" />
 
-                <span>{props.t("Blog")}</span>
+
               </Link>
               <ul className="sub-menu" aria-expanded="false">
-                <li>
-                  <Link to="/blog-list">{props.t("Blog List")}</Link>
-                </li>
-                <li>
-                  <Link to="/blog-grid">{props.t("Blog Grid")}</Link>
-                </li>
-                <li>
-                  <Link to="/blog-details">{props.t("Blog Details")}</Link>
-                </li>
+
               </ul>
             </li>
 

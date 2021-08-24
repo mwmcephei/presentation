@@ -12,8 +12,6 @@ import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit"
 import { Button, Card, CardBody, Col, Row, Badge } from "reactstrap"
 import { getOrders as onGetOrders } from "store/actions"
 
-import EcommerceOrdersModal from "../Ecommerce/EcommerceOrders/EcommerceOrdersModal"
-
 //redux
 import { useSelector, useDispatch } from "react-redux"
 
@@ -160,7 +158,6 @@ const LatestTranaction = props => {
 
   return (
     <React.Fragment>
-      <EcommerceOrdersModal isOpen={modal1} toggle={toggleViewModal} />
       <Card>
         <CardBody>
           <div className="mb-4 h4 card-title">Latest Transaction</div>

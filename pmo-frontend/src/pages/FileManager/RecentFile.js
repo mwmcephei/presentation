@@ -24,13 +24,6 @@ const RecentFile = props => {
       size: "115",
     },
     {
-      id: 3,
-      icon: "mdi mdi-image font-size-16 align-middle text-muted me-2",
-      file: "Img-1.jpeg",
-      date: "11-10-2020, 13:26",
-      size: "86",
-    },
-    {
       id: 4,
       icon: "mdi mdi-text-box font-size-16 align-middle text-muted me-2",
       file: "update list.txt",
@@ -51,13 +44,7 @@ const RecentFile = props => {
       date: "09-10-2020, 17:05",
       size: "07",
     },
-    {
-      id: 7,
-      icon: "mdi mdi-image font-size-16 align-middle text-success me-2",
-      file: "Img-2.png",
-      date: "09-10-2020, 15:12",
-      size: "31",
-    },
+
     {
       id: 8,
       icon: "mdi mdi-folder font-size-16 align-middle text-warning me-2",

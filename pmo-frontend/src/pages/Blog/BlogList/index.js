@@ -4,8 +4,6 @@ import { Container, Row } from "reactstrap"
 
 //Import Breadcrumb
 import Breadcrumbs from "../../../components/Common/Breadcrumb"
-
-import BlogList from "./BlogList"
 import RightBar from "./RightBar"
 
 function Index(props) {
@@ -18,7 +16,6 @@ function Index(props) {
         <Container fluid>
           <Breadcrumbs title="Blog" breadcrumbItem="Blog List" />
           <Row>
-            <BlogList />
             <RightBar />
           </Row>
         </Container>

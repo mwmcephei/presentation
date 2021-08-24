@@ -13,9 +13,6 @@ import { withTranslation } from "react-i18next"
 import { connect } from "react-redux"
 import { withRouter, Link } from "react-router-dom"
 
-// users
-import user1 from "../../../assets/images/users/avatar-1.jpg"
-
 const ProfileMenu = props => {
   // Declare a new state variable, which we'll call "menu"
   const [menu, setMenu] = useState(false)
@@ -49,11 +46,6 @@ const ProfileMenu = props => {
           id="page-header-user-dropdown"
           tag="button"
         >
-          <img
-            className="rounded-circle header-profile-user"
-            src={user1}
-            alt="Header Avatar"
-          />
           <span className="d-none d-xl-inline-block ms-2 me-1">{username}</span>
           <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
         </DropdownToggle>

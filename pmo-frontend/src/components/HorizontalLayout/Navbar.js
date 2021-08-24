@@ -19,7 +19,6 @@ const Navbar = props => {
   const [project, setproject] = useState(false)
   const [task, settask] = useState(false)
   const [contact, setcontact] = useState(false)
-  const [blog, setBlog] = useState(false)
   const [component, setcomponent] = useState(false)
   const [form, setform] = useState(false)
   const [table, settable] = useState(false)
@@ -111,9 +110,7 @@ const Navbar = props => {
                     <Link to="/dashboard-crypto" className="dropdown-item">
                       {props.t("Crypto")}
                     </Link>
-                    <Link to="/blog" className="dropdown-item">
-                      {props.t("Blog")}
-                    </Link>
+
                   </div>
                 </li>
 
@@ -263,12 +260,8 @@ const Navbar = props => {
                       <div
                         className={classname("dropdown-menu", { show: email })}
                       >
-                        <Link to="/email-inbox" className="dropdown-item">
-                          {props.t("Inbox")}
-                        </Link>
-                        <Link to="/email-read" className="dropdown-item">
-                          {props.t("Read Email")}
-                        </Link>
+
+
                         <div className="dropdown">
                           <Link
                             className="dropdown-item dropdown-toggle arrow-none"
@@ -387,9 +380,6 @@ const Navbar = props => {
                         <Link to="/crypto-buy-sell" className="dropdown-item">
                           {props.t("Buy/Sell")}
                         </Link>
-                        <Link to="/crypto-exchange" className="dropdown-item">
-                          {props.t("Exchange")}
-                        </Link>
                         <Link to="/crypto-lending" className="dropdown-item">
                           {props.t("Lending")}
                         </Link>
@@ -494,31 +484,8 @@ const Navbar = props => {
                       </div>
                     </div>
                     <div className="dropdown">
-                      <Link
-                        to="/#"
-                        className="dropdown-item dropdown-toggle arrow-none"
-                        onClick={e => {
-                          e.preventDefault()
-                          setBlog(!blog)
-                        }}
-                      >
-                        {props.t("Blog")} <div className="arrow-down" />
-                      </Link>
-                      <div
-                        className={classname("dropdown-menu", {
-                          show: blog,
-                        })}
-                      >
-                        <Link to="/blog-list" className="dropdown-item">
-                          {props.t("Blog List")}
-                        </Link>
-                        <Link to="/blog-grid" className="dropdown-item">
-                          {props.t("Blog Grid")}
-                        </Link>
-                        <Link to="/blog-details" className="dropdown-item">
-                          {props.t("Blog Details")}
-                        </Link>
-                      </div>
+
+
                     </div>
                   </div>
                 </li>

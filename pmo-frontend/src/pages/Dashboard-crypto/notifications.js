@@ -4,10 +4,6 @@ import { Col, Card, CardBody, Media } from "reactstrap"
 //Simple bar
 import SimpleBar from "simplebar-react"
 
-//Import Images
-import img1 from "../../assets/images/companies/img-1.png"
-import img2 from "../../assets/images/companies/img-2.png"
-import img3 from "../../assets/images/companies/img-3.png"
 
 const Notifications = () => {
   return (
@@ -22,7 +18,7 @@ const Notifications = () => {
                   <Media>
                     <div className="avatar-xs me-3">
                       <span className="avatar-title rounded-circle bg-light">
-                        <img src={img1} alt="" height="18" />
+
                       </span>
                     </div>
                     <Media body>
@@ -45,7 +41,7 @@ const Notifications = () => {
                   <Media>
                     <div className="avatar-xs me-3">
                       <span className="avatar-title rounded-circle bg-light">
-                        <img src={img2} alt="" height="18" />
+
                       </span>
                     </div>
                     <Media body>
@@ -70,7 +66,6 @@ const Notifications = () => {
                   <Media>
                     <div className="avatar-xs me-3">
                       <span className="avatar-title rounded-circle bg-light">
-                        <img src={img3} alt="" height="18" />
                       </span>
                     </div>
                     <Media body>
@@ -95,7 +90,7 @@ const Notifications = () => {
                   <Media>
                     <div className="avatar-xs me-3">
                       <span className="avatar-title rounded-circle bg-light">
-                        <img src={img1} alt="" height="18" />
+
                       </span>
                     </div>
                     <Media body>

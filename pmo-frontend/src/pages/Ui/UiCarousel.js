@@ -12,10 +12,7 @@ import {
 
 // Carousel
 import Slide from "./CarouselTypes/slide"
-import Slidewithcontrol from "./CarouselTypes/slidewithcontrol"
-import Slidewithindicator from "./CarouselTypes/slidewithindicator"
-import Slidewithcaption from "./CarouselTypes/slidewithcaption"
-import Slidewithfade from "./CarouselTypes/slidewithfade"
+
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb"
@@ -51,7 +48,6 @@ const UiCarousel = () => {
                   <CardSubtitle className="mb-3">
                     Adding in the previous and next controls:
                   </CardSubtitle>
-                  <Slidewithcontrol />
                 </CardBody>
               </Card>
             </Col>
@@ -65,7 +61,6 @@ const UiCarousel = () => {
                     You can also add the indicators to the carousel, alongside
                     the controls, too.
                   </CardSubtitle>
-                  <Slidewithindicator />
                 </CardBody>
               </Card>
             </Col>
@@ -78,7 +73,6 @@ const UiCarousel = () => {
                     <code>.carousel-caption</code> element within any{" "}
                     <code>.carousel-item</code>.
                   </CardSubtitle>
-                  <Slidewithcaption />
                 </CardBody>
               </Card>
             </Col>
@@ -92,7 +86,6 @@ const UiCarousel = () => {
                     Add <code>.carousel-fade</code> to your carousel to animate
                     slides with a fade transition instead of a slide.
                   </CardSubtitle>
-                  <Slidewithfade />
                 </CardBody>
               </Card>
             </Col>
