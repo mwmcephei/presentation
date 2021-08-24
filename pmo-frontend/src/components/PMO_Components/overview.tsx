@@ -15,14 +15,14 @@ import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics_custom'
 import { number } from 'prop-types';
 
 
-type getOverView_propType = {
+type OverviewType = {
     _id: String,
     name: String,
     kpiProgress: number,
     overallStatus: number,
     totalBudget: number,
     progress: number,
-    measures: [""]
+    measures: String[]
 }
 
 
@@ -34,14 +34,14 @@ const Overview = (): ReactElement => {
     //   const parserBaseURL = "https://pmo-ios-backend.herokuapp.com/api"   // backend hosted on heroku
 
 
-    const [overviewData, setOverviewData] = useState()
+    const [overviewData, setOverviewData] = useState<OverviewType>()
     const [measures, setMeasures] = useState([])
     const [measuresPieChart, setMeasuresPieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
     const [measurePKI_pieChart, setMeasurePKI_pieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
 
     const [labels, setLabels] = useState([])
-    const [monthlySpendings, setMonthlySpendings] = useState([1])
-    const [approved, setApproved] = useState(0)
+    const [monthlySpendings, setMonthlySpendings] = useState<number[]>([0])
+    const [approved, setApproved] = useState<number>(0)
 
 
     useEffect(() => {
@@ -152,7 +152,7 @@ const Overview = (): ReactElement => {
     }
 
 
-    const getOverview = (overViewProps: getOverView_propType): ReactElement => {
+    const getOverview = (overViewProps: OverviewType): ReactElement => {
         let overview = <div>overview</div>
         if (overViewProps && typeof overViewProps != 'undefined') {
             overview = <div>

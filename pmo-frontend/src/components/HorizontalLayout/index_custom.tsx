@@ -22,16 +22,17 @@ const Layout = props => {
   const dispatch = useDispatch()
 
   const { topbarTheme, layoutWidth, isPreloader, showRightSidebar } =
-    useSelector(state => ({
-      // @ts-ignore
-      topbarTheme: state.Layout.topbarTheme,
-      // @ts-ignore
-      layoutWidth: state.Layout.layoutWidth,
-      // @ts-ignore
-      isPreloader: state.Layout.isPreloader,
-      // @ts-ignore
-      showRightSidebar: state.Layout.showRightSidebar,
-    }))
+    useSelector(state => (
+      {
+        // @ts-ignore
+        topbarTheme: state.Layout.topbarTheme,
+        // @ts-ignore
+        layoutWidth: state.Layout.layoutWidth,
+        // @ts-ignore
+        isPreloader: state.Layout.isPreloader,
+        // @ts-ignore
+        showRightSidebar: state.Layout.showRightSidebar,
+      }))
 
   /*
   document title

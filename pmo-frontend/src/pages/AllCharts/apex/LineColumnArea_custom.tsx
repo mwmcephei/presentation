@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import ReactApexChart from "react-apexcharts"
 
 
-type budgetPropType = {
+type LineColumnAreaProps = {
   labels: string[],
   monthlySpendings: number[],
   approved: number,
@@ -12,9 +12,9 @@ type budgetPropType = {
 
 
 
-const LineColumnArea = ({ labels, monthlySpendings, approved }: budgetPropType): ReactElement => {
-  const [approvedArray, setApproved] = useState([0])
-  const [accumulatedSpendings, setAccumulatedSpendings] = useState([0])
+const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaProps): ReactElement => {
+  const [approvedArray, setApproved] = useState<number[]>([])
+  const [accumulatedSpendings, setAccumulatedSpendings] = useState<number[]>([])
 
   useEffect(() => {
     if (typeof labels != 'undefined' && labels &&
@@ -142,8 +142,12 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: budgetPropType):
 
 
 
+
   let budgetChart = <div></div>
   if (labels && monthlySpendings && approved) {
+    console.log(typeof ("OPTIONSOPTIONSOPTIONSOPTIONSOPTIONS"))
+    console.log(typeof (options))
+
     budgetChart = <ReactApexChart
       options={options}
       series={series}
