@@ -39,7 +39,7 @@ const Overview = (): ReactElement => {
     const [measuresPieChart, setMeasuresPieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
     const [measurePKI_pieChart, setMeasurePKI_pieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
 
-    const [labels, setLabels] = useState([])
+    const [labels, setLabels] = useState<string[]>([])
     const [monthlySpendings, setMonthlySpendings] = useState<number[]>([0])
     const [approved, setApproved] = useState<number>(0)
 
@@ -52,7 +52,7 @@ const Overview = (): ReactElement => {
                     setMonthlySpendings(response.monthlySpendings)
                     console.log("budget")
                     console.log(response)
-                    let labels: String[] = []
+                    let labels: string[] = []
                     for (let i = 0; i < response.monthlySpendings.length; i++) {
                         const date = "0" + (i + 1) + "/01/" + response.year
                         labels.push(date)

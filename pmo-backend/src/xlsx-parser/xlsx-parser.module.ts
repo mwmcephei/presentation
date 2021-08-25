@@ -10,13 +10,13 @@ import { Budget, BudgetSchema } from '../schemas/budget.schema';
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: "Sheet", schema: SheetSchema },
-      { name: "Measure", schema: MeasureSchema },
-      { name: "Artefact", schema: ArtefactSchema },
-      { name: "Budget", schema: BudgetSchema },
-    ])
+      { name: 'Sheet', schema: SheetSchema },
+      { name: 'Measure', schema: MeasureSchema },
+      { name: 'Artefact', schema: ArtefactSchema },
+      { name: 'Budget', schema: BudgetSchema },
+    ]),
   ],
   providers: [XlsxParserController, XlsxParserService],
-  controllers: [XlsxParserController]
+  controllers: [XlsxParserController],
 })
 export class XlsxParserModule {}

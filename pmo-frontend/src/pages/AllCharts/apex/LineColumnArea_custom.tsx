@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react"
 import { useState, useEffect } from 'react';
 import ReactApexChart from "react-apexcharts"
-
+import { ApexOptions } from 'apexcharts'
 
 type LineColumnAreaProps = {
   labels: string[],
@@ -69,7 +69,9 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
       data: approvedArray ? approvedArray : [],
     },
   ]
-  const options: object = {
+
+
+  const options: ApexOptions = {
     chart: {
       stacked: false,
       toolbar: {
@@ -85,13 +87,11 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
         columnWidth: "50%",
       },
     },
-
     colors: [
       "#556ee6",
       "#f46a6a", // red
       "#34c38f",
     ],
-
     fill: {
       opacity: [0.25, 1, 1], // [0.85, 0.25, 1],
       gradient: {
@@ -103,7 +103,6 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
         stops: [0, 100, 100, 100],
       },
     },
-
     labels: labels,
     markers: {
       size: 0,
@@ -145,9 +144,6 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
 
   let budgetChart = <div></div>
   if (labels && monthlySpendings && approved) {
-    console.log(typeof ("OPTIONSOPTIONSOPTIONSOPTIONSOPTIONS"))
-    console.log(typeof (options))
-
     budgetChart = <ReactApexChart
       options={options}
       series={series}

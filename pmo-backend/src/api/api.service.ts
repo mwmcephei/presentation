@@ -7,7 +7,6 @@ import { Budget, BudgetSchema } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
 import { fileNames } from 'src/globalVars';
 
-
 @Injectable()
 export class ApiService {
     constructor(
@@ -18,42 +17,35 @@ export class ApiService {
     ) { }
 
 
-    /*
-    async getAllArtefacts(): Promise<string> {
-      const result = await this.artefactModel.find()
-      console.log(result)
-      return JSON.stringify(result)
-    }
-  */
-
     async getArtefactsOfMeasure(measureID: string): Promise<string> {
-        const measure = await this.measureModel.findById(measureID)
+        const measure = await this.measureModel.findById(measureID);
         if (measure) {
-            const populatedMeasure = await measure.populate("artefacts").execPopulate()
-            return JSON.stringify(populatedMeasure.artefacts)
+            const populatedMeasure = await measure
+                .populate('artefacts')
+                .execPopulate();
+            return JSON.stringify(populatedMeasure.artefacts);
         } else {
-            return JSON.stringify("Error")
+            return JSON.stringify('Error');
         }
     }
 
-
     async getAllMeasures(): Promise<string> {
-        const result = await this.measureModel.find()
-        console.log(result)
-        return JSON.stringify(result)
+        const result = await this.measureModel.find();
+        console.log(result);
+        return JSON.stringify(result);
     }
-
 
     async getOverview(): Promise<string> {
-        const excelSheet = await this.sheetModel.findOne({ name: fileNames.main_file })   // TO DO: safeguard for duplicates
-        console.log(excelSheet)
-        return JSON.stringify(excelSheet)
+        const excelSheet = await this.sheetModel.findOne({
+            name: fileNames.main_file,
+        }); // TO DO: safeguard for duplicates
+        console.log(excelSheet);
+        return JSON.stringify(excelSheet);
     }
 
-
     async getBudget(): Promise<string> {
-        const excelSheet = await this.budgetModel.findOne()   // TO DO: safeguard for duplicates
-        console.log(excelSheet)
-        return JSON.stringify(excelSheet)
+        const excelSheet = await this.budgetModel.findOne(); // TO DO: safeguard for duplicates
+        console.log(excelSheet);
+        return JSON.stringify(excelSheet);
     }
 }

@@ -11,16 +11,13 @@ import { Budget, BudgetSchema } from '../schemas/budget.schema';
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: "Sheet", schema: SheetSchema },
-      { name: "Measure", schema: MeasureSchema },
-      { name: "Artefact", schema: ArtefactSchema },
-      { name: "Budget", schema: BudgetSchema },
-    ])
+      { name: 'Sheet', schema: SheetSchema },
+      { name: 'Measure', schema: MeasureSchema },
+      { name: 'Artefact', schema: ArtefactSchema },
+      { name: 'Budget', schema: BudgetSchema },
+    ]),
   ],
   controllers: [ApiController],
-  providers: [ApiService]
+  providers: [ApiService],
 })
-
-
-
-export class ApiModule { }
+export class ApiModule {}
