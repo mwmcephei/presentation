@@ -35,6 +35,10 @@ type AllBudgetMeasures = { [x: number]: number }
 
 
 
+type SheetType = {
+  [key: string]: string | number
+}
+
 @Injectable()
 export class XlsxParserService {
   constructor(
@@ -62,7 +66,7 @@ export class XlsxParserService {
       let totalBudget = 0;
       const allBudgetsOfMeasures: AllBudgetMeasures[] = [];
       Object.keys(overview_object).filter((key) => {
-        if (key.includes('I')) {
+        if (key.includes('I')) {      // column 'I' of xlsx sheet
           const row = parseInt(key.substring(1));
           if (row > 4) {
             const measureName = overview_object['D' + row]['v'];
@@ -202,75 +206,69 @@ export class XlsxParserService {
     // create Sheet Table
     const newSheet = {
       name: fileNames.main_file,
-    };
-    const excelFile = new this.sheetModel(newSheet);
-    excelFile.save().then((newlySavedExcelSheet) => {
-      const workbook = XLSX.readFile(
-        resolve(fileNames.xlsx_file_dir, fileNames.main_file),
-      );
-      // 'sheet' corresponds to measure
-      const sheet_name_list = workbook.SheetNames;
-      sheet_name_list.map((sheetName) => {
-        // save measure to DB
-        if (sheetName !== 'Status Overview' && sheetName !== 'Overview') {
-          const newMeasure = {
-            title: sheetName,
-          };
-          const measure = new this.measureModel(newMeasure);
-          measure
-            .save()
-            .then(async (savedMeasure) => {
-              // add measure to ExcelSheet measure list
-              await this.sheetModel.updateOne(
-                { _id: newlySavedExcelSheet._id },
-                { $push: { measures: savedMeasure } },
-              );
-              return savedMeasure;
-            })
-            .then(async (savedMeasure) => {
-              // get artefacts of this measure and add it to measure in DB
-              const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-              const artefacts = this.getArtefactsFromLinesArray(data);
+    }
+    const excelFile = new this.sheetModel(newSheet)
+    excelFile.save()
+      .then(newlySavedExcelSheet => {
+        console.log(newlySavedExcelSheet)
 
-              const savedArtefact_IDs = [];
-              artefacts.map((art) => {
-                const toSave = {
-                  id: art['__EMPTY_1'],
-                  description: art['__EMPTY_2'],
-                  progress: art['__EMPTY_9'],
-                  budget: art['__EMPTY_11'] ? art['__EMPTY_11'] : '',
-                  achievement: art['__EMPTY_13'],
-                  work: art['__EMPTY_21'],
-                };
-                const artefact = new this.artefactModel(toSave);
-                artefact
-                  .save()
-                  .then(async (savedArtefact) => {
-                    savedArtefact_IDs.push(savedArtefact._id);
-                    await this.measureModel.updateOne(
-                      { _id: savedMeasure._id },
-                      { $push: { artefacts: savedArtefact } },
-                    );
-                  })
-                  .catch((err) => console.log(err));
-              });
-            })
-            .catch((err) => console.log(err));
-        }
-      });
-    });
-    return 'measures & artefacts parsed and saved to DB';
+        const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.main_file))
+        // 'sheet' corresponds to measure
+        const sheet_name_list = workbook.SheetNames;
+        console.log(typeof (workbook.SheetNames))
+        sheet_name_list.map(sheetName => {
+          // save measure to DB
+          if (sheetName !== "Status Overview" && sheetName !== "Overview") {
+            console.log(sheetName)
+            const newMeasure = {
+              title: sheetName,
+            }
+            const measure = new this.measureModel(newMeasure)
+            measure.save()
+              .then(async savedMeasure => {
+                // add measure to ExcelSheet measure list
+                await this.sheetModel.updateOne({ _id: newlySavedExcelSheet._id }, { $push: { measures: savedMeasure } });
+                return savedMeasure
+              })
+              .then(async savedMeasure => {
+                // get artefacts of this measure and add it to measure in DB
+                const data: SheetType[] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
+                const artefacts = this.getArtefactsFromLinesArray(data)
+
+                const savedArtefact_IDs = []
+                artefacts.map(art => {  // artefacts: array of objects, each containing a row of xlsx file
+                  const toSave = {
+                    id: art["__EMPTY_1"], // __EMPTY_ + column(!) number accesses a cell
+                    description: art["__EMPTY_2"],
+                    progress: art["__EMPTY_9"],
+                    budget: art["__EMPTY_11"] ? art["__EMPTY_11"] : "",
+                    achievement: art["__EMPTY_13"],
+                    work: art["__EMPTY_21"],
+                  }
+                  const artefact = new this.artefactModel(toSave)
+                  artefact.save()
+                    .then(async savedArtefact => {
+                      savedArtefact_IDs.push(savedArtefact._id)
+                      await this.measureModel.updateOne({ _id: savedMeasure._id }, { $push: { artefacts: savedArtefact } });
+                    })
+                    .catch(err => console.log(err))
+                })
+              })
+              .catch(err => console.log(err))
+          }
+        })
+      })
+    return "measures & artefacts parsed and saved to DB"
   }
 
 
 
   // aux function for parse()
-  getArtefactsFromLinesArray(sheet: Object[]): Object[] {
-    const result = sheet.filter((line) => {
-
-      const firstKey = Object.keys(line)[0];
-      if (firstKey === '__EMPTY_1') {
-        const firstItem = line[firstKey];
+  getArtefactsFromLinesArray(sheet: SheetType[]): SheetType[] {
+    return sheet.filter(line => {
+      const firstKey = Object.keys(line)[0]
+      if (firstKey === "__EMPTY_1") {
+        const firstItem = `${line[firstKey]}`
         try {
           if (parseInt(firstItem) < 10 && Object.keys(line).length > 2) {
             return line;
@@ -280,7 +278,6 @@ export class XlsxParserService {
         }
       }
     });
-    return result
   }
 
 

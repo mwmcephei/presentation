@@ -13,8 +13,8 @@ import {
 import { useSelector, useDispatch } from "react-redux"
 
 //components
-import Navbar from "./Navbar"
 import Header from "./Header"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 import Rightbar from "../CommonForBoth/RightSidebar"
 const Layout = props => {
@@ -22,9 +22,13 @@ const Layout = props => {
 
   const { topbarTheme, layoutWidth, isPreloader, showRightSidebar } =
     useSelector(state => ({
+      // @ts-ignore redux store stays untyped for now
       topbarTheme: state.Layout.topbarTheme,
+      // @ts-ignore redux store stays untyped for now
       layoutWidth: state.Layout.layoutWidth,
+      // @ts-ignore redux store stays untyped for now
       isPreloader: state.Layout.isPreloader,
+      // @ts-ignore redux store stays untyped for now
       showRightSidebar: state.Layout.showRightSidebar,
     }))
 
@@ -35,7 +39,7 @@ const Layout = props => {
     const title = props.location.pathname
     let currentage = title.charAt(1).toUpperCase() + title.slice(2)
 
-    document.title = currentage + " | Skote - React Admin & Dashboard Template"
+    document.title = currentage + " PMO Tool"
   }, [props.location.pathname])
 
   useEffect(() => {

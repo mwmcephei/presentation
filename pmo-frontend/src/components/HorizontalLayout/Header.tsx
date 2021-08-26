@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import ReactDrawer from "react-drawer"
@@ -12,7 +11,7 @@ import { showRightSidebarAction, toggleLeftmenu } from "../../store/actions"
 
 // Import menuDropdown
 import NotificationDropdown from "../CommonForBoth/TopbarDropdown/NotificationDropdown"
-import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu_custom"
+import ProfileMenu from "../CommonForBoth/TopbarDropdown/ProfileMenu"
 import RightSidebar from "../CommonForBoth/RightSidebar"
 import logo_small from "../../assets/images/allianz_bird_logo.png"
 import headerLogog from "../../assets/images/headerLogo.png"
@@ -35,27 +34,27 @@ const Header = props => {
   function toggleFullscreen() {
     if (
       !document.fullscreenElement &&
-      /* alternative standard method */ !document.mozFullScreenElement &&
-      !document.webkitFullscreenElement
+      /* alternative standard method */ !document["mozFullScreenElement"] &&
+      !document["webkitFullscreenElement"]
     ) {
       // current working methods
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen()
-      } else if (document.documentElement.mozRequestFullScreen) {
-        document.documentElement.mozRequestFullScreen()
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        document.documentElement.webkitRequestFullscreen(
+      } else if (document.documentElement["mozRequestFullScreen"]) {
+        document.documentElement["mozRequestFullScreen"]()
+      } else if (document.documentElement["webkitRequestFullscreen"]) {
+        document.documentElement["webkitRequestFullscreen"](
           // @ts-ignore
           Element.ALLOW_KEYBOARD_INPUT
         )
       }
     } else {
-      if (document.cancelFullScreen) {
-        document.cancelFullScreen()
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen()
-      } else if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen()
+      if (document["cancelFullScreen"]) {
+        document["cancelFullScreen"]()
+      } else if (document["mozCancelFullScreen"]) {
+        document["mozCancelFullScreen"]()
+      } else if (document["webkitCancelFullScreen"]) {
+        document["webkitCancelFullScreen"]()
       }
     }
   }

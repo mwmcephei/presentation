@@ -9,9 +9,9 @@ import {
     CardBody,
     CardTitle,
 } from "reactstrap"
-import CardUser from "../../pages/Dashboard-saas/card-user_custom"
-import LineColumnArea from "pages/AllCharts/apex/LineColumnArea_custom"
-import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics_custom'
+import CardUser from "../../pages/Dashboard-saas/card-user"
+import LineColumnArea from "pages/AllCharts/apex/LineColumnArea"
+import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics'
 import { number } from 'prop-types';
 
 
