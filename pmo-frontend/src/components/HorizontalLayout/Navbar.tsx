@@ -9,6 +9,14 @@ import { withTranslation } from "react-i18next"
 
 import { connect } from "react-redux"
 
+
+
+const navbarItemStyle = { marginLeft: "20px" }
+const iconStyle = {
+  backgroundSize: "20px",
+  width: "20px",
+}
+
 const Navbar = props => {
   const [activeTab, setActiveTab] = useState("dashboard")
 
@@ -28,23 +36,56 @@ const Navbar = props => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link to="/dashboard" className="dropdown-item">
-                    Dashboard
+                    <div className="d-flex justify-content-left">
+                      <h5 className="text-muted" style={iconStyle}>
+                        <i className="mdi mdi-developer-board"></i>
+                      </h5>
+                      <div style={navbarItemStyle}>
+                        <h5 className="text-muted ">Dashboard</h5>
+                      </div>
+                    </div>
                   </Link>
                 </li>
 
                 <li className="nav-item ">
                   <Link to="/measure_overview" className="dropdown-item">
-                    Measure Overview
+                    <div className="d-flex justify-content-left">
+                      <h5 className="text-muted" style={iconStyle}>
+                        <i className="mdi mdi-clipboard-list-outline"></i>
+                      </h5>
+
+                      <div style={navbarItemStyle}>
+                        <h5 className="text-muted">Measure Overview</h5>
+                      </div>
+                    </div>
                   </Link>
                 </li>
+
                 <li className="nav-item ">
                   <Link to="/measure_reports" className="dropdown-item">
-                    Measure Reports
+                    <div className="d-flex justify-content-left">
+                      <h5 className="text-muted" style={iconStyle}>
+                        <i className="bx bx-file "></i>
+                      </h5>
+
+                      <div style={navbarItemStyle}>
+                        <h5 className="text-muted">Measure Reports</h5>
+                      </div>
+                    </div>
                   </Link>
                 </li>
+
                 <li className="nav-item ">
                   <Link to="/budget_reports" className="dropdown-item">
-                    Budget Report
+                    <div className="d-flex justify-content-left">
+                      <h5 className="text-muted" style={iconStyle}>
+                        <i className="bx bx-bar-chart-alt-2 "></i>
+                      </h5>
+
+                      <div style={navbarItemStyle}>
+                        <h5 className="text-muted">Budget Report</h5>
+                      </div>
+                    </div>
                   </Link>
                 </li>
               </ul>
@@ -71,3 +112,6 @@ const mapStatetoProps = state => {
 export default withRouter(
   connect(mapStatetoProps, {})(withTranslation()(Navbar))
 )
+
+
+

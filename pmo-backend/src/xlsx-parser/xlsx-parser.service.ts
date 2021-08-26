@@ -11,6 +11,15 @@ import * as XLSX from 'xlsx';
 import { fileNames } from '../globalVars';
 
 
+/*
+Conduct one-time manual parsing by addressing api endpoints in this order:
+1. .../xlsx-parser/parse
+2. .../xlsx-parser/parse_overview
+3. .../xlsx-parser/create_overview  
+4. .../xlsx-parser/parse_kpi
+5. .../xlsx-parser/parse_budget_months
+*/
+
 type Overview = {
   numberOfMeasures: number,
   totalBudget: number,

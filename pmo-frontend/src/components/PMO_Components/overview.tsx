@@ -8,6 +8,7 @@ import {
     Card,
     CardBody,
     CardTitle,
+    Spinner,
 } from "reactstrap"
 import CardUser from "../../pages/Dashboard-saas/card-user"
 import LineColumnArea from "pages/AllCharts/apex/LineColumnArea"
@@ -178,47 +179,60 @@ const Overview = (): ReactElement => {
 
 
 
+    let content = <div className="d-flex justify-content-center align-items-center " style={{ height: "80vh" }}>
+        <Spinner className="ms-6" color="primary" />
+    </div>
+
+    if (overviewData && measures && measuresPieChart && measurePKI_pieChart && labels && monthlySpendings && approved) {
+        content = (<div>
+            <Row>
+                <Container>
+                    {getOverview(overviewData)}
+                </Container>
+            </Row>
+
+            <Row>
+                <Container className="">
+                    <Row>
+                        <Col xs="12" xm="6" lg="6" xl="6">
+                            <SalesAnalytics title={"Status of Projects"}
+                                green={measuresPieChart.greenCounter}
+                                yellow={measuresPieChart.yellowCounter}
+                                red={measuresPieChart.redCounter}
+                                labels={["Status ", "Status ", "Status "]}
+                            />
+                        </Col>
+                        <Col xs="12" xm="6" lg="6" xl="6">
+                            <SalesAnalytics title={"KPI"}
+                                green={measurePKI_pieChart.greenCounter}
+                                yellow={measurePKI_pieChart.yellowCounter}
+                                red={measurePKI_pieChart.redCounter}
+                                labels={["Behind ", "On Track ", "Achieved "]}
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+            </Row>
+
+            <Row>
+                <Container>
+                    <Card>
+                        <CardBody>
+                            <CardTitle className="mb-4">Budget</CardTitle>
+                            {getBudgetChart(labels, monthlySpendings, approved)}
+                        </CardBody>
+                    </Card>
+                </Container>
+            </Row>
+        </div>)
+    }
+
+
     return (
         <>
             <div className="page-content">
                 <Container fluid>
-                    <Row>
-                        <Container>
-                            {getOverview(overviewData)}
-                        </Container>
-                    </Row>
-
-                    <Row>
-                        <Container className="">
-                            <Row>
-                                <Col xs="12" xm="6" lg="6" xl="6">
-                                    <SalesAnalytics title={"Status of Projects"}
-                                        green={measuresPieChart.greenCounter}
-                                        yellow={measuresPieChart.yellowCounter}
-                                        red={measuresPieChart.redCounter}
-                                    />
-                                </Col>
-                                <Col xs="12" xm="6" lg="6" xl="6">
-                                    <SalesAnalytics title={"KPI"}
-                                        green={measurePKI_pieChart.greenCounter}
-                                        yellow={measurePKI_pieChart.yellowCounter}
-                                        red={measurePKI_pieChart.redCounter}
-                                    />
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Row>
-
-                    <Row>
-                        <Container>
-                            <Card>
-                                <CardBody>
-                                    <CardTitle className="mb-4">Budget</CardTitle>
-                                    {getBudgetChart(labels, monthlySpendings, approved)}
-                                </CardBody>
-                            </Card>
-                        </Container>
-                    </Row>
+                    {content}
 
                 </Container>
             </div>

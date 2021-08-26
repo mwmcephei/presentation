@@ -8,13 +8,18 @@ type dashboardCircleDiagram_PropType = {
   green: number,
   yellow: number,
   red: number,
+  labels: string[]
 }
 
 
 const SalesAnalytics = (props: dashboardCircleDiagram_PropType): ReactElement => {
   const series: number[] = [props.yellow, props.green, props.red]
+  let toolTipLabels = props.labels
+  if (props.labels[0] === "Status ") {
+    toolTipLabels = ["", "", ""]
+  }
   const options = {
-    labels: ["Series A", "Series B", "Series C"],
+    labels: toolTipLabels,
     colors: ["#f0ad4e", "#34c38f", "#f46a6a"],
     legend: { show: !1 },
     plotOptions: {
@@ -49,7 +54,7 @@ const SalesAnalytics = (props: dashboardCircleDiagram_PropType): ReactElement =>
               <Col xs="4">
                 <div className="mt-4">
                   <span className="mb-2 ">
-                    <span>Behind </span>
+                    <span>{props.labels[0]}</span>
                     <i className="mdi mdi-circle text-danger me-1 " />
                   </span>
                   <h5 className="mt-2">{props.red}</h5>
@@ -58,7 +63,7 @@ const SalesAnalytics = (props: dashboardCircleDiagram_PropType): ReactElement =>
               <Col xs="4">
                 <div className="mt-4">
                   <span className="mb-2 text-truncate">
-                    <span>On Track </span>
+                    <span>{props.labels[1]}</span>
                     <i className="mdi mdi-circle text-warning me-1" />
                   </span>
                   <h5 className="mt-2">{props.yellow}</h5>
@@ -67,7 +72,7 @@ const SalesAnalytics = (props: dashboardCircleDiagram_PropType): ReactElement =>
               <Col xs="4">
                 <div className="mt-4">
                   <span className="mb-2 text-truncate">
-                    <span >Achieved </span>
+                    <span>{props.labels[2]}</span>
                     <i className="mdi mdi-circle text-success me-1 " />
                   </span>
                   <h5 className="mt-2">{props.green}</h5>

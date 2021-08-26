@@ -128,9 +128,12 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
       y: {
         formatter: function (y) {
           if (typeof y !== "undefined") {
-            return y.toFixed(0) + " points"
+            return Math.ceil(y / 1000) + " k"
           }
           return y
+        },
+        title: {
+          formatter: (seriesName) => "",
         },
       },
     },

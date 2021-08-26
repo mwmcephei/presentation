@@ -33,10 +33,12 @@ type overviewPropType = {
 
 function CardUser(props: overviewPropType): ReactElement {
   const overallProgress_style: CSS.Properties = {
-    width: props.overallProgress + "%"
+    width: props.overallProgress + "%",
+    background: "#16549C"
   };
   const kpiProgress_style: CSS.Properties = {
-    width: props.kpiProgress + "%"
+    width: props.kpiProgress + "%",
+    background: "#16549C"
   };
 
   let toalBudget_adjustedForDisplay: String;
@@ -56,7 +58,8 @@ function CardUser(props: overviewPropType): ReactElement {
         <Col lg="12">
           <Card>
             <CardBody>
-              <CardTitle className="mb-4">Short Summary</CardTitle>
+              <CardTitle className="mb-1">Short Summary</CardTitle>
+              <h6 className="card-subtitle mb-3 ">HY2 2021</h6>
               <Row>
                 <div>
                   <div className="text-lg-center mt-4 mt-lg-0">
@@ -106,7 +109,7 @@ function CardUser(props: overviewPropType): ReactElement {
                               </h5>
                               <div className="progress animated-progess progress-sm">
                                 <div
-                                  className="progress-bar bg-warning"
+                                  className="progress-bar "
                                   role="progressbar"
                                   style={overallProgress_style}
                                   aria-valuenow={props.overallProgress}
@@ -123,7 +126,7 @@ function CardUser(props: overviewPropType): ReactElement {
                               </h5>
                               <div className="progress animated-progess progress-sm">
                                 <div
-                                  className="progress-bar bg-success"
+                                  className="progress-bar"
                                   role="progressbar"
                                   style={kpiProgress_style}
                                   aria-valuenow={props.kpiProgress}
