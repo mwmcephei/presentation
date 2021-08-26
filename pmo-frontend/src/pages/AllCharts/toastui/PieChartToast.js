@@ -2,8 +2,8 @@ import React from "react"
 
 import "tui-chart/dist/tui-chart.css"
 import { PieChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 var theme = {
   chart: {
@@ -28,7 +28,7 @@ var theme = {
     colors: ["#556ee6", "#34c38f", "#f46a6a", "#50a5f1", "#f1b44c"],
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const PieChartToast = props => {
   const data = {

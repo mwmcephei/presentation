@@ -2,8 +2,8 @@ import React from "react"
 
 import "tui-chart/dist/tui-chart.css"
 import { AreaChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 const theme = {
   chart: {
@@ -45,7 +45,7 @@ const theme = {
     colors: ["#f46a6a", "#34c38f", "#556ee6"],
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const AreaChartToast = props => {
   const data = {

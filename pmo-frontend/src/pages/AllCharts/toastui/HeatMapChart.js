@@ -2,8 +2,8 @@ import React from "react"
 
 import "tui-chart/dist/tui-chart.css"
 import { HeatMapChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 const theme = {
   chart: {
@@ -48,7 +48,7 @@ const theme = {
     borderColor: "#F4511E",
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const ProfileMenu = props => {
   const data = {

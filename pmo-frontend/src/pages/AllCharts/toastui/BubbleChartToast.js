@@ -1,8 +1,8 @@
 import React from "react"
 import "tui-chart/dist/tui-chart.css"
 import { BubbleChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 const theme = {
   chart: {
@@ -44,7 +44,7 @@ const theme = {
     colors: ["#556ee6", "#34c38f", "#f1b44c", "#f46a6a"],
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const BubbleChartToast = props => {
   const data = {

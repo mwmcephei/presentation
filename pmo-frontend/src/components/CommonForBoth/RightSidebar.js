@@ -20,16 +20,7 @@ import SimpleBar from "simplebar-react"
 import { Link } from "react-router-dom"
 
 import "../../components/CommonForBoth/rightbar.scss"
-//Import images
 
-//Import images
-import bgimg1 from "../../assets/images/sidebar/img1.jpg"
-import bgimg2 from "../../assets/images/sidebar/img2.jpg"
-import bgimg3 from "../../assets/images/sidebar/img3.jpg"
-import bgimg4 from "../../assets/images/sidebar/img4.jpg"
-import layout1 from "../../assets/images/layouts/layout-1.jpg"
-import layout2 from "../../assets/images/layouts/layout-2.jpg"
-import layout3 from "../../assets/images/layouts/layout-3.jpg"
 
 //constants
 import {
@@ -457,7 +448,7 @@ const RightSidebar = props => {
                         alt="sidebar bg image"
                         width="90"
                         className="themesideimage rounded"
-                        src={bgimg1}
+
                       />
                     </label>
                     {"   "}
@@ -483,7 +474,7 @@ const RightSidebar = props => {
                         alt="sidebar bg image"
                         width="90"
                         className="themesideimage rounded"
-                        src={bgimg2}
+
                       />
                     </label>
                     {"   "}
@@ -509,7 +500,7 @@ const RightSidebar = props => {
                         alt="sidebar bg image"
                         width="90"
                         className="themesideimage rounded"
-                        src={bgimg3}
+
                       />
                     </label>
                     {"   "}
@@ -533,7 +524,7 @@ const RightSidebar = props => {
                         alt="sidebar bg image"
                         width="90"
                         className="themesideimage rounded"
-                        src={bgimg4}
+
                       />
                     </label>
                     {"   "}
@@ -593,19 +584,19 @@ const RightSidebar = props => {
 
             <div className="mb-2">
               <Link to="//skote-v-light.react.themesbrand.com" target="_blank">
-                <img src={layout1} className="img-fluid img-thumbnail" alt="" />
+                <img className="img-fluid img-thumbnail" alt="" />
               </Link>
             </div>
 
             <div className="mb-2">
               <Link to="//skote-v-dark.react.themesbrand.com" target="_blank">
-                <img src={layout2} className="img-fluid img-thumbnail" alt="" />
+                <img className="img-fluid img-thumbnail" alt="" />
               </Link>
             </div>
 
             <div className="mb-2">
               <Link to="//skote-v-rtl.react.themesbrand.com" target="_blank">
-                <img src={layout3} className="img-fluid img-thumbnail" alt="" />
+                <img className="img-fluid img-thumbnail" alt="" />
               </Link>
             </div>
 

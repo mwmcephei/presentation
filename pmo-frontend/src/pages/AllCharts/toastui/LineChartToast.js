@@ -2,8 +2,8 @@ import React from "react"
 
 import "tui-chart/dist/tui-chart.css"
 import { LineChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 const theme = {
   chart: {
@@ -46,7 +46,7 @@ const theme = {
   },
 }
 
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const LineChartToast = props => {
   const data = {

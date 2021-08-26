@@ -1,8 +1,8 @@
 import React from "react"
 import "tui-chart/dist/tui-chart.css"
 import { MapChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 var theme = {
   chart: {
@@ -27,7 +27,7 @@ var theme = {
     borderColor: "#F4511E",
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const MapChartToast = () => {
   const data = {

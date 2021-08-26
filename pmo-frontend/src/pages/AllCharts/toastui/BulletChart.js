@@ -2,8 +2,8 @@ import React from "react"
 
 import "tui-chart/dist/tui-chart.css"
 import { BulletChart } from "@toast-ui/react-chart"
-import TuiChart from "tui-chart"
-import "./toastui.scss"
+
+
 
 const theme = {
   chart: {
@@ -46,7 +46,6 @@ const theme = {
     ranges: [{ color: "#eee", opacity: 0.7 }, null, { color: "#556ee6" }],
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
 
 const BulletChartToast = props => {
   const data = {

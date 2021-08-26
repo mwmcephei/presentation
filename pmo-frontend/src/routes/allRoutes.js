@@ -84,7 +84,6 @@ import ChartistChart from "../pages/Charts/ChartistChart"
 import ChartjsChart from "../pages/Charts/ChartjsChart"
 import EChart from "../pages/Charts/EChart"
 import SparklineChart from "../pages/Charts/SparklineChart"
-import ToastUIChart from "../pages/Charts/ToastUIChart"
 import ChartsKnob from "../pages/Charts/charts-knob"
 import ReCharts from "../pages/Charts/ReCharts"
 
@@ -221,7 +220,6 @@ const userRoutes = [
   { path: "/chartjs-charts", component: ChartjsChart },
   { path: "/e-charts", component: EChart },
   { path: "/sparkline-charts", component: SparklineChart },
-  { path: "/tui-charts", component: ToastUIChart },
   { path: "/charts-knob", component: ChartsKnob },
   { path: "/re-charts", component: ReCharts },
 
