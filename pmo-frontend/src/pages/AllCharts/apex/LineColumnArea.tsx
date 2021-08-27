@@ -115,7 +115,7 @@ const LineColumnArea = ({ labels, monthlySpendings, approved }: LineColumnAreaPr
     },
     yaxis: {
       title: {
-        text: "Spent",
+        text: "Spent €",
       },
       labels: {
         show: true,

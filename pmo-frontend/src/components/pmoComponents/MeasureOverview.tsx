@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Container, Row, Col, Card, CardBody } from "reactstrap"
 import { Link } from "react-router-dom"
 
-const Measure_Overview = (): ReactElement => {
+const MeasureOverview = (): ReactElement => {
   return (
     <>
       <div className="page-content">
@@ -16,4 +16,4 @@ const Measure_Overview = (): ReactElement => {
   )
 }
 
-export default Measure_Overview
+export default MeasureOverview

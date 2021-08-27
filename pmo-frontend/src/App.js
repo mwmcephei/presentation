@@ -15,10 +15,10 @@ import VerticalLayout from "./components/VerticalLayout"
 import HorizontalLayout from "./components/HorizontalLayout"
 import NonAuthLayout from "./components/NonAuthLayout"
 import Index from "./components/HorizontalLayout"
-import Overview from "./components/PMO_Components/overview"
-import Measure_Overview from "./components/PMO_Components/Measure_Overview"
-import Measure_Reports from "./components/PMO_Components/Measure_Reports"
-import Budget_Report from "./components/PMO_Components/Budget_Report"
+import Overview from "./components/pmoComponents/overview"
+import MeasureOverview from "./components/pmoComponents/MeasureOverview"
+import MeasureReports from "./components/pmoComponents/MeasureReports"
+import BudgetReport from "./components/pmoComponents/BudgetReport"
 
 // Import scss
 import "./assets/scss/theme.scss"
@@ -46,20 +46,20 @@ const App = props => {
       <Router>
         <Index />
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <Overview />
           </Route>
           <Route path="/dashboard">
             <Overview />
           </Route>
           <Route path="/measure_overview">
-            <Measure_Overview />
+            <MeasureOverview />
           </Route>
           <Route path="/measure_reports">
-            <Measure_Reports />
+            <MeasureReports />
           </Route>
           <Route path="/budget_reports">
-            <Budget_Report />
+            <BudgetReport />
           </Route>
         </Switch>
       </Router>

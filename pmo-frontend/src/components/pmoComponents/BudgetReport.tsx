@@ -4,16 +4,16 @@ import { useState, useEffect } from "react"
 import { Container, Row, Col, Card, CardBody } from "reactstrap"
 import { Link } from "react-router-dom"
 
-const Measure_Reports = (): ReactElement => {
+const BudgetReport = (): ReactElement => {
   return (
     <>
       <div className="page-content">
         <Container fluid>
-          <Row>Measure Reports</Row>
+          <Row>Budget Report</Row>
         </Container>
       </div>
     </>
   )
 }
 
-export default Measure_Reports
+export default BudgetReport

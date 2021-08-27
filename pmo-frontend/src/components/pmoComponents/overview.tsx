@@ -207,7 +207,7 @@ const Overview = (): ReactElement => {
                                 green={measurePKI_pieChart.greenCounter}
                                 yellow={measurePKI_pieChart.yellowCounter}
                                 red={measurePKI_pieChart.redCounter}
-                                labels={["Behind ", "On Track ", "Achieved "]}
+                                labels={["On Track ", "Achieved ", "Behind "]}
                             />
                         </Col>
                     </Row>
