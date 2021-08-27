@@ -46,6 +46,9 @@ const App = props => {
       <Router>
         <Index />
         <Switch>
+          <Route path="/">
+            <Overview />
+          </Route>
           <Route path="/dashboard">
             <Overview />
           </Route>

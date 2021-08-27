@@ -44,7 +44,7 @@ const theme = {
     colors: ["#34c38f", "#556ee6"],
   },
 }
-TuiChart.registerTheme("skoteTheme", theme)
+
 
 const ScatterChartToast = props => {
   const data = {
