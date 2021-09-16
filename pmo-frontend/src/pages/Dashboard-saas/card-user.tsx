@@ -7,19 +7,8 @@ import {
   CardTitle,
 } from "reactstrap"
 import CSS from 'csstype';
+import { getCircle, allianzBlue } from "../../globalVars"
 
-const getCircle = (input: number): ReactElement => {
-  switch (input) {
-    case 0:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-success  text-muted text-truncate" style={{ height: '30px', width: '30px' }} ></div>)
-    case 1:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-warning align-self-centerr" style={{ height: '30px', width: '30px' }} ></div>)
-    case 2:
-      return (<div className="justify-content-center mx-auto text-center rounded-circle bg-danger align-self-center" style={{ height: '30px', width: '30px' }} ></div>)
-    default:
-      return (<div className="text-center rounded-circle " style={{ height: '30px', width: '30px' }} ></div>)
-  }
-}
 
 
 type overviewPropType = {
@@ -34,11 +23,11 @@ type overviewPropType = {
 function CardUser(props: overviewPropType): ReactElement {
   const overallProgress_style: CSS.Properties = {
     width: props.overallProgress + "%",
-    background: "#16549C"
+    background: allianzBlue
   };
   const kpiProgress_style: CSS.Properties = {
     width: props.kpiProgress + "%",
-    background: "#16549C"
+    background: allianzBlue
   };
 
   let toalBudget_adjustedForDisplay: String;
@@ -93,7 +82,7 @@ function CardUser(props: overviewPropType): ReactElement {
                           </p>
                           <div className="text-center ">
                             <div className="justify-content-center mx-auto">
-                              {getCircle(props.signal)}
+                              {getCircle(props.signal, 30)}
                             </div>
                           </div>
                         </div>

@@ -3,5 +3,8 @@
   "appName": "PMO-Tool",
   "webDir": "build",
   "bundledWebRuntime": false,
-  "allowMixedContent": true
+  "allowMixedContent": true,
+  "ios": {
+    "contentInset": "always"
+  }
 }
