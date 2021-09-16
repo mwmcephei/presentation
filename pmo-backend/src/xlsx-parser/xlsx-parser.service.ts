@@ -1,14 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import * as fs from 'fs';
 import { InjectModel } from '@nestjs/mongoose';
-import { Sheet, SheetSchema } from '../schemas/sheet.schema';
-import { Measure, MeasureSchema } from '../schemas/measure.schema';
-import { Artefact, ArtefactSchema } from '../schemas/artefact.schema';
-import { Budget, BudgetSchema } from '../schemas/budget.schema';
+import { Sheet } from '../schemas/sheet.schema';
+import { Measure } from '../schemas/measure.schema';
+import { Artefact } from '../schemas/artefact.schema';
+import { Budget } from '../schemas/budget.schema';
 import { Model } from 'mongoose';
 import { resolve } from 'path';
 import * as XLSX from 'xlsx';
-import { fileNames } from '../globalVars';
+import { fileNames, FOCUS_AREA_NAMES } from '../globalVars';
 
 
 /*
@@ -219,51 +218,78 @@ export class XlsxParserService {
     const excelFile = new this.sheetModel(newSheet)
     excelFile.save()
       .then(newlySavedExcelSheet => {
-        console.log(newlySavedExcelSheet)
-
         const workbook = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.main_file))
-        // 'sheet' corresponds to measure
+        const workbookBudgetFile = XLSX.readFile(resolve(fileNames.xlsx_file_dir, fileNames.status_report))
+        const statusReportAsJsonObject = XLSX.utils.sheet_to_json(workbookBudgetFile.Sheets[workbookBudgetFile.SheetNames[0]])
+        // 'sheet' here means a sheet of the xlsx file i.e. a measure "M...""
         const sheet_name_list = workbook.SheetNames;
-        console.log(typeof (workbook.SheetNames))
         sheet_name_list.map(sheetName => {
           // save measure to DB
           if (sheetName !== "Status Overview" && sheetName !== "Overview") {
-            console.log(sheetName)
-            const newMeasure = {
-              title: sheetName,
-            }
-            const measure = new this.measureModel(newMeasure)
-            measure.save()
-              .then(async savedMeasure => {
-                // add measure to ExcelSheet measure list
-                await this.sheetModel.updateOne({ _id: newlySavedExcelSheet._id }, { $push: { measures: savedMeasure } });
-                return savedMeasure
-              })
-              .then(async savedMeasure => {
-                // get artefacts of this measure and add it to measure in DB
-                const data: SheetType[] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
-                const artefacts = this.getArtefactsFromLinesArray(data)
+            const xlsxFileAsJsonObject: SheetType[] = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
+            for (let i = 0; i < statusReportAsJsonObject.length; i++) {
+              if (statusReportAsJsonObject[i]["__EMPTY_1"] === sheetName) {
+                const firstKey = Object.keys(statusReportAsJsonObject[i])[0]
+                const id: number = statusReportAsJsonObject[i][firstKey]
+                const measureLead: string = statusReportAsJsonObject[i]["__EMPTY_8"]
+                const measureSponsor: string = statusReportAsJsonObject[i]["__EMPTY_7"]
+                const lineOrgSponsor: string = statusReportAsJsonObject[i]["__EMPTY_10"]
+                const solutionManager: string = statusReportAsJsonObject[i]["__EMPTY_11"]
+                const approved: number = statusReportAsJsonObject[i]["__EMPTY_12"]
+                const spent: number = statusReportAsJsonObject[i]["__EMPTY_14"].toFixed(2)
+                const kpiName: string = statusReportAsJsonObject[i]["__EMPTY_17"]
+                const actuals: number = statusReportAsJsonObject[i]["__EMPTY_19"]
+                const target: number = statusReportAsJsonObject[i]["__EMPTY_27"]
+                const focusArea: string = FOCUS_AREA_NAMES[xlsxFileAsJsonObject[3]["__EMPTY_8"]]
+                const name: string | number = xlsxFileAsJsonObject[3]["__EMPTY_1"]
+                const newMeasure = {
+                  id,
+                  title: sheetName,
+                  name,
+                  focusArea,
+                  measureLead,
+                  measureSponsor,
+                  lineOrgSponsor,
+                  solutionManager,
+                  approved,
+                  spent,
+                  kpiName,
+                  actuals,
+                  target,
+                }
+                const measure = new this.measureModel(newMeasure)
+                measure.save()
+                  .then(async savedMeasure => {
+                    // add measure to ExcelSheet measure list
+                    await this.sheetModel.updateOne({ _id: newlySavedExcelSheet._id }, { $push: { measures: savedMeasure } });
+                    return savedMeasure
+                  })
+                  .then(async savedMeasure => {
+                    // get artefacts of this measure and add it to measure in DB            
+                    const artefacts = this.getArtefactsFromLinesArray(xlsxFileAsJsonObject)
 
-                const savedArtefact_IDs = []
-                artefacts.map(art => {  // artefacts: array of objects, each containing a row of xlsx file
-                  const toSave = {
-                    id: art["__EMPTY_1"], // __EMPTY_ + column(!) number accesses a cell
-                    description: art["__EMPTY_2"],
-                    progress: art["__EMPTY_9"],
-                    budget: art["__EMPTY_11"] ? art["__EMPTY_11"] : "",
-                    achievement: art["__EMPTY_13"],
-                    work: art["__EMPTY_21"],
-                  }
-                  const artefact = new this.artefactModel(toSave)
-                  artefact.save()
-                    .then(async savedArtefact => {
-                      savedArtefact_IDs.push(savedArtefact._id)
-                      await this.measureModel.updateOne({ _id: savedMeasure._id }, { $push: { artefacts: savedArtefact } });
+                    const savedArtefact_IDs = []
+                    artefacts.map(art => {  // artefacts: array of objects, each containing a row of xlsx file
+                      const toSave = {
+                        id: art["__EMPTY_1"], // __EMPTY_ + column(!) number accesses a cell
+                        description: art["__EMPTY_2"],
+                        progress: art["__EMPTY_9"],
+                        budget: art["__EMPTY_11"] ? art["__EMPTY_11"] : "",
+                        achievement: art["__EMPTY_13"],
+                        work: art["__EMPTY_21"],
+                      }
+                      const artefact = new this.artefactModel(toSave)
+                      artefact.save()
+                        .then(async savedArtefact => {
+                          savedArtefact_IDs.push(savedArtefact._id)
+                          await this.measureModel.updateOne({ _id: savedMeasure._id }, { $push: { artefacts: savedArtefact } });
+                        })
+                        .catch(err => console.log(err))
                     })
-                    .catch(err => console.log(err))
-                })
-              })
-              .catch(err => console.log(err))
+                  })
+                  .catch(err => console.log(err))
+              }
+            }
           }
         })
       })
@@ -272,7 +298,7 @@ export class XlsxParserService {
 
 
 
-  // aux function for parse()
+  // aux functions for parse()
   getArtefactsFromLinesArray(sheet: SheetType[]): SheetType[] {
     return sheet.filter(line => {
       const firstKey = Object.keys(line)[0]
@@ -288,6 +314,8 @@ export class XlsxParserService {
       }
     });
   }
+
+
 
 
 

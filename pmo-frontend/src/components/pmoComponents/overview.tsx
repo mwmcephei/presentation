@@ -1,6 +1,5 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { useState, useEffect } from 'react';
-
 import {
     Container,
     Row,
@@ -13,7 +12,6 @@ import {
 import CardUser from "../../pages/Dashboard-saas/card-user"
 import LineColumnArea from "pages/AllCharts/apex/LineColumnArea"
 import SalesAnalytics from 'pages/Dashboard-saas/sales-analytics'
-import { number } from 'prop-types';
 
 
 type OverviewType = {
@@ -29,12 +27,6 @@ type OverviewType = {
 
 
 const Overview = (): ReactElement => {
-    //   const parserBaseURL = "http://192.168.2.112:4000/api"  // Michael
-    //   const parserBaseURL = "http://localhost:4000/api" // Matthias Browser
-    //   const parserBaseURL = "http://10.0.2.2:4000/api"   // android emulator
-    const parserBaseURL = "https://pmo-ios-backend.herokuapp.com/api"   // backend hosted on heroku
-
-
     const [overviewData, setOverviewData] = useState<OverviewType>()
     const [measures, setMeasures] = useState([])
     const [measuresPieChart, setMeasuresPieChart] = useState({ redCounter: 0, yellowCounter: 0, greenCounter: 0 })
@@ -46,25 +38,18 @@ const Overview = (): ReactElement => {
 
 
     useEffect(() => {
-        fetch(parserBaseURL + "/budget")
+        fetch(process.env.REACT_APP_API_URL_LOCAL + "/budget")
             .then(response => response.json())
             .then(response => {
                 if (response.monthlySpendings && response.approvedBudgetPerMonth) {
-                    setMonthlySpendings(response.monthlySpendings)
-                    console.log("budget")
-                    console.log(response)
                     let labels: string[] = []
                     for (let i = 0; i < response.monthlySpendings.length; i++) {
                         const date = "0" + (i + 1) + "/01/" + response.year
                         labels.push(date)
                     }
                     setLabels(labels)
+                    setMonthlySpendings(response.monthlySpendings)
                     setApproved(response.approvedBudgetPerMonth)
-
-                    console.log("in useeffect")
-                    console.log(labels)
-                    console.log(response.approvedBudgetPerMonth)
-                    console.log(response.monthlySpendings)
                 }
             })
             .catch(error => {
@@ -75,21 +60,16 @@ const Overview = (): ReactElement => {
 
     useEffect(() => {
         if (approved) {
-            fetch(parserBaseURL + "/overview")
+            fetch(process.env.REACT_APP_API_URL_LOCAL + "/overview")
                 .then(response => response.json())
                 .then(response => {
                     setOverviewData(response)
-                    console.log("overview")
-                    console.log(response)
-
-                    fetch(parserBaseURL + "/measures")
-                        .then(response => response.json())
-                        .then(response => {
-                            setMeasures(response)
-                            console.log("measures")
-                            console.log(response)
-                        })
-                        .catch(error => console.log(error));
+                })
+                .catch(error => console.log(error));
+            fetch(process.env.REACT_APP_API_URL_LOCAL + "/measures")
+                .then(response => response.json())
+                .then(response => {
+                    setMeasures(response)
                 })
                 .catch(error => console.log(error));
         }
@@ -101,7 +81,7 @@ const Overview = (): ReactElement => {
         let yellowCounter = 0
         let redCounter = 0
         measures.map(measure => {
-            const max = getMax([measure.budget, measure.risk, measure.artefact])
+            const max = Math.max(...[measure.budget, measure.risk, measure.artefact])
             switch (max) {
                 case 0:
                     greenCounter += 1
@@ -144,13 +124,7 @@ const Overview = (): ReactElement => {
     }, [measures]);
 
 
-    const getMax = (array: number[]): number => {
-        let res = 0
-        array.map(a => {
-            if (a > res) { res = a }
-        })
-        return res
-    }
+
 
 
     const getOverview = (overViewProps: OverviewType): ReactElement => {
@@ -207,7 +181,7 @@ const Overview = (): ReactElement => {
                                 green={measurePKI_pieChart.greenCounter}
                                 yellow={measurePKI_pieChart.yellowCounter}
                                 red={measurePKI_pieChart.redCounter}
-                                labels={["On Track ", "Achieved ", "Behind "]}
+                                labels={["Behind ", "On Track ", "Achieved "]}
                             />
                         </Col>
                     </Row>
